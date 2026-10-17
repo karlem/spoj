@@ -1,0 +1,20 @@
+{
+  "scope": "Static source/literature shortlist; no implementation changes",
+  "repositories": 9,
+  "source_files_hash_checked": 19,
+  "pinned_links_checked": 17,
+  "full_paper_texts_read": false,
+  "project_code_executed": false,
+  "models_downloaded": false,
+  "new_product_tests_run": false,
+  "checks": [
+    {
+      "command": "Validate pinned primary file hashes, sizes and source links",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ]
+}
