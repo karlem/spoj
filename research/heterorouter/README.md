@@ -2,6 +2,10 @@
 
 Date: 2026-10-17. Research-only; no changes to the correctness implementation and no main-correctness acceptance claim. Published separately under `research/heterorouter/`. Tracking issue: https://github.com/karlem/spoj/issues/7.
 
+## Capacity goal and Colibri comparison
+
+The human clarified that capacity comes first: combine heterogeneous device memory to host a model that cannot fit one device, then improve service through measured scheduling and placement adaptation. Read [the primary-code Colibri study and capacity accounting](capacity-and-colibri.md). This is research direction only; it changes no approved product scope or implementation. Colibri was inspected, not executed.
+
 ## Current source pointer: arXiv:2608.00577
 
 The user supplied the primary PDF for https://arxiv.org/abs/2608.00577; it has now been read. Start with [primary-source analysis, algorithms and explicit ambiguities](primary-analysis.md). Its title is **HetRoute: Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference**. A separate bounded online sketch explores joint routing with assumed perceived bandwidth; it is not a complete reproduction. The generic simulation below remains a separate pre-paper baseline. [Earlier blocked-access notes](source-update-2608.00577.md) are retained as history.
