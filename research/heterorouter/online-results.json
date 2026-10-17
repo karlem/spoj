@@ -1,0 +1,299 @@
+{
+  "beam_perceived_cost_misses": 0,
+  "beam_width": 8,
+  "gap_definition": "realized chosen route latency minus exact_true Eq11-constrained comparator; signed; sums over completed snapshots only, denominator is completed",
+  "limits": [
+    "not full HetRoute",
+    "no physical measurement or tensor execution",
+    "fixed fullprecision exact replicas",
+    "no fallback",
+    "per-server work/loading sum is an explicit Eq10 extension",
+    "beam ranks total partial D; paper tie/ordering details underspecified"
+  ],
+  "metrics_unit": "one token, one MoE layer",
+  "one_bounded_trace": {
+    "decisions": {
+      "beam_perceived": {
+        "aggregation": 1,
+        "assignment": [
+          1,
+          1,
+          1
+        ],
+        "predicted_assumed": {
+          "aggregation": 1,
+          "compute": 0.051666666666666666,
+          "fanin": 0.0,
+          "fanout": 0.008192,
+          "latency": 0.059858666666666664,
+          "participants": [
+            1
+          ],
+          "server_service": {
+            "1": 0.051666666666666666
+          }
+        },
+        "realized_assumed": {
+          "aggregation": 1,
+          "compute": 0.051666666666666666,
+          "fanin": 0.0,
+          "fanout": 0.0008192,
+          "latency": 0.052485866666666665,
+          "participants": [
+            1
+          ],
+          "server_service": {
+            "1": 0.051666666666666666
+          }
+        }
+      },
+      "exact_perceived": {
+        "aggregation": 1,
+        "assignment": [
+          1,
+          1,
+          1
+        ],
+        "predicted_assumed": {
+          "aggregation": 1,
+          "compute": 0.051666666666666666,
+          "fanin": 0.0,
+          "fanout": 0.008192,
+          "latency": 0.059858666666666664,
+          "participants": [
+            1
+          ],
+          "server_service": {
+            "1": 0.051666666666666666
+          }
+        },
+        "realized_assumed": {
+          "aggregation": 1,
+          "compute": 0.051666666666666666,
+          "fanin": 0.0,
+          "fanout": 0.0008192,
+          "latency": 0.052485866666666665,
+          "participants": [
+            1
+          ],
+          "server_service": {
+            "1": 0.051666666666666666
+          }
+        }
+      },
+      "exact_true": {
+        "aggregation": 1,
+        "assignment": [
+          0,
+          1,
+          1
+        ],
+        "predicted_assumed": {
+          "aggregation": 1,
+          "compute": 0.04833333333333333,
+          "fanin": 0.0008192,
+          "fanout": 0.0008192,
+          "latency": 0.04997173333333333,
+          "participants": [
+            0,
+            1
+          ],
+          "server_service": {
+            "0": 0.01,
+            "1": 0.04833333333333333
+          }
+        },
+        "realized_assumed": {
+          "aggregation": 1,
+          "compute": 0.04833333333333333,
+          "fanin": 0.0008192,
+          "fanout": 0.0008192,
+          "latency": 0.04997173333333333,
+          "participants": [
+            0,
+            1
+          ],
+          "server_service": {
+            "0": 0.01,
+            "1": 0.04833333333333333
+          }
+        }
+      },
+      "greedy_perceived": {
+        "aggregation": 0,
+        "assignment": [
+          0,
+          1,
+          1
+        ],
+        "predicted_assumed": {
+          "aggregation": 0,
+          "compute": 0.04833333333333333,
+          "fanin": 0.004096,
+          "fanout": 0.008192,
+          "latency": 0.06062133333333333,
+          "participants": [
+            0,
+            1
+          ],
+          "server_service": {
+            "0": 0.01,
+            "1": 0.04833333333333333
+          }
+        },
+        "realized_assumed": {
+          "aggregation": 0,
+          "compute": 0.04833333333333333,
+          "fanin": 0.004096,
+          "fanout": 0.0008192,
+          "latency": 0.053248533333333334,
+          "participants": [
+            0,
+            1
+          ],
+          "server_service": {
+            "0": 0.01,
+            "1": 0.04833333333333333
+          }
+        }
+      }
+    },
+    "inputs_assumed": {
+      "admitted": [
+        200000.0,
+        0.0,
+        200000.0
+      ],
+      "backlog": [
+        0.0,
+        500000.0,
+        500000.0
+      ],
+      "compute": [
+        10000000.0,
+        30000000.0,
+        6000000.0
+      ],
+      "eligible": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "home": 0,
+      "in_bytes": 4096.0,
+      "load_bytes": [
+        [
+          0.0,
+          0.0,
+          1000000.0
+        ],
+        [
+          1000000.0,
+          1000000.0,
+          1000000.0
+        ],
+        [
+          1000000.0,
+          0.0,
+          1000000.0
+        ]
+      ],
+      "out_bytes": 4096.0,
+      "pcie": [
+        100000000.0,
+        200000000.0,
+        100000000.0
+      ],
+      "perceived_bandwidth": [
+        [
+          1e+30,
+          500000.0,
+          1000000.0
+        ],
+        [
+          1000000.0,
+          1e+30,
+          20000000.0
+        ],
+        [
+          1000000.0,
+          5000000.0,
+          1e+30
+        ]
+      ],
+      "true_bandwidth": [
+        [
+          1e+30,
+          5000000.0,
+          1000000.0
+        ],
+        [
+          1000000.0,
+          1e+30,
+          20000000.0
+        ],
+        [
+          1000000.0,
+          5000000.0,
+          1e+30
+        ]
+      ],
+      "window": 0.1,
+      "work": [
+        100000.0,
+        400000.0,
+        400000.0
+      ]
+    },
+    "snapshot_index": 6
+  },
+  "policy_summary": {
+    "beam_perceived": {
+      "completed": 99,
+      "largest_gap_s": 0.0032767999999999964,
+      "model_infeasible": 1,
+      "search_failed_on_feasible_model": 0,
+      "signed_gap_sum_s": 0.0076341333333333344,
+      "smallest_gap_s": 0.0
+    },
+    "exact_perceived": {
+      "completed": 99,
+      "largest_gap_s": 0.0032767999999999964,
+      "model_infeasible": 1,
+      "search_failed_on_feasible_model": 0,
+      "signed_gap_sum_s": 0.0076341333333333344,
+      "smallest_gap_s": 0.0
+    },
+    "exact_true": {
+      "completed": 99,
+      "largest_gap_s": 0.0,
+      "model_infeasible": 1,
+      "search_failed_on_feasible_model": 0,
+      "signed_gap_sum_s": 0.0,
+      "smallest_gap_s": 0.0
+    },
+    "greedy_perceived": {
+      "completed": 99,
+      "largest_gap_s": 0.030000000000000013,
+      "model_infeasible": 1,
+      "search_failed_on_feasible_model": 0,
+      "signed_gap_sum_s": 0.5397813333333332,
+      "smallest_gap_s": 0.0
+    }
+  },
+  "seed": 1907,
+  "snapshot_count": 100,
+  "status": "restricted primary-source-inspired synthetic snapshot model"
+}

@@ -4,11 +4,11 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Current source pointer: arXiv:2608.00577
 
-The user has now supplied https://arxiv.org/abs/2608.00577. Available mirrored metadata identifies **HetRoute: Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference**. The primary PDF/HTML remains blocked by the cloud proxy. See [the source update and reading plan](source-update-2608.00577.md). The generic simulation below remains a separate pre-paper baseline; no paper algorithm is reproduced yet.
+The user supplied the primary PDF for https://arxiv.org/abs/2608.00577; it has now been read. Start with [primary-source analysis, algorithms and explicit ambiguities](primary-analysis.md). Its title is **HetRoute: Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference**. A separate bounded online sketch explores joint routing with assumed perceived bandwidth; it is not a complete reproduction. The generic simulation below remains a separate pre-paper baseline. [Earlier blocked-access notes](source-update-2608.00577.md) are retained as history.
 
 ## Initial discovery before the user supplied the citation (audit trail)
 
-**At the initial bootstrap, no verified HeteroRouter primary paper or implementation had been identified.** Do not label the attached generic scheduler as HeteroRouter, reproduce invented equations, or infer a paper's claims from the user's pronunciation. The user subsequently supplied arXiv:2608.00577; full primary-text access is still needed before paper-specific analysis.
+**At the initial bootstrap, no verified HeteroRouter primary paper or implementation had been identified.** Do not label the attached generic scheduler as HeteroRouter, reproduce invented equations, or infer a paper's claims from the user's pronunciation. The user subsequently supplied arXiv:2608.00577; the later attachment now supports the primary-source analysis linked above.
 
 Observed public searches on this date:
 
@@ -25,7 +25,7 @@ Exact queries can be repeated through `https://api.github.com/search/repositorie
 1. **HexGen: Generative Inference of Large Language Model over Heterogeneous Environment**, ICML 2024, as identified by its official README: https://github.com/Relaxed-System-Lab/HexGen ; paper linked there: https://arxiv.org/abs/2311.11514. README describes hybrid pipeline/tensor parallelism and asymmetric parallel groups. Relevant question: how heterogeneous compute and links enter placement/partition decisions. It is not established here as an MoE token-routing algorithm. Full paper text/equations have not been retrieved; do not claim their objective or specific algorithm from README alone.
 2. **DeepEP**, official communication implementation: https://github.com/deepseek-ai/DeepEP. README exposes dispatch/combine interfaces using selected expert IDs/weights and separates communication from expert math. Useful systems comparator, not the requested HeteroRouter paper. Its current documented environment requires modern NVIDIA GPUs/NVLink/RDMA; no installation or execution attempted. README performance claims are not SPOJ evidence.
 
-Once the primary PDF is accessible, inspect its exact version and corresponding code revision; extract objective, constraints, observation model, pseudocode and equations with section/page references, plus claims actually supported by its evaluation. Determine whether its "router" changes logical expert selection or only placement/replica dispatch. That distinction determines whether it can preserve the frozen HF oracle at all.
+Original extraction plan (now addressed for the supplied PDF; no author code acquired): inspect its exact version and corresponding code revision; extract objective, constraints, observation model, pseudocode and equations with section/page references, plus claims actually supported by its evaluation. Determine whether its "router" changes logical expert selection or only placement/replica dispatch. That distinction determines whether it can preserve the frozen HF oracle at all.
 
 ## Generic simulation bootstrap — explicitly our proposal
 
@@ -74,4 +74,4 @@ Independent correctness evidence would include hand-solvable event schedules, co
 
 The parent agent separately executed `python3 simulate.py` and compared the complete JSON with the researcher output: exit 0, exact match, all four policies conserved 120 eligible jobs. This checks deterministic mechanics only; it does not validate a HeteroRouter algorithm or physical predictions.
 
-This workstream is distinct from correctness PR #6. To continue it in a separate ChatGPT conversation, reference GitHub issue #7 and this research branch. The exact identifier is now supplied. Paper-specific analysis is blocked on access to its actual primary text.
+This workstream is distinct from correctness PR #6. To continue it in a separate ChatGPT conversation, reference GitHub issue #7 and this research branch. The identifier and primary attachment are now supplied. Continue from primary-analysis.md and the bounded online sketch; the earlier access blocker is resolved by the attachment.

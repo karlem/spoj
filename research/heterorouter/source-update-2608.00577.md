@@ -1,4 +1,6 @@
-# Exact user citation supplied: arXiv:2608.00577
+# Historical source-acquisition record: arXiv:2608.00577
+
+**Superseded access status:** the user later attached the actual PDF. It has now been read; see [primary analysis](primary-analysis.md) and the attachment hash in citation-metadata.json. The blocked statuses below describe earlier attempts, retained for audit.
 
 The human supplied https://arxiv.org/abs/2608.00577 for the separate research workstream. This resolves the intended identifier. It does **not** establish that we have read its primary text.
 
