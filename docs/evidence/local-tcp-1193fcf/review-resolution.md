@@ -1,0 +1,5 @@
+Independent read-only re-review of 7858fa68892de9879f10f5cbfe8bca2ab921c0a9: prior P2 resolved; no additional blocking findings. Reviewer verified that normal shutdown now rejects missing/malformed acknowledgements, duplicate terminal results and nonzero exits after cleanup, while exceptional cleanup preserves the original failure. New negative cases cover those boundaries; a hand-built fixture checks little-endian payload bytes independently of the codec roundtrip.
+
+Reviewer also checked unchanged HF per-contribution/direct-output oracles, byte-based initialization (no process tensor shortcut), bounded framing/deadlines, raw trace reconstruction and unchanged legacy partition defaults. This is independent-agent source review within Codex, not an external human audit or an audit of compiled Torch kernels; exact serving model identifier unavailable. Reviewer ran no process tests concurrently and made no edits.
+
+Approval remains conditional on final frozen validation, currently running. Native Mac acceptance remains outstanding. Review does not authorize merge or multi-host/full-model/capacity claims.

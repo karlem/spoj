@@ -105,3 +105,43 @@ UV_PROJECT_ENVIRONMENT="$PWD/target/spoi/fresh-issue1" HF_HUB_OFFLINE=1 TRANSFOR
 Keep caches/results under ignored paths. Native shared-memory process tests
 need permission to create semaphores/shared memory and inspect owned process
 lifetimes; a sandbox-denied run is failed validation until rerun with permission.
+
+## Three-worker local TCP correctness demonstration
+
+The additive [local TCP specification](../docs/specs/local-tcp-parity.md) keeps
+this milestone separate from original native-Mac acceptance and issue #2.
+From the repository root, use a new output directory:
+
+```sh
+uv sync --project spoi --frozen --python 3.12
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --project spoi --frozen python -m spoi tcp-demo --output target/tcp/my-demo
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --project spoi --frozen python -m spoi.verify_tcp_trace target/tcp/my-demo/trace.json
+./scripts/check.sh
+```
+
+`my-demo` must be absent. The demo starts three standalone subprocesses on
+loopback TCP, transfers compact expert shards as raw tensor bytes, reuses the
+same worker PIDs across three requests, and checks every returned contribution
+with the actual unchanged HF expert path before comparing the reconstructed
+output to direct `block(x)`. It forces all-worker and zero-hit routing. Workers
+are trusted local processes; this protocol is not exposed to remote peers.
+
+The output contains `trace.json` (bounded full tensor records and base64 raw
+TCP frames), `verification.json`, and a generated `README.md` with measured
+routing tables, frame sequence diagram and source walkthrough. The offline
+verifier decodes the frames, checks receipt hashes, reconstructs seeded shard
+provenance and re-executes HF contribution and direct-output oracles without
+starting workers. It rejects altered bytes, even if a result frame's hash is
+recomputed, when the altered contribution disagrees with the HF oracle. Hashes
+link evidence; they are not signatures or independent proof of the recorded
+process execution. Source/model arithmetic shares PyTorch with the oracle;
+no independent audit of compiled kernels is claimed.
+
+`TCPSession(block, frozen, workers=1..4)` provides the bounded local worker
+count independently from the legacy two-worker `ExpertSession`. The default
+TCP demo uses five experts split [0,1]/[2,3]/[4], CPU float32, tiny dimensions
+and unchanged locked packages. TCP frames cap metadata at 64 KiB and tensor
+payload at 8 MiB. Trace mode caps requests at four, tokens at 16, hidden size
+at 64, frames at 128 and aggregate raw frame bytes at 4 MiB; excess fails
+explicitly. Do not use this correctness demonstrator to infer speedup, reduced
+total memory, full-model generation, or multi-host/native-Mac acceptance.

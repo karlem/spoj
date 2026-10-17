@@ -1,0 +1,1 @@
+{"expected_exception": "TimeoutError", "observed": true, "bytes_successfully_sent": 65482, "socket_send_calls": 3, "received_prefix_hex": "0000008700400000", "deadline_seconds": 0.2, "elapsed_seconds": 0.20063681500050734, "purpose": "functional deadline witness, not a performance benchmark"}

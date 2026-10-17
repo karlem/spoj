@@ -24,13 +24,13 @@ def validate_input(x, hidden_size):
         raise ValueError("input must be finite CPU float32")
 
 
-def pack(x, selected, weights, owners):
+def pack(x, selected, weights, owners, worker_count=2):
     flat = x.reshape(-1, x.shape[-1])
     tokens = torch.arange(flat.shape[0]).unsqueeze(1).expand_as(selected)
     slots = torch.arange(selected.shape[1]).unsqueeze(0).expand_as(selected)
     ownership = torch.tensor(owners, dtype=torch.long)[selected]
     result = []
-    for worker in (0, 1):
+    for worker in range(worker_count):
         mask = ownership == worker
         ti, si = tokens[mask].clone(), slots[mask].clone()
         result.append(Assignments(flat[ti].clone(), ti, si, selected[mask].clone(), weights[mask].clone()))

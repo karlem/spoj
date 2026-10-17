@@ -3,6 +3,7 @@
 import argparse
 from dataclasses import asdict
 import json
+import sys
 
 import torch
 
@@ -13,6 +14,9 @@ from .qwen3_adapter import build_reference, compatibility
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == 'tcp-demo':
+        from .tcp_demo import main as tcp_main
+        return tcp_main(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     smoke = commands.add_parser("smoke")

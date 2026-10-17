@@ -1,0 +1,68 @@
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+........................................................................ [ 79%]
+.......................E.................................                [100%]
+==================================== ERRORS ====================================
+_________________ ERROR at teardown of test_worker_bounds[1.5] _________________
+
+request = <SubRequest 'running' for <Function test_seeded_tcp_contribution_and_final_parity[running31-shape0]>>
+
+    @pytest.fixture(scope='module', params=CASES)
+    def running(request):
+        workers, seed, top_k, norm = request.param
+        block, state = build_reference(ExperimentConfig(num_experts=5, seed=seed, top_k=top_k, norm_topk_prob=norm))
+        session = TCPSession(block, state, workers)
+>       with session:
+             ^^^^^^^
+
+spoi/tests/test_tcp_session.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spoi/src/spoi/tcp_session.py:225: in __exit__
+    self.close(suppress=exc_type is not None)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <spoi.tcp_session.TCPSession object at 0x7f4b12effd70>, suppress = False
+
+    def close(self, *, suppress=False):
+        if self.closed:
+            return
+        self.closed = True
+        deadline = time.monotonic()+self.config.shutdown_timeout
+        for worker in range(len(self.sockets)):
+            try:
+                self._send(worker, 'stop', {}, deadline, request=self.request+1)
+                meta, tensors = self._recv(worker, 'stopped', deadline, request=self.request+1)
+                if set(meta) != {'kind', 'run', 'worker', 'request'} or tensors:
+                    raise TCPError('invalid stop acknowledgement')
+            except Exception as exc:
+                self.shutdown_errors.append(f'worker {worker}: {type(exc).__name__}: {exc}')
+        for connection in [*self.sockets, *self.listeners]:
+            connection.close()
+        for process in self.processes:
+            try:
+                process.wait(timeout=max(0, deadline-time.monotonic()))
+            except subprocess.TimeoutExpired:
+                pass
+        for process in self.processes:
+            if process.poll() is None:
+                process.terminate()
+        deadline = time.monotonic()+1
+        for process in self.processes:
+            try:
+                process.wait(timeout=max(0, deadline-time.monotonic()))
+            except subprocess.TimeoutExpired:
+                process.kill()
+        deadline = time.monotonic()+1
+        for process in self.processes:
+            process.wait(timeout=max(0.001, deadline-time.monotonic()))
+        self.exitcodes = [p.returncode for p in self.processes]
+        if any(code != 0 for code in self.exitcodes):
+            self.shutdown_errors.append(f'unclean exit codes: {self.exitcodes}')
+        if self.shutdown_errors and not suppress:
+>           raise TCPError('shutdown failure: ' + '; '.join(self.shutdown_errors))
+E           spoi.tcp_session.TCPError: shutdown failure: worker 0: TCPError: worker error: TimeoutError: timed out; worker 1: TCPError: worker error: TimeoutError: timed out; worker 2: TCPError: worker error: TimeoutError: timed out; worker 3: TCPError: worker error: TimeoutError: timed out; unclean exit codes: [1, 1, 1, 1]
+
+spoi/src/spoi/tcp_session.py:222: TCPError
+=========================== short test summary info ============================
+ERROR spoi/tests/test_tcp_session.py::test_worker_bounds[1.5] - spoi.tcp_sess...
+272 passed, 1 error in 604.09s (0:10:04)

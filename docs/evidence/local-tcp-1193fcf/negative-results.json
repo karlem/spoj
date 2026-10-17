@@ -1,0 +1,34 @@
+[
+  {
+    "fault": "raw-byte",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1,
+    "result": "expected rejection observed",
+    "transcript": "raw-byte.log",
+    "source_trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  },
+  {
+    "fault": "rehash-output",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1,
+    "result": "expected rejection observed",
+    "transcript": "rehash-output.log",
+    "source_trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  },
+  {
+    "fault": "drop-assignment",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1,
+    "result": "expected rejection observed",
+    "transcript": "drop-assignment.log",
+    "source_trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  },
+  {
+    "fault": "duplicate-assignment",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1,
+    "result": "expected rejection observed",
+    "transcript": "duplicate-assignment.log",
+    "source_trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  }
+]
