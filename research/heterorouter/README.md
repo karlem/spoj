@@ -6,6 +6,16 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 The user supplied the primary PDF for https://arxiv.org/abs/2608.00577; it has now been read. Start with [primary-source analysis, algorithms and explicit ambiguities](primary-analysis.md). Its title is **HetRoute: Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference**. A separate bounded online sketch explores joint routing with assumed perceived bandwidth; it is not a complete reproduction. The generic simulation below remains a separate pre-paper baseline. [Earlier blocked-access notes](source-update-2608.00577.md) are retained as history.
 
+## Read and reproduce the current sketch
+
+- [Primary source, algorithms, equations and ambiguities](primary-analysis.md).
+- [Observed synthetic decision and annotated code map](online-walkthrough.md).
+- [Inputs and bounded output trace](online-results.json); [narrow-beam counterexample](beam-counterexample.json).
+- [Independent source review](independent-primary-review.md) and [independent executable review](evidence-34c4bad/independent-code-review.md).
+- [Evaluated commit and commands](evidence-34c4bad/validation.json). Python 3.12 stdlib; no model/network required. Both implementer and independent reviewer ran all 12 tests and matched complete JSON.
+
+The source below describes the earlier generic bootstrap. It is retained separately and has not become a HetRoute reproduction.
+
 ## Initial discovery before the user supplied the citation (audit trail)
 
 **At the initial bootstrap, no verified HeteroRouter primary paper or implementation had been identified.** Do not label the attached generic scheduler as HeteroRouter, reproduce invented equations, or infer a paper's claims from the user's pronunciation. The user subsequently supplied arXiv:2608.00577; the later attachment now supports the primary-source analysis linked above.

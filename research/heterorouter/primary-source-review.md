@@ -1,5 +1,7 @@
 # HetRoute primary-source review for SPOJ research issue #7
 
+This extraction was written before the bounded sketch; its concluding proposed next step is historical. Executed results now appear in online-walkthrough.md.
+
 Source: user-attached `1-2608.00577.pdf`; printed pages 1–15. Read the primary PDF's layout text and raw extraction of p.5. Equation references below follow the **printed PDF**, correcting stale internal references in its prose. This is a source review, not a reproduction or verification of paper performance.
 
 ## Identity and provenance correction

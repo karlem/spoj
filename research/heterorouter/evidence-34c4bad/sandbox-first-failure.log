@@ -1,0 +1,164 @@
+..................................F
+=================================== FAILURES ===================================
+_ test_protocol_and_worker_failures_close_session[traceback-intentional expert failure] _
+
+mode = 'traceback', match = 'intentional expert failure'
+
+    @pytest.mark.parametrize("mode,match", [
+        ("traceback", "intentional expert failure"), ("crash", "exited unexpectedly"),
+        ("wrong-request", "request ID"), ("wrong-run", "identity"), ("wrong-worker", "identity"),
+        ("missing-slot", "coverage"), ("wrong-token", "coverage"), ("nan", "output"),
+        ("shape", "output"), ("dtype", "output"), ("duration", "duration"),
+        ("malformed", "malformed"), ("duplicate", "identity|request ID"),
+    ])
+    def test_protocol_and_worker_failures_close_session(mode, match):
+        config = ExperimentConfig(shutdown_timeout=0.2)
+        _, state = build_reference(config)
+        session = ExpertSession(config, state, _worker_target=partial(fault_worker, mode=mode))
+        with pytest.raises(SessionError, match=match) as caught:
+>           with session:
+                 ^^^^^^^
+
+spoi/tests/test_failures.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spoi/src/spoi/coordinator.py:86: in __enter__
+    process.start()
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/process.py:121: in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/context.py:289: in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/popen_spawn_posix.py:32: in __init__
+    super().__init__(process_obj)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/popen_fork.py:19: in __init__
+    self._launch(process_obj)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/popen_spawn_posix.py:47: in _launch
+    reduction.dump(process_obj, fp)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/reduction.py:60: in dump
+    ForkingPickler(file, protocol).dump(obj)
+spoi/.venv/lib/python3.12/site-packages/torch/multiprocessing/reductions.py:602: in reduce_storage
+    metadata = storage._share_filename_cpu_()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spoi/.venv/lib/python3.12/site-packages/torch/storage.py:458: in wrapper
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self =  206
+ 60
+ 160
+ 188
+ 28
+ 222
+ 69
+ 60
+ 88
+ 185
+ 12
+ 189
+ 159
+ 123
+ 15
+ 186
+ 29
+ 28
+ 82
+ 189
+ 4
+ 185
+ 89
+ 61
+ 48
+ 116
+ 5
+...48
+ 60
+ 30
+ 27
+ 54
+ 59
+ 248
+ 155
+ 171
+ 59
+ 188
+ 216
+ 238
+ 188
+[torch.storage.UntypedStorage(device=cpu) of size 131072]
+args = (), kwargs = {}
+
+    @_share_memory_lock_protected
+    def _share_filename_cpu_(self, *args, **kwargs):
+>       return super()._share_filename_cpu_(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: torch_shm_manager at "/workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/bin/torch_shm_manager": Operation not permitted
+E       Exception raised from start_manager at /__w/pytorch/pytorch/torch/lib/libshm/core.cpp:62 (most recent call first):
+E       frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7f9267cb460d in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+E       frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xca (0x7f9267c408e3 in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+E       frame #2: <unknown function> + 0x5062 (0x7f9269712062 in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libshm.so)
+E       frame #3: THManagedMapAllocatorInit::THManagedMapAllocatorInit(char const*, char const*) + 0x77 (0x7f9269712b27 in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libshm.so)
+E       frame #4: THManagedMapAllocator::THManagedMapAllocator(char const*, char const*, int, unsigned long) + 0x20 (0x7f9269712fb0 in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libshm.so)
+E       frame #5: THManagedMapAllocator::makeDataPtr(char const*, char const*, int, unsigned long) + 0x3e (0x7f926971301e in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libshm.so)
+E       frame #6: <unknown function> + 0x7ab78a (0x7f91e52f878a in /workspace/spoj/spoi/.venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so)
+E       frame #7: /workspace/spoj/spoi/.venv/bin/python() [0x180fe43]
+E       frame #8: _PyEval_EvalFrameDefault + 0xc655 (0x181e955 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #9: PyObject_CallOneArg + 0x54 (0x1855d94 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #10: /workspace/spoj/spoi/.venv/bin/python() [0x1aabe49]
+E       frame #11: /workspace/spoj/spoi/.venv/bin/python() [0x18872a6]
+E       frame #12: /workspace/spoj/spoi/.venv/bin/python() [0x188647f]
+E       frame #13: /workspace/spoj/spoi/.venv/bin/python() [0x1887195]
+E       frame #14: /workspace/spoj/spoi/.venv/bin/python() [0x18872a6]
+E       frame #15: /workspace/spoj/spoi/.venv/bin/python() [0x188647f]
+E       frame #16: /workspace/spoj/spoi/.venv/bin/python() [0x1887195]
+E       frame #17: /workspace/spoj/spoi/.venv/bin/python() [0x18884fc]
+E       frame #18: /workspace/spoj/spoi/.venv/bin/python() [0x18865f7]
+E       frame #19: /workspace/spoj/spoi/.venv/bin/python() [0x1887195]
+E       frame #20: /workspace/spoj/spoi/.venv/bin/python() [0x18875de]
+E       frame #21: /workspace/spoj/spoi/.venv/bin/python() [0x18884fc]
+E       frame #22: /workspace/spoj/spoi/.venv/bin/python() [0x18865f7]
+E       frame #23: /workspace/spoj/spoi/.venv/bin/python() [0x1887195]
+E       frame #24: /workspace/spoj/spoi/.venv/bin/python() [0x188988f]
+E       frame #25: /workspace/spoj/spoi/.venv/bin/python() [0x18893f0]
+E       frame #26: /workspace/spoj/spoi/.venv/bin/python() [0x1852f49]
+E       frame #27: _PyEval_EvalFrameDefault + 0x510a (0x181740a in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #28: /workspace/spoj/spoi/.venv/bin/python() [0x1857fa6]
+E       frame #29: /workspace/spoj/spoi/.venv/bin/python() [0x18025ad]
+E       frame #30: _PyEval_EvalFrameDefault + 0x4f0e (0x181720e in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #31: /workspace/spoj/spoi/.venv/bin/python() [0x181090b]
+E       frame #32: _PyEval_EvalFrameDefault + 0xe8e8 (0x1820be8 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #33: /workspace/spoj/spoi/.venv/bin/python() [0x1ab9b6e]
+E       frame #34: /workspace/spoj/spoi/.venv/bin/python() [0x18b746c]
+E       frame #35: _PyEval_EvalFrameDefault + 0x4f7f (0x181727f in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #36: /workspace/spoj/spoi/.venv/bin/python() [0x1ab9b6e]
+E       frame #37: /workspace/spoj/spoi/.venv/bin/python() [0x18b746c]
+E       frame #38: _PyEval_EvalFrameDefault + 0xc739 (0x181ea39 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #39: /workspace/spoj/spoi/.venv/bin/python() [0x1ab9b6e]
+E       frame #40: /workspace/spoj/spoi/.venv/bin/python() [0x18b746c]
+E       frame #41: _PyEval_EvalFrameDefault + 0x4f7f (0x181727f in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #42: /workspace/spoj/spoi/.venv/bin/python() [0x1ab9b6e]
+E       frame #43: /workspace/spoj/spoi/.venv/bin/python() [0x18b746c]
+E       frame #44: _PyEval_EvalFrameDefault + 0x4f7f (0x181727f in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #45: /workspace/spoj/spoi/.venv/bin/python() [0x1ab9b6e]
+E       frame #46: /workspace/spoj/spoi/.venv/bin/python() [0x18b746c]
+E       frame #47: _PyEval_EvalFrameDefault + 0x4f7f (0x181727f in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #48: PyEval_EvalCode + 0xde (0x18a84f2 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #49: /workspace/spoj/spoi/.venv/bin/python() [0x18a8049]
+E       frame #50: /workspace/spoj/spoi/.venv/bin/python() [0x19dce85]
+E       frame #51: _PyRun_SimpleFileObject + 0x106 (0x19dcc46 in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #52: _PyRun_AnyFileObject + 0x4a (0x19dc9ca in /workspace/spoj/spoi/.venv/bin/python)
+E       frame #53: /workspace/spoj/spoi/.venv/bin/python() [0x19dc950]
+E       frame #54: /workspace/spoj/spoi/.venv/bin/python() [0x19dc85d]
+E       frame #55: /workspace/spoj/spoi/.venv/bin/python() [0x1ad7763]
+E       frame #56: /workspace/spoj/spoi/.venv/bin/python() [0x197d35f]
+E       frame #57: /workspace/spoj/spoi/.venv/bin/python() [0x197d16c]
+E       frame #58: <unknown function> + 0x29ca8 (0x7f926943cca8 in /lib/x86_64-linux-gnu/libc.so.6)
+E       frame #59: __libc_start_main + 0x85 (0x7f926943cd65 in /lib/x86_64-linux-gnu/libc.so.6)
+E       frame #60: _start + 0x29 (0x19b1229 in /workspace/spoj/spoi/.venv/bin/python)
+
+spoi/.venv/lib/python3.12/site-packages/torch/storage.py:540: RuntimeError
+=========================== short test summary info ============================
+FAILED spoi/tests/test_failures.py::test_protocol_and_worker_failures_close_session[traceback-intentional expert failure]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 34 passed in 4.02s

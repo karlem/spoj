@@ -20,3 +20,8 @@ The difference is a **signed gap**, not guaranteed nonnegative regret: Eq11 mini
 Declared beam interpretation: rank total partial-layer cost across prefixes, rather than compare only marginal costs from differing baselines; widths/ties/order are explicit. This is a transparent paper-inspired implementation choice, not verified reproduction of unspecified author code. Refinement runs until no strict feasible single-target improvement remains. No bounded-sweep local-optimality claim.
 
 No physical latency, actual TCP, model tensors, quality-changing execution, offline placement, fallback, or adaptive feedback is validated here. Primary review documents the exact scope and equation extensions.
+
+
+## Parent verification and independent review
+
+Root added three checks: unrelated already-overloaded servers must not invalidate a route to another server; narrow beam can lose the only feasible completion; and a retained width-1/1-exchange local optimum is 10ms worse than exhaustive search. The first check failed before a targeted admission fix (`for n in set(assignment)` rather than all servers). The observed exit-1 output is retained in evidence-34c4bad/admission-regression-before-fix.log. All 12 tests then passed; complete JSON still matched the researcher run. Independent reviewer separately ran the 12 tests, reran JSON and recomputed the walkthrough with rational arithmetic; see evidence-34c4bad/independent-code-review.md.

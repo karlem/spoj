@@ -1,0 +1,31 @@
+{
+  "evaluated_commit": "34c4badf265f4fceb06c1a7d651d11aa305f334e",
+  "python": "Python 3.12.14",
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s research/heterorouter -p test_online_sketch.py -v",
+      "exit_code": 0,
+      "tests": 12,
+      "evidence": "tests.log"
+    },
+    {
+      "command": "python3 research/heterorouter/online_sketch.py; compare entire parsed JSON to committed online-results.json",
+      "exit_code": 0,
+      "exact_json_match": true,
+      "evidence": "../online-results.json"
+    },
+    {
+      "command": "UV_CACHE_DIR=/workspace/.cache/uv scripts/check.sh",
+      "execution": "authorized local IPC/socket access outside restricted sandbox",
+      "exit_code": 0,
+      "tests": 272,
+      "elapsed_seconds": 608.74,
+      "evidence": "repo-check-authorized.log",
+      "scope": "unchanged product sources; research files not collected by this pytest command"
+    }
+  ],
+  "frozen_lock_sha256": "84c7d962a98809b1d158c99bbf37426262a62451dabdd2efc2f82d244775f2e7",
+  "product_baseline_commit": "6e82bd19d3fa6c113f79001299dfb1b727cf0c13",
+  "product_source_unchanged": true,
+  "independent_review": "approved; independently executed 12 tests, full JSON comparison, rational walkthrough arithmetic"
+}
