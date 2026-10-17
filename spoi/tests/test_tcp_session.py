@@ -88,6 +88,7 @@ FAULTS = [
     ('missing-slot', 'assignment'), ('duplicate-slot', 'assignment'), ('changed-weight', 'assignment'),
     ('bad-contribution', 'HF contribution'), ('swap-contributions', 'HF contribution'),
     ('wrong-output-dtype', 'dtype'), ('duplicate', 'identity'),
+    ('duplicate-final', 'shutdown'), ('bad-stopped', 'shutdown'), ('nonzero-stop', 'shutdown'),
     ('disconnect', 'truncated|reset'), ('truncated-result', 'truncated|reset'), ('stall', 'timed out|deadline'),
 ]
 
@@ -116,7 +117,8 @@ def test_shutdown_stall_has_collective_deadline(monkeypatch):
     monkeypatch.setenv('SPOI_TCP_FAULT', 'shutdown-stall')
     block, state = build_reference(ExperimentConfig(shutdown_timeout=0.15))
     session = TCPSession(block, state, workers=1, _worker_script=str(Path(__file__).with_name('tcp_fault_worker.py')))
-    with session: session.forward(torch.randn(1, 2, 64))
+    with pytest.raises(TCPError, match='shutdown'):
+        with session: session.forward(torch.randn(1, 2, 64))
     assert session.exitcodes[0] != 0 and session.processes[0].poll() is not None
 
 

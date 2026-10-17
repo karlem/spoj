@@ -152,3 +152,16 @@ def test_encoder_budget_rejected_and_empty_tensor_preserved():
     size, _ = wire.PREFIX.unpack(raw[:8])
     _, values = wire.decode(raw[8:8+size], raw[8+size:])
     assert values['x'].shape == (0, 64)
+
+
+def test_golden_little_endian_tensor_bytes_independent_of_encoder():
+    # A hand-built wire fixture checks layout independently of encode/decode roundtrip.
+    header = b'{"version":1,"meta":{"kind":"golden"},"tensors":[{"name":"x","dtype":"f32","shape":[2],"offset":0,"size":8},{"name":"ids","dtype":"i64","shape":[2],"offset":8,"size":16}]}'
+    payload = struct.pack('<ffqq', 1.0, -2.5, 0, 1234567890123)
+    meta, values = wire.decode(header, payload)
+    assert meta == {'kind': 'golden'}
+    assert torch.equal(values['x'], torch.tensor([1.0, -2.5]))
+    assert torch.equal(values['ids'], torch.tensor([0, 1234567890123]))
+    encoded = wire.encode(meta, values)
+    hsize, psize = wire.PREFIX.unpack(encoded[:8])
+    assert psize == 24 and encoded[8+hsize:] == payload

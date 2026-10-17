@@ -39,6 +39,7 @@ class TCPSession:
         self.ready, self.events, self.records = [], [], []
         self.request, self.closed, self.opened = 0, False, False
         self.exitcodes = []
+        self.shutdown_errors = []
         self._sent = {}
         self._trace_bytes = 0
         self._lock = threading.Lock()
@@ -113,7 +114,7 @@ class TCPSession:
                 self.ready.append(ready)
             return self
         except BaseException:
-            self.close()
+            self.close(suppress=True)
             raise
 
     def forward(self, x):
@@ -177,12 +178,12 @@ class TCPSession:
                         max_absolute_error=float((actual-expected).abs().max()) if actual.numel() else 0.0))
                 return actual
         except BaseException:
-            self.close()
+            self.close(suppress=True)
             raise
         finally:
             self._lock.release()
 
-    def close(self):
+    def close(self, *, suppress=False):
         if self.closed:
             return
         self.closed = True
@@ -193,8 +194,8 @@ class TCPSession:
                 meta, tensors = self._recv(worker, 'stopped', deadline, request=self.request+1)
                 if set(meta) != {'kind', 'run', 'worker', 'request'} or tensors:
                     raise TCPError('invalid stop acknowledgement')
-            except Exception:
-                pass  # Closing the connection and bounded reap still run.
+            except Exception as exc:
+                self.shutdown_errors.append(f'worker {worker}: {type(exc).__name__}: {exc}')
         for connection in [*self.sockets, *self.listeners]:
             connection.close()
         for process in self.processes:
@@ -215,6 +216,10 @@ class TCPSession:
         for process in self.processes:
             process.wait(timeout=max(0.001, deadline-time.monotonic()))
         self.exitcodes = [p.returncode for p in self.processes]
+        if any(code != 0 for code in self.exitcodes):
+            self.shutdown_errors.append(f'unclean exit codes: {self.exitcodes}')
+        if self.shutdown_errors and not suppress:
+            raise TCPError('shutdown failure: ' + '; '.join(self.shutdown_errors))
 
-    def __exit__(self, *exc):
-        self.close()
+    def __exit__(self, exc_type, exc, tb):
+        self.close(suppress=exc_type is not None)

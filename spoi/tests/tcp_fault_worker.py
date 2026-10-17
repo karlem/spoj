@@ -37,10 +37,14 @@ def send(sock, meta, tensors, deadline):
                 tensors['output'] = tensors['output'].flip(0)
             if mode == 'wrong-output-dtype':
                 tensors['output'] = tensors['output'].to(__import__('torch').int64)
-            if mode == 'duplicate':
+            if mode in ('duplicate', 'duplicate-final'):
                 original_send(sock, meta, tensors, deadline)
-        if meta['kind'] == 'stopped' and mode == 'shutdown-stall':
-            time.sleep(60)
+        if meta['kind'] == 'stopped':
+            if mode == 'shutdown-stall': time.sleep(60)
+            if mode == 'bad-stopped': meta['request'] += 1
+            if mode == 'nonzero-stop':
+                original_send(sock, meta, tensors, deadline)
+                os._exit(37)
     return original_send(sock, meta, tensors, deadline)
 
 
