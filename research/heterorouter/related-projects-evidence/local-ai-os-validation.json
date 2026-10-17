@@ -1,0 +1,21 @@
+{
+  "scope": "Appended local AI/agent OS and host-overhead research notes",
+  "primary_readmes": 5,
+  "hashes_match": true,
+  "full_papers_read": false,
+  "source_code_audited": false,
+  "project_code_executed": false,
+  "benchmarks_run": false,
+  "new_product_tests_run": false,
+  "checks": [
+    {
+      "command": "Validate five pinned primary README SHA256 and sizes",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "independent_static_review": "approved"
+}

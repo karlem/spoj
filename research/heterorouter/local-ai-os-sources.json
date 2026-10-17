@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-17",
+  "method": "Static primary README inspection only",
+  "projects": [
+    {
+      "requested_repository": "FMInference/FlexLLMGen",
+      "repository": "FMInference/FlexLLMGen",
+      "revision": "004ffef82b46e8dc8685c55d0cdda650bdaf1269",
+      "readme_path": "README.md",
+      "size": 12666,
+      "sha256": "19cf01b3faca2faff552ebffb5fa677f46fa0c62c6b39d0471dcb0205ba795ac",
+      "executed": false
+    },
+    {
+      "requested_repository": "OpenCPIL/prima.cpp",
+      "repository": "OpenCPIL/prima.cpp",
+      "revision": "288df6a2cc2120387e12d6f40798f30cc525c9ea",
+      "readme_path": "README.md",
+      "size": 23580,
+      "sha256": "3ee1c742aabdfabfc6229fc860da79718a2c02549cb7a6bdd07e6f4f6adef327",
+      "executed": false
+    },
+    {
+      "requested_repository": "Tiiny-AI/PowerInfer",
+      "repository": "Tiiny-AI/PowerInfer",
+      "revision": "8bd56d69906c9d2dba4d3bf6899763401e01a9a4",
+      "readme_path": "README.md",
+      "size": 21831,
+      "sha256": "cc5214d9b44a350dd71dfe4466fe3bbd79945947c1fcc21c2e3aa15b24b332f3",
+      "executed": false
+    },
+    {
+      "requested_repository": "agiresearch/AIOS",
+      "repository": "agiresearch/AIOS",
+      "revision": "292d98f78c835499df18cdb6de6325bba1895862",
+      "readme_path": "README.md",
+      "size": 24791,
+      "sha256": "b830a4338058247c5739e035e67e419793a5275d8d6c84dd3a12f52883d02c5a",
+      "executed": false
+    },
+    {
+      "requested_repository": "ix-project/ix",
+      "repository": "ix-project/ix",
+      "revision": "550bf28a4ddd5fafcec707a14acd502712a10dae",
+      "readme_path": "README.md",
+      "size": 2219,
+      "sha256": "251ad4749104c03f941df024c1ba06cd95042c8cad15aa3be9182dfa768c6f8a",
+      "executed": false
+    }
+  ],
+  "full_paper_texts_read": false,
+  "code_audited": false,
+  "project_code_executed": false,
+  "models_downloaded": false,
+  "discovery_limits": [
+    "Attempted apple/ml-llm-in-a-flash repository returned404; no conclusion about availability of the paper or other source locations."
+  ]
+}

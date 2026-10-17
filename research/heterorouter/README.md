@@ -4,6 +4,8 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Capacity goal and Colibri comparison
 
+The same [project/paper survey](related-projects-and-papers.md#affordable-local-ai-as-a-foundation-for-an-ai-os) now includes Prima.cpp, PowerInfer/PowerInfer-2, FlexGen, AIOS and IX, and a proposed method to distinguish network, memory and OS/control overhead for an affordable local-assistant goal. These are source-grounded reading leads and hypotheses, not measured platform results.
+
 For additional systems and verified paper citations, read the [ranked primary-source project/paper survey](related-projects-and-papers.md). It separates CPU/GPU expert execution, cross-device layer/tensor partitioning, caching and transport. Nine pinned repositories were inspected; no project was installed/run and full paper texts were not read in that survey.
 
 The human clarified that capacity comes first: combine heterogeneous device memory to host a model that cannot fit one device, then improve service through measured scheduling and placement adaptation. Read [the primary-code Colibri study and capacity accounting](capacity-and-colibri.md). This is research direction only; it changes no approved product scope or implementation. Colibri was inspected, not executed.

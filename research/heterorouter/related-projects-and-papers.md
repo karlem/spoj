@@ -209,3 +209,98 @@ configuration; a model that cannot load on one device has no useful single-devic
 speedup ratio. Numerical validation remains independent of scheduling scores.
 No new machines, checkpoints, full-model generation, #2 work, product changes,
 merges or native Mac acceptance claims result from this survey.
+
+
+## Affordable local AI as a foundation for an AI OS
+
+Human clarification, 2026-10-17: the eventual application is a useful local AI
+assistant/AI OS on affordable hardware. SPOJ can investigate the inference and
+resource-management foundation. This does not authorize building an agent OS,
+new kernel, full-model runner or hardware deployment now. Distinguish three
+layers: agent/tool/context management; model execution/placement; host OS/drivers.
+A lean host OS or faster control language is a hypothesis to test, not a remedy
+for an unmeasured bottleneck.
+
+Five additional primary repository READMEs were read at pinned revisions below.
+Their hashes/revisions and static-only scope are recorded in
+`local-ai-os-sources.json`. No full paper text or implementation code was audited
+in this extension; no setup scripts, builds, downloads of weights or benchmarks
+were executed. Paper links/identities are from these primary READMEs.
+
+| Primary source / reading | Useful question | Limit |
+| --- | --- | --- |
+| [OpenCPIL/prima.cpp](https://github.com/OpenCPIL/prima.cpp/blob/288df6a2cc2120387e12d6f40798f30cc525c9ea/README.md); [Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters](https://iclr.cc/virtual/2026/poster/10008093), ICLR2026 per author citation | Direct baseline for home-device layer placement, profiling, CPU/GPU offload and deciding that a weak device should receive no work | README-level inspection only; mmap/prefetch claims are not bounded all-RAM capacity or latency guarantees. GPU-support descriptions need reconciliation before a cross-platform claim. |
+| [Tiiny-AI/PowerInfer](https://github.com/Tiiny-AI/PowerInfer/blob/8bd56d69906c9d2dba4d3bf6899763401e01a9a4/README.md); [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456) | Hot/cold neuron placement and sparse CPU/GPU co-computation on consumer hardware | Uses activation-sparse models/predictors and a special format; not automatically compatible with an unchanged arbitrary Qwen/MoE checkpoint. |
+| [PowerInfer-2](https://arxiv.org/abs/2406.06282), linked in the PowerInfer primary README | What memory/execution scheduling can make smartphone inference practical? | Paper lead only, full text/code not examined; reported TurboSparse-model results cannot be transferred to arbitrary models or hardware. |
+| [FMInference/FlexLLMGen](https://github.com/FMInference/FlexLLMGen/blob/004ffef82b46e8dc8685c55d0cdda650bdaf1269/README.md); [FlexGen paper](https://arxiv.org/abs/2303.06865) | How should weights, activations and KV cache be placed among GPU, CPU and storage, and how can scheduling overlap movement? | Its primary target is high-throughput large-batch processing, not low-latency interactive agent turns. |
+| [agiresearch/AIOS](https://github.com/agiresearch/AIOS/blob/292d98f78c835499df18cdb6de6325bba1895862/README.md); [AIOS: LLM Agent Operating System](https://arxiv.org/abs/2403.16971) | How should an agent layer schedule model calls, manage contexts/memory and coordinate tools? | README explicitly places the AIOS kernel above the host OS kernel. It does not establish faster device execution through replacing Linux/macOS. |
+| [ix-project/ix](https://github.com/ix-project/ix/blob/550bf28a4ddd5fafcec707a14acd502712a10dae/README.md) | Under what conditions does protected dataplane / kernel-bypass networking reduce software I/O overhead? | Historical specialized OS research reference, not an inference benchmark or recommended default platform. README specifies DPDK and particular Intel NICs; accelerator/backend compatibility is unverified. |
+
+Prima.cpp deserves earlier baseline consideration than an assumption that no
+existing system attempts the whole home-cluster problem. Its README describes
+profiling compute, disk, memory and OS behavior, selecting device/layer assignments,
+CPU/GPU offload and piped-ring/prefetch strategies. It documents dropping weak
+nodes rather than forcing every device to participate. However, its benchmark
+table includes an Apple Metal device while its FAQ says GPU support is CUDA-only;
+this inconsistency must be resolved against the exact backend/source before
+claiming a supported mixed GPU deployment. Its memory-pressure statements rely on
+mmap/page-cache behavior, not evidence that all weights reside in aggregate RAM.
+No headline model-size, memory-pressure or speed claim is adopted here.
+
+### Networking versus OS versus memory: distinguish mechanisms
+
+- **Memory feasibility and locality:** sufficient usable RAM/VRAM, including
+  dense/KV/workspace state; bytes resident per tier; page faults and expert loads.
+- **Compute and memory bandwidth:** expert/kernel time, memory traffic and CPU
+  versus GPU service curves. Resident weights still need to be read each use.
+- **Communication:** payload bytes, serialization/copies, directional transfer,
+  queue wait, RTT and the number of dependent request/response crossings.
+- **OS/control overhead:** CPU time in scheduling, syscalls, wakeups, context
+  switches, allocation and polling, plus background interference. OS overhead can
+  matter, but is not established by observing that two machines are involved.
+
+A higher-bandwidth link does not remove latency from many small, sequential
+crossings. For an illustrative arrangement with 32 dependent layer boundaries,
+each requiring a 2 ms remote round trip, that structure contributes about 64 ms per
+forward before computation/extra transfer; this is not a measurement or a universal
+bound for arbitrary overlapped/batched execution. Kernel bypass can reduce the
+software part of a transfer, not abolish propagation, wire serialization or
+model dependencies. RDMA/zero-copy can help specific paths without replacing the
+whole OS, but require suitable hardware and compatible software.
+
+Python control code already calls native PyTorch/C++/accelerator kernels. A C++
+or Rust rewrite only accelerates the measured portion actually replaced. As a
+hypothetical Amdahl calculation, if all removable control overhead is 5% of the
+critical path, eliminating it entirely gives at most `1/(1-.05) = 1.053x` speedup.
+This is not the overhead fraction of SPOJ; it explains why profiling must precede
+choosing a language. A smaller OS may recover RAM or reduce contention, which are
+useful independent effects, but they need measured capacity/latency evidence.
+
+### Define 'fast enough' around the application
+
+For a future local AI OS, specify representative tasks, model-quality/tool-use
+success, context sizes, acceptable first-response and full-turn time, concurrent
+agents, resident working set, and power/cost limits. Report per-turn latency and
+tails alongside TTFT and token rate; tool execution, prompt preparation and
+context growth also contribute. A small model meeting the task target may be a
+better configuration than a large distributed model. This is an evaluation
+question, not a claim that a smaller model is adequate for the target tasks.
+
+Possible later falsifiable comparisons, not started here:
+
+1. Lean host configuration versus ordinary host setup at fixed kernels, workloads,
+   memory reserves and device clocks: measure reclaimed memory, context switches,
+   scheduler delays and end-to-end latency; reject claims based only on process
+   count or an idle microbenchmark.
+2. Local resident expert versus remote resident expert versus GPU staging at fixed
+   expert identity and precision: separately measure service, queue, transport and
+   load costs with controlled cold/warm state and batching.
+3. Existing partitioned engine versus a minimal experiment at the same task/model
+   target: include startup/steady-state capacity, topology, rejected requests,
+   quality, and end-to-end interactive latency. Model selection and approximation
+   are separate experimental changes, not silent expert-routing modifications.
+
+No single bottleneck has been diagnosed for the proposed deployment because no
+such hardware/workload deployment has been measured. Keep the main correctness
+and native Mac acceptance gates intact; do not start a new OS or transport rewrite
+from this reading agenda.
