@@ -2,11 +2,7 @@
 
 SPOI lab: begin with a tiny Qwen3 MoE block executed natively on macOS. The approved experiment checks expert ownership and numerical correctness across processes before later multi-device capacity experiments.
 
-Current manager state:
-
-```text
-IDLE: no eligible GitHub issues
-```
+Current implementation and agent ownership are tracked in [issue #1](https://github.com/karlem/spoj/issues/1). Its draft implementation has passed an initial native Mac smoke; full validation and independent review remain pending.
 
 The human remains the final authority. Read [AGENTS.md](AGENTS.md) before operating agents.
 
@@ -24,7 +20,7 @@ Run the verification entry point from the repository root:
 ./scripts/check.sh
 ```
 
-It currently succeeds and explicitly reports that no product-specific checks are configured. This does not validate any product behavior. Once the stack is established, this script becomes the canonical entry point for formatting, linting, type checks, unit tests, integration tests, and relevant deterministic validation. Future CI must invoke this same script.
+The check entry point runs the locked Python product test suite for issue #1. See [the experiment README](spoi/README.md) for environment setup and smoke execution. The initial native Mac smoke passed; the full suite and independent review remain pending. Follow [issue #1](https://github.com/karlem/spoj/issues/1) for the current GitHub handoff and writer ownership. Future CI should invoke this same check entry point.
 
 The intended progression is `grill-me` (grilling) → final specification → `to-spec` → committed spec → `to-tickets` → GitHub Issues → manager → worker → checks → independent review → targeted fixes → merge-ready result → human merge decision. These are workflow stages; this bootstrap does not install commands or orchestrators with those names.
 
