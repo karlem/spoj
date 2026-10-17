@@ -1,0 +1,15 @@
+$ /workspace/spoj/target/tcp/fresh-1193fcf/bin/python -m spoi.verify_tcp_trace target/tcp/negative-final/raw-byte.json
+exit_code=1
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/spoj/spoi/src/spoi/verify_tcp_trace.py", line 154, in <module>
+    main()
+  File "/workspace/spoj/spoi/src/spoi/verify_tcp_trace.py", line 150, in main
+    print(json.dumps(verify(parser.parse_args().trace)))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/spoj/spoi/src/spoi/verify_tcp_trace.py", line 43, in verify
+    require(len(raw) == event['bytes'] and hashlib.sha256(raw).hexdigest() == event['sha256'], 'raw frame digest/length')
+  File "/workspace/spoj/spoi/src/spoi/verify_tcp_trace.py", line 17, in require
+    raise ValueError(message)
+ValueError: raw frame digest/length

@@ -1,0 +1,48 @@
+{
+  "evaluated_commit": "1193fcf8733ae73bde4ff3f18fdaf2c5c61932d7",
+  "spec_commit": "2bbbee2d57250263845bd710b3487ebaecc96564",
+  "timestamp": "2026-10-17T14:57:50.523750+00:00",
+  "suite": {
+    "tests": 272,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "verification": {
+    "verified": true,
+    "frames": 33,
+    "contributions": 14,
+    "requests": 3,
+    "workers": 3,
+    "max_absolute_error": 0.0,
+    "trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  },
+  "full_suite_exit_code": 0,
+  "fresh_sync_exit_code": 0,
+  "fresh_demo_exit_code": 0,
+  "offline_replay_exit_code": 0,
+  "negative_harness_exit_code": 0,
+  "expected_negative_exit_codes": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "limits": [
+    "one local random-weight HF MoE block",
+    "no multi-host/capacity/speedup/full-model claim",
+    "native Mac gate unrun"
+  ],
+  "earlier_runs": [
+    {
+      "commit": "c1fc09c",
+      "exit_code": 2,
+      "outcome": "interrupted for review correction;61 passed before interruption"
+    },
+    {
+      "commit": "7858fa6",
+      "exit_code": 1,
+      "outcome": "272 passed bodies;1 fixture teardown error"
+    }
+  ]
+}

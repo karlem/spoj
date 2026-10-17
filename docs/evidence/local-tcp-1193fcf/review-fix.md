@@ -1,0 +1,5 @@
+Independent read-only review of c1fc09c requested changes for one P2: normal close could swallow a malformed/missing stop acknowledgement or a final duplicate result. The previous full regression run was gracefully interrupted for correction (exit 2, 61 passed before interruption); it is not a full-suite pass.
+
+Fixed in 7858fa68892de9879f10f5cbfe8bca2ab921c0a9: collect shutdown errors, finish bounded socket/process cleanup, then reject normal close/exit for invalid acknowledgements or nonzero children. Cleanup after an existing startup/forward/context failure preserves the original error. New final-duplicate, bad-stopped, nonzero-stop, and shutdown-stall regressions are included; six targeted shutdown/duplicate tests passed (exit 0). A hand-built golden tensor-byte fixture now separately checks little-endian wire layout.
+
+Final frozen full regression/matrix/fault/replay suite is running on 7858fa6. Reviewer is independently rechecking resolution; no concurrent process test suite. Scope remains local-only, PR draft, no native Mac acceptance waiver, #2, merge, purchases or pretrained models.
