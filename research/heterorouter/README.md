@@ -2,9 +2,13 @@
 
 Date: 2026-10-17. Research-only; no changes to the correctness implementation and no main-correctness acceptance claim. Published separately under `research/heterorouter/`. Tracking issue: https://github.com/karlem/spoj/issues/7.
 
-## Source identity remains unresolved
+## Current source pointer: arXiv:2608.00577
 
-**No verified HeteroRouter primary paper or implementation has been identified.** Do not label the attached generic scheduler as HeteroRouter, reproduce invented equations, or infer a paper's claims from the user's pronunciation. An exact title, author, DOI/arXiv URL, or repository link is needed before paper-specific analysis.
+The user has now supplied https://arxiv.org/abs/2608.00577. Available mirrored metadata identifies **HetRoute: Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference**. The primary PDF/HTML remains blocked by the cloud proxy. See [the source update and reading plan](source-update-2608.00577.md). The generic simulation below remains a separate pre-paper baseline; no paper algorithm is reproduced yet.
+
+## Initial discovery before the user supplied the citation (audit trail)
+
+**At the initial bootstrap, no verified HeteroRouter primary paper or implementation had been identified.** Do not label the attached generic scheduler as HeteroRouter, reproduce invented equations, or infer a paper's claims from the user's pronunciation. The user subsequently supplied arXiv:2608.00577; full primary-text access is still needed before paper-specific analysis.
 
 Observed public searches on this date:
 
@@ -21,7 +25,7 @@ Exact queries can be repeated through `https://api.github.com/search/repositorie
 1. **HexGen: Generative Inference of Large Language Model over Heterogeneous Environment**, ICML 2024, as identified by its official README: https://github.com/Relaxed-System-Lab/HexGen ; paper linked there: https://arxiv.org/abs/2311.11514. README describes hybrid pipeline/tensor parallelism and asymmetric parallel groups. Relevant question: how heterogeneous compute and links enter placement/partition decisions. It is not established here as an MoE token-routing algorithm. Full paper text/equations have not been retrieved; do not claim their objective or specific algorithm from README alone.
 2. **DeepEP**, official communication implementation: https://github.com/deepseek-ai/DeepEP. README exposes dispatch/combine interfaces using selected expert IDs/weights and separates communication from expert math. Useful systems comparator, not the requested HeteroRouter paper. Its current documented environment requires modern NVIDIA GPUs/NVLink/RDMA; no installation or execution attempted. README performance claims are not SPOJ evidence.
 
-Once the exact paper is supplied, inspect the versioned primary PDF and corresponding code revision; extract objective, constraints, observation model, pseudocode and equations with section/page references, plus claims actually supported by its evaluation. Determine whether its "router" changes logical expert selection or only placement/replica dispatch. That distinction determines whether it can preserve the frozen HF oracle at all.
+Once the primary PDF is accessible, inspect its exact version and corresponding code revision; extract objective, constraints, observation model, pseudocode and equations with section/page references, plus claims actually supported by its evaluation. Determine whether its "router" changes logical expert selection or only placement/replica dispatch. That distinction determines whether it can preserve the frozen HF oracle at all.
 
 ## Generic simulation bootstrap — explicitly our proposal
 
@@ -60,7 +64,7 @@ These are outputs of one constructed scenario, not measured improvements or a ge
 
 The bootstrap excludes shared-uplink contention, finite buffers, admission/backpressure, RTT jitter, loss/retransmission, batch-level top-k barriers, request deadlines, online measurement updates, migrations, failures, resource limits and initialization traffic. It is a deterministic queue/calendar model of fixed jobs, not a production simulator or a numerical parity proof.
 
-After source identification: choose a paper-faithful minimal algorithm, document every adaptation separately, and implement one agreed comparison. Then model shared resources and bounded queues explicitly (admit/block/reject; no disappearing work), retain per-event conservation assertions, and use batch completion as the maximum required expert response. Compare identical realized workloads under paired seeds; sweep offered load, bandwidth/RTT asymmetry, estimation staleness/error, payload sizes and skew. Report uncertainty and failed/uncompleted/deadline-missed work alongside latency so dropping work cannot improve apparent scores.
+After primary-text inspection: choose a paper-faithful minimal algorithm, document every adaptation separately, and implement one agreed comparison. Then model shared resources and bounded queues explicitly (admit/block/reject; no disappearing work), retain per-event conservation assertions, and use batch completion as the maximum required expert response. Compare identical realized workloads under paired seeds; sweep offered load, bandwidth/RTT asymmetry, estimation staleness/error, payload sizes and skew. Report uncertainty and failed/uncompleted/deadline-missed work alongside latency so dropping work cannot improve apparent scores.
 
 For eventual perceived measurements, specify what the observer could know at each decision: timestamped bytes transferred and elapsed duration for throughput; transport/application round-trip samples; device service-time samples separate from queue wait; observation age and estimator update rule. Trace replay must use past observations only. Assume-vs-measured provenance belongs in the input schema, with units, source host/run, timestamp, uncertainty and calibration command. No new host or benchmark is authorized by these notes.
 
@@ -70,4 +74,4 @@ Independent correctness evidence would include hand-solvable event schedules, co
 
 The parent agent separately executed `python3 simulate.py` and compared the complete JSON with the researcher output: exit 0, exact match, all four policies conserved 120 eligible jobs. This checks deterministic mechanics only; it does not validate a HeteroRouter algorithm or physical predictions.
 
-This workstream is distinct from correctness PR #6. To continue it in a separate ChatGPT conversation, reference GitHub issue #7 and this research branch. Paper-specific analysis is blocked until an exact primary citation can be verified.
+This workstream is distinct from correctness PR #6. To continue it in a separate ChatGPT conversation, reference GitHub issue #7 and this research branch. The exact identifier is now supplied. Paper-specific analysis is blocked on access to its actual primary text.
