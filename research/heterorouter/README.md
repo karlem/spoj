@@ -4,6 +4,8 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Capacity goal and Colibri comparison
 
+The consolidated [hardware-memory research section](related-projects-and-papers.md#memory-hardware-far-memory-and-near-memory-computation) adds CXL, RDMA far memory and PIM papers/artifacts, distinguishes physical hardware from simulation, and proposes a no-purchase lab ladder. No hardware, model or benchmark was run.
+
 The same [project/paper survey](related-projects-and-papers.md#affordable-local-ai-as-a-foundation-for-an-ai-os) now includes Prima.cpp, PowerInfer/PowerInfer-2, FlexGen, AIOS and IX, and a proposed method to distinguish network, memory and OS/control overhead for an affordable local-assistant goal. These are source-grounded reading leads and hypotheses, not measured platform results.
 
 For additional systems and verified paper citations, read the [ranked primary-source project/paper survey](related-projects-and-papers.md). It separates CPU/GPU expert execution, cross-device layer/tensor partitioning, caching and transport. Nine pinned repositories were inspected; no project was installed/run and full paper texts were not read in that survey.
