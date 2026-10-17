@@ -9,6 +9,7 @@ import hashlib
 import json
 import random
 import struct
+import sys
 
 import torch
 import torch.nn.functional as F
@@ -19,6 +20,9 @@ from transformers.models.qwen3_moe.configuration_qwen3_moe import Qwen3MoeConfig
 from .config import ExperimentConfig
 
 SOURCE_SHA256 = "58387f2cc22a706e7e4c7dabe6cf05cb1e9c9fe48c57e2f2a0fc5cbdb2132f4f"
+# Exact runtime builds inspected against the unchanged frozen lock. Do not strip
+# local version suffixes: other CUDA/CPU/nightly builds require their own review.
+TORCH_BUILDS = {"darwin": "2.14.1", "linux": "2.14.1+cu130"}
 
 
 class CompatibilityError(RuntimeError):
@@ -29,8 +33,13 @@ def compatibility() -> dict:
     from pathlib import Path
 
     source_hash = hashlib.sha256(Path(hf.__file__).read_bytes()).hexdigest()
-    if (torch.__version__, transformers.__version__, source_hash) != ("2.14.1", "5.20.1", SOURCE_SHA256):
-        raise CompatibilityError("unsupported Qwen implementation; re-inspect and validate the adapter before changing the lock")
+    if (sys.platform not in TORCH_BUILDS
+            or torch.__version__ != TORCH_BUILDS[sys.platform]
+            or transformers.__version__ != "5.20.1" or source_hash != SOURCE_SHA256):
+        raise CompatibilityError(
+            f"unsupported Qwen implementation: platform={sys.platform}, "
+            f"torch={torch.__version__}, transformers={transformers.__version__}, "
+            f"qwen_source_sha256={source_hash}; re-inspect and validate the adapter before changing the lock")
     return {"torch": torch.__version__, "transformers": transformers.__version__,
             "qwen_source_sha256": source_hash, "experts_backend": "eager"}
 

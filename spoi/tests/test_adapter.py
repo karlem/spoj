@@ -10,6 +10,24 @@ from spoi.qwen3_adapter import (CompatibilityError, FrozenState, build_reference
                                compatibility, evaluate_shard, tensor_digest)
 
 
+@pytest.mark.parametrize("platform,version,accepted", [
+    ("linux", "2.14.1+cu130", True), ("darwin", "2.14.1", True),
+    ("linux", "2.14.1", False), ("linux", "2.14.1+cpu", False),
+    ("linux", "2.14.1+cu129", False), ("linux", "2.14.2+cu130", False),
+    ("linux", "2.15.0.dev1+cu130", False),
+    ("darwin", "2.14.1+cu130", False), ("win32", "2.14.1", False),
+])
+def test_exact_platform_build_guard(monkeypatch, platform, version, accepted):
+    import spoi.qwen3_adapter as adapter
+    monkeypatch.setattr(adapter.sys, "platform", platform)
+    monkeypatch.setattr(adapter.torch, "__version__", version)
+    if accepted:
+        assert compatibility()["torch"] == version
+    else:
+        with pytest.raises(CompatibilityError, match="unsupported"):
+            compatibility()
+
+
 @pytest.mark.parametrize("changes", [
     {"hidden_size": 0}, {"moe_intermediate_size": -1}, {"num_experts": 0},
     {"threads": 0}, {"hidden_size": True}, {"top_k": 0}, {"top_k": 5},

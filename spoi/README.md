@@ -25,6 +25,20 @@ It compares two requests to the direct HF block with `rtol=1e-5, atol=1e-6`.
 Relative error uses `abs(actual-reference)/max(abs(reference), 1e-12)`;
 `assert_close` determines pass/fail. The smoke is not a latency benchmark.
 
+The runtime guard accepts only the inspected platform/build pairs: native
+macOS `torch.__version__ == "2.14.1"` and Linux `"2.14.1+cu130"` from the
+unchanged lock. It does not strip build suffixes or accept arbitrary 2.14.1
+variants. Linux's locked wheel installs CUDA dependencies, but this experiment
+still uses CPU tensors exclusively and requires no GPU. Transformers remains
+exactly 5.20.1 and the Qwen source SHA-256, eager backend, and tensor schema
+guards remain enforced. The installed Linux router/expert implementation was
+reinspected: linear router, float32 softmax, top-k/optional normalization,
+fused gate/up SiLU product, weighted down projection and indexed accumulation.
+Linux smoke/test results supplement native Mac acceptance; they do not replace
+the complete native Mac suite, fresh-environment smoke, or independent review.
+Seeded weights may differ across platforms: compare paths against the same
+local frozen snapshot, rather than requiring the Mac and Linux hashes to match.
+
 Tiny dimensions and routing options are configurable, for example:
 
 ```sh
