@@ -1,0 +1,9 @@
+{
+  "command": "python3 research/heterorouter/simulate.py",
+  "exit_code": 0,
+  "independent_exact_json_match": true,
+  "policies": 4,
+  "jobs_per_policy": 120,
+  "inputs": "all assumed; virtual time only",
+  "paper_specific_validation": "not performed; primary citation unresolved"
+}
