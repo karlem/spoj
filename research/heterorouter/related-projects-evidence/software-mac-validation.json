@@ -1,0 +1,185 @@
+{
+  "timestamp": "2026-10-17T22:25:27.239454+00:00",
+  "method": "Local SHA256/size verification, pinned documentation link/manifest/backlog consistency, topology source inspection and report arithmetic",
+  "repositories": 22,
+  "primary_projects": 21,
+  "secondary_discovery_catalogs": 1,
+  "verified_files": [
+    {
+      "repository": "LLMServe/DistServe",
+      "path": "README.md",
+      "sha256": "aad0ee8212a6eb505d9af513bc6789171f65a8cb409f04be91b7ed37df29e5b9"
+    },
+    {
+      "repository": "LMCache/LMCache",
+      "path": "README.md",
+      "sha256": "0cd626200a287a6c51c36e59fa8f22fa830fb41420a7c24278bd340c71b64259"
+    },
+    {
+      "repository": "MoE-Inf/awesome-moe-inference",
+      "path": "README.md",
+      "sha256": "5ab3eb0254fa6db679261b90e20ed35eaf2354ca0edff8787694fbe3cbf22d11"
+    },
+    {
+      "repository": "ai-dynamo/dynamo",
+      "path": "README.md",
+      "sha256": "0b80d789264af104e512bca3669bf79da18dc956b6fa3f1ae29b9df3c82a399c"
+    },
+    {
+      "repository": "ai-dynamo/nixl",
+      "path": "README.md",
+      "sha256": "a0efbba5419d3cb977bb3e0901b2eaa8eba0d369931b4bb8438c91c800e73bc7"
+    },
+    {
+      "repository": "danveloper/flash-moe",
+      "path": "README.md",
+      "sha256": "4cde0e3dfcf1a96cd62137e8657bd18ed94de972de56a544ae29f72d0d6012d9"
+    },
+    {
+      "repository": "danveloper/flash-moe",
+      "path": "paper/flash_moe.pdf",
+      "sha256": "ecfadb036a019a34ff12a74fc0253d5b5e17fbc399eaed4bc0023ba252e3abfc"
+    },
+    {
+      "repository": "deepseek-ai/DeepEP",
+      "path": "README.md",
+      "sha256": "86415f7fc11381dceb14c112b6c602103d975936444601666ab1fcfd65e8fceb"
+    },
+    {
+      "repository": "deepseek-ai/EPLB",
+      "path": "README.md",
+      "sha256": "897fa18b928858d6f4241fa910377125fbbc16fba8868b8c121eb5a8c30336ef"
+    },
+    {
+      "repository": "deepseek-ai/EPLB",
+      "path": "eplb.py",
+      "sha256": "25b37ccd83aef2369c68f2b4bb596608a4f289956d97d9a3504bfd3159459e29"
+    },
+    {
+      "repository": "deepseek-ai/FlashMLA",
+      "path": "README.md",
+      "sha256": "0a3d443119284195fd8ef144bd0325fd7d58e08070764f824a1adb6ad3333eb8"
+    },
+    {
+      "repository": "dvmazur/mixtral-offloading",
+      "path": "README.md",
+      "sha256": "fc047d9cfa027330ea6f4e037e57b47589cb08ed22421503021aa5658eb6059b"
+    },
+    {
+      "repository": "exo-explore/exo",
+      "path": "README.md",
+      "sha256": "176868021ebcf900b1397d5cb8d4ae94d5c196fbeae094bc5b57673a3586f09e"
+    },
+    {
+      "repository": "kvcache-ai/Mooncake",
+      "path": "README.md",
+      "sha256": "35bf154190466d207c3ff037c45d55857c3be07c6bd2486b223970af8338e669"
+    },
+    {
+      "repository": "laekov/fastmoe",
+      "path": "README.md",
+      "sha256": "f90379b83146c5299ad43b44e26e2139146e8972d319d3f794272b7950e5157f"
+    },
+    {
+      "repository": "microsoft/Tutel",
+      "path": "README.md",
+      "sha256": "942c79a00e05e74e61914e45c3c2a16fa67bab209026447c56dcccabb9340475"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "README.md",
+      "sha256": "df7d58237b57e70595c5a19b72acb4053d28a47235033bd2cbfd66eea73e1c7d"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "docs/src/usage/distributed.rst",
+      "sha256": "72870321282ca63f901c53c2998244c70598b313b8c7f93f9b9ac2a14795ebe1"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "docs/src/usage/launching_distributed.rst",
+      "sha256": "952be025299ca1b749d355db5ae40971170c129997c4c89a9d0e183257e973a0"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "mlx/distributed/jaccl/lib/README.md",
+      "sha256": "ccc60539e33f3a4139fb6cf37834467edec88ed083b92b06ce34913ac1c06e51"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "mlx/distributed/jaccl/lib/jaccl/rdma.cpp",
+      "sha256": "0b3d7e113a75815178ad479b3f218993b957b1a453be63400ccec82bb8aedf33"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "mlx/distributed/jaccl/lib/jaccl/mesh.cpp",
+      "sha256": "5cf12862defe97324261acf7ccd89cea91e674ee86784001c055672145c6d344"
+    },
+    {
+      "repository": "ml-explore/mlx",
+      "path": "mlx/distributed/jaccl/lib/jaccl/jaccl.cpp",
+      "sha256": "05a52ccc57463b701151586733cb219f6853395543eabeda49ac7f43f81cba3f"
+    },
+    {
+      "repository": "ml-explore/mlx-examples",
+      "path": "README.md",
+      "sha256": "4b8d8cc5f34dc9453497f9e645ae3c83229859c4e7253c23ef2ca18a1319702b"
+    },
+    {
+      "repository": "ml-explore/mlx-lm",
+      "path": "README.md",
+      "sha256": "fc4dc67d70ca364ef8c2f94e84d170072d3c5f4fdfd2aa7a7be7a38a6b3d0008"
+    },
+    {
+      "repository": "ml-explore/mlx-lm",
+      "path": "examples/sharded_generate.py",
+      "sha256": "9b87aba4fa0d5be56537de766064c4701a99be4897d028254826b6a8455aed73"
+    },
+    {
+      "repository": "ranggihwang/Pregated_MoE",
+      "path": "README.md",
+      "sha256": "9a9278b9cae75f2e5be5226477285c0750d699db81cb04d3459b2be7aa530aa4"
+    },
+    {
+      "repository": "sgl-project/sglang",
+      "path": "README.md",
+      "sha256": "7c99b50fa5ef9f4a666a2f73860f746d3fc259e7e7912d4bff88dffdc1dc4c5e"
+    },
+    {
+      "repository": "thu-pacman/FasterMoE",
+      "path": "README.md",
+      "sha256": "f0b4219c22b9547a09f9ba4ca7991f7cc371233a3b890bb1b86b99d3d3c9f358"
+    },
+    {
+      "repository": "timlee0212/SiDA-MoE",
+      "path": "README.md",
+      "sha256": "bdaf772abcadd479aaed9a2724fb6c002a1033542ae4498c0eeb68dc243a8827"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "path": "README.md",
+      "sha256": "4dc7399323b9660117f8cc1226afb7a81cdbb912dbb4ae74b66d89052417d11c"
+    }
+  ],
+  "file_count": 31,
+  "readme_pins_checked": 22,
+  "primary_readme_links_in_report": 21,
+  "paper_citation_entries": 21,
+  "full_text_reports_read": 1,
+  "other_full_papers_read": false,
+  "independently_reproduced_papers": 0,
+  "report_conditional_expert_coverage_bound_pct": 23.4375,
+  "git_diff_check_exit_code": 0,
+  "source_project_execution": false,
+  "hardware_or_model_experiments": false,
+  "product_tests_run": false,
+  "limitations": "Static provenance/documentation checks and one author-report critique, not platform compatibility, numerical parity, benchmark verification, literature completeness or hardware availability.",
+  "mooncake_versions_are_one_research_family": true,
+  "report_extraction": {
+    "command": "pdftotext -layout paper/flash_moe.pdf paper/flash_moe.txt",
+    "exit_code": 0,
+    "tool_version": "pdftotext version 25.03.0",
+    "extracted_text_sha256": "706fb849188fdbd391c20c2002fc618ca56abc956b1ad759be6e04ae6c14d670",
+    "pages": 13
+  }
+}

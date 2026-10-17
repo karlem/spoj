@@ -421,3 +421,215 @@ move weights to compute**, with slower-tier sensitivity and warm/cold reuse.
 It can use ordinary hardware first and tell us which specialized device, if any,
 would address the measured bottleneck. No existing correctness source, native
 Mac gate, #2 scope or hardware authorization is changed by this agenda.
+
+
+## Software research atlas and Apple / heterogeneous execution paths
+
+Human direction, 2026-10-17: broaden discovery before choosing a design; include
+software papers, Apple Silicon, Thunderbolt/RDMA, colder experts on other hosts,
+and combinations with the memory-hardware research above. This extends the same
+issue #7 / PR #8 research stream. No new runtime, hardware experiment, model
+execution or implementation issue is started.
+
+### Evidence ledger and how to grow the collection
+
+This pass inspected documentation from **21 primary project repositories**, plus
+one explicitly secondary MoE bibliography, at pinned revisions. Eight selected
+source/documentation files and one author-hosted 13-page technical report add
+specific depth below. `software-mac-sources.json` records all 31 file hashes and
+revisions; `software-paper-backlog.json` records paper citations, source level,
+open questions and reading status. Some projects refresh earlier survey entries;
+these are not all newly discovered projects. No primary project was installed,
+imported, compiled or run. No project performance number becomes SPOJ evidence.
+
+The Flash-MoE report was read in full after PDF text extraction; its peer-review
+status is not established. Other paper links here were checked in the cited
+project documentation or explicitly secondary bibliography, not read as full
+papers. Do not confuse a verified citation with a verified method/result.
+GitHub search is bounded discovery, not exhaustive literature coverage. Previous
+arXiv/publisher access restrictions remain; no alternate route bypassed policy.
+
+Use the collection in four stages: discovered citation; primary full text and
+artifact inspected; method/assumptions extracted; independently reproduced or
+rejected. Record negative findings, exact versions, hardware/workload, semantic
+changes, initialization costs and author claims separately from observations.
+Snowball references and citing papers around each mechanism; deduplicate by
+paper identifier and canonical repository. Select the next full-text reads by
+which uncertainty they resolve, rather than accumulated paper count.
+
+### A mechanism map rather than one competing architecture
+
+| Mechanism | Primary projects / papers | Question to resolve for SPOJ |
+| --- | --- | --- |
+| Mac execution and collective communication | MLX, MLX-LM, JACCL; exo | Which topology/backend is supported on our exact Macs, and what are actual payload-size latency/throughput and memory costs? |
+| Resident CPU experts vs GPU staging | KTransformers, Fiddler, HybriMoE; previous source studies | When does sending activations beat fetching weights, including CPU service and queues? |
+| Cache and predict future expert demand | Colibri, Mixtral offloading, SiDA; ProMoE / MoE-Lightning reading leads | Do demand-aware policies beat LRU/static residency after charging wrong prefetch and migration? |
+| Identical-expert replication and placement | DeepSeek EPLB; HetRoute restricted replica interpretation | How much capacity is spent to reduce load/communication, and how does heterogeneous service change the policy? |
+| Communication scheduling / overlap | DeepEP, FastMoE/FasterMoE, Tutel; Lina reading lead | Which dependency-safe overlap and batching ideas transfer beyond datacenter GPU fabrics? |
+| Request/KV locality and prompt reuse | vLLM/PagedAttention, SGLang, LMCache, Mooncake | Does repeated agent context dominate cost enough that KV reuse matters more than expert placement? |
+| Prefill/decode resource separation | DistServe, Dynamo, Mooncake | When do different phase optima repay KV handoff and extra resident resources? |
+| Transport and memory-tier interfaces | JACCL; NIXL, Mooncake Transfer Engine; hardware section | Reuse interfaces and telemetry without assuming their platform support or kernels transfer to Macs. |
+| Compression, changed routing, reduced expert count | HOBBIT / Pre-gated MoE / Flash-MoE and quantization reading paths | What computation/quality contract changes? Keep these comparisons separate from exact execution. |
+
+The previously studied Prima.cpp, HexGen, distributed-llama, Petals, PowerInfer,
+MoEInfinity, exo, Colibri and hardware-memory artifacts remain in this same index.
+No claim that SPOJ uniquely supports distribution, heterogeneous scheduling,
+expert caching or cost-aware placement survives this prior-art map.
+
+### Apple Silicon: concrete support and important boundaries
+
+Official MLX distributed documentation now describes three distinct paths:
+
+1. **TCP/IP over Ethernet or Thunderbolt**, including MLX's ring backend. The
+   ring documentation restricts arbitrary-rank send/recv; a coordinator/expert
+   star cannot assume that collective backend exposes the exact point-to-point
+   pattern it needs.
+2. **JACCL RDMA over Thunderbolt 5**, documented from macOS26.2, with SDK26.2+
+   requirements in the library README. Enabling it requires recovery-mode
+   configuration; this is a host-access prerequisite, not something to promise
+   a remote agent can silently enable. No host was configured here.
+3. **NCCL for CUDA environments**, documented separately. Launching a Linux CUDA
+   job from a Mac is not proof of one mixed Metal/CUDA collective or expert
+   execution group. Cross-platform data types, numerical behavior, transport
+   interoperability and failures need explicit tests.
+
+There is a material documentation/version discrepancy: MLX's high-level guide
+says JACCL only supports a fully connected mesh, and its launch auto-configuration
+checks a mesh. The nested JACCL README also advertises a ring; selected
+`jaccl.cpp` validates rings and constructs `RingGroup`, including a preference
+flag. Thus **do not infer either universal mesh-only support or working arbitrary
+rings from one document**. Freeze the library/wrapper/config-tool versions and
+verify supported operations/topology together. A direct mesh needs n(n-1)/2
+pair links before considering port/controller constraints; a ring has different
+communication paths. This is topology arithmetic, not a benchmark.
+
+The selected RDMA source loads verbs functions, registers memory and uses a TCP
+side channel for connection metadata. RDMA data movement does not mean every
+control path disappears, nor does it expose a transparent coherent memory pool
+across Macs. JACCL collectives are not themselves an expert-placement algorithm.
+The standalone library README says caller output buffers must already exist;
+selected mesh implementation also allocates/registers internal communication
+buffers, which later memory accounting must include.
+
+exo's README adds model/OS/port/cable caveats and currently describes Linux
+execution as CPU while Mac execution uses GPU. Its headline speedups were not
+reproduced. SGLang's README lists Apple Metal/MLX and vLLM lists an Apple plugin;
+these platform listings do not establish feature parity with their CUDA paths,
+JACCL support, or arbitrary Mac/NVIDIA interoperability. NIXL explicitly lists
+Linux-only support and no native macOS support in the inspected revision.
+
+MLX-LM documents memory wiring on macOS15+ and prompt/KV caching. Wired-memory
+limits do not create extra physical capacity. Unified CPU/GPU memory on one Mac
+must be counted once. Its example sharded generation exposes pipeline and tensor
+modes, not proof of the expert-granular heterogeneous scheduler proposed here.
+An MLX/Metal backend would need its own declared numerical contract and oracle
+checks; the existing native Mac acceptance gate is still outstanding.
+
+### New software artifacts and precise lessons
+
+| Artifact | What the inspected documentation/source says | Limits / next evidence |
+| --- | --- | --- |
+| [ml-explore/mlx](https://github.com/ml-explore/mlx/blob/b6642e604843776705b57b1eaecb6f57e519b793/README.md) | Distributed API, ring TCP, JACCL and NCCL; selected official docs and three JACCL C++ files inspected. | Test exact topology/backend and operations, actual transfers, singleton fallback, synchronization and memory overhead on native hosts. |
+| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm/blob/93e6d4a6447b3080861985947f0820e76fcb957d/README.md) | Distributed inference, prompt cache and memory wiring; selected sharded example inspected. | Example accepts pipeline/tensor modes; model-specific sharding and expert placement still require source audit. |
+| [ml-explore/mlx-examples](https://github.com/ml-explore/mlx-examples/blob/796f5b53cab69a3d48a44233ce21aae889e94a08/README.md) | Standalone learning examples including Mixtral. | Educational starting point; no distributed expert result established. |
+| [exo-explore/exo](https://github.com/exo-explore/exo/blob/bc412e2230f395e652c23426a5eb88dfa515769b/README.md) | Mac model partitioning and Thunderbolt RDMA configuration documented. | Existing baseline to study before building; present README limits Linux acceleration and lists topology/port/version caveats. |
+| [deepseek-ai/EPLB](https://github.com/deepseek-ai/EPLB/blob/d52c72d5b2f2fb4c41afbf8eb21366820239913d/README.md) | Estimated-load input, redundant experts and hierarchical/global packing; eplb.py read. | Equal-size replica slots and equal item counts per pack; no arbitrary memory budgets, measured device rates, link/queue costs or migration protocol supplied. |
+| [dvmazur/mixtral-offloading](https://github.com/dvmazur/mixtral-offloading/blob/ce545188b804238f0b23a59fc45e6a8f8b390c40/README.md) | Mixed HQQ quantization, individually offloaded experts and LRU residency. | README explicitly calls speculative expert prefetch upcoming; do not treat the paper and repo as identical feature sets. |
+| [timlee0212/SiDA-MoE](https://github.com/timlee0212/SiDA-MoE/blob/752882890c788551f071970c051548b2fb757567/README.md) | Short README documents activation collection and sharded checkpoints. | Disk offload and above-main-memory shard handling are TODOs there; the complete paper design is not established by this README. |
+| [ranggihwang/Pregated_MoE](https://github.com/ranggihwang/Pregated_MoE/blob/6b0a6660ea792a7a9e128c592fa4641d11228dc8/README.md) | ISCA24 proof-of-concept artifact with GPU/container/build/evaluation directions. | Algorithm-system co-design is a separate semantic review; do not assume pretrained HF gate equivalence from its title. |
+| [laekov/fastmoe](https://github.com/laekov/fastmoe/blob/55af4f98eee087cf5b3aac34318abf80c3bcbafd/README.md) | Distributed experts and data/expert parallel distinction in a PyTorch/CUDA/NCCL training system. | Training throughput/gradient communication differs from batch-one inference; backend/version requirements apply. |
+| [thu-pacman/FasterMoE](https://github.com/thu-pacman/FasterMoE/blob/de4d5ac7547978bad56fed716d1a78203e9b64d7/README.md) | Training prototype documents dynamic shadowing, schedule fusion and topology-aware gate; cleaner integration is referenced in FastMoE. | Extract mechanisms; a topology-aware learned gate can change logical expert selection and is not an exact scheduler drop-in. |
+| [microsoft/Tutel](https://github.com/microsoft/Tutel/blob/175ad8075acf7783e42d8de4473aa120dcc9e4d0/README.md) | Adaptive MoE implementation with distributed examples and inference documentation; primary Tutel paper citation present. | Current README mixes paper-era design with new serving/model claims; pin version and audit precision, workload and capacity before comparing. |
+| [deepseek-ai/DeepEP](https://github.com/deepseek-ai/DeepEP/blob/b5a33eefda39485f438dc764695b71ba7b9249b6/README.md) | Expert dispatch/combine communication primitives and platform-specific paths. | Separate kernel/transport cost from expert math; do not assume Metal or commodity TCP compatibility. |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm/blob/7879f3687b5b6a4be4754242e70b9c21cf7b4183/README.md) | PagedAttention, batching, prefix caching, distributed modes and several backend/plugin paths. | Use as an engine/baseline where supported; README platform list does not prove uniform feature combinations. |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang/blob/05ce0e980f00aa80864190d6f1cd5d9b685802f1/README.md) | Serving framework with agentic workload focus and multiple hardware paths, including Apple. | Inspect actual Apple platform guide/backend before choosing features or claiming mixed-device support. |
+| [LMCache/LMCache](https://github.com/LMCache/LMCache/blob/f24bfe9840599f796c844ac7bdfb6be791be8122/README.md) | Tiered KV reuse/offload, engine integrations, transport backends and observability. | Expert weights are a different object; non-prefix CacheBlend/recompression/token dropping need separate numerical/quality validation. |
+| [kvcache-ai/Mooncake](https://github.com/kvcache-ai/Mooncake/blob/19e0ab28f125346f7348e8ac9d043537d7202771/README.md) | Transfer Engine, multi-tier Store and EP/process-group functionality described; paper/traces linked. | Paper-era KV system and current broader repo must be separated. Routing around failed ranks is not exact recovery of an unavailable required expert without a valid replica or explicit failure. |
+| [LLMServe/DistServe](https://github.com/LLMServe/DistServe/blob/82831f1604cc6b10bebd360f6c437a07790dde9f/README.md) | Separates prefill/decode, with KV communication, Ray workers and a CUDA-oriented backend. | README requires at least two GPUs for its example; extra resources and KV movement may lose for a small interactive setup. |
+| [ai-dynamo/dynamo](https://github.com/ai-dynamo/dynamo/blob/a29a9fde28df161df3c3e19f9170274789f698b1/README.md) | Orchestration above engines: KV-aware routing, phase separation, caching, planning and telemetry. | Reuse policy questions, not the entire datacenter stack. Request routing differs from token-to-expert routing. |
+| [ai-dynamo/nixl](https://github.com/ai-dynamo/nixl/blob/0fe526d1aa2fd10091b7ae7fb7b735c0b1103bc0/README.md) | Plugin abstraction for CPU/GPU/storage point-to-point movement, benchmark and telemetry hooks. | Explicit Linux-only support; no native Mac claim. Data movement is not scheduling or numerical correctness. |
+| [deepseek-ai/FlashMLA](https://github.com/deepseek-ai/FlashMLA/blob/0f11e178da1f67becb087a324b400854931ec3e3/README.md) | Model/hardware-specific attention kernels. | Current README records a breaking change removing Hopper/earlier-model support and changing KV formats; old benchmark assumptions cannot be carried to HEAD. |
+| [danveloper/flash-moe](https://github.com/danveloper/flash-moe/blob/3601d41882a346d85041f7955c66429d248e8cd9/README.md) | C/Metal expert streaming, OS-cache experiments and an author technical report. | Interesting negative-result source; semantic changes and internal report/README discrepancies prevent treating its throughput as exact-model evidence. |
+
+#### EPLB: a useful small algorithm, not yet our optimizer
+
+The selected source replicates the expert maximizing estimated load divided by
+its current replica count, then greedily packs sorted loads into equal-count
+bins; the hierarchical path first packs expert groups to nodes. This is a
+concrete simple baseline worth understanding. The source leaves load prediction
+out of scope. It does not normalize by heterogeneous service rates or model
+network contention, migration, replica initialization and unequal expert byte
+sizes. These are reasons to compare/extend a baseline later, not a proven defect.
+Identical replicas preserve logical expert identity only when payloads, weights,
+precision and dispatch/reconstruction are validated; replication consumes memory.
+
+#### Flash-MoE: read the raw report before adopting the headline
+
+The 13-page author-hosted report and current README are not a controlled parity
+comparison. Report sections3.2/4.5 reduce routing from top10 to top4, section3.4
+requantizes experts to two bits, and section5.5 describes skipping expert forward
+computation for nonfinal prefill tokens. These alter the computation contract;
+we cannot count resulting throughput as unchanged-model distributed correctness.
+Coherent answers on a few prompts and small weight RMSE are not full-model parity
+or tool-use acceptance evidence.
+
+There are useful unresolved source discrepancies to investigate before using
+this project as a baseline:
+
+- PDF abstract/section4.4 describe two-bit output as production-quality or
+  indistinguishable in their examples; current README says two-bit breaks JSON
+  tool calling and recommends four-bit. Record exact revision/config/task.
+- PDF section4.3 says 43–57% of512 experts appear per layer across30 tokens. If
+  that statistic uses its top4 configuration, only120 selections are possible,
+  at most23.4375% distinct experts. Resolve the run/configuration/count definition
+  before fitting a cache model; do not invent a runtime explanation.
+- PDF section5.5's prefill omission needs a dependency-level audit and numerical
+  oracle test. Earlier-token hidden states can affect later layers' attention
+  state; overwriting a buffer is not proof its computation was unnecessary.
+- PDF discussion claims a cross-Thunderbolt extension of unified memory; no
+  transparent coherent shared-memory implementation was established here.
+  Current README's universal 'hardware-optimal' no-overlap wording also needs
+  measurements under varied kernels, cache states and workloads.
+
+Its reports that explicit caches/prefetch can lose are valuable hypotheses:
+compare OS-managed paging with explicit bounded caching at equal total memory,
+record physical reads versus page-cache hits and compressor activity, and audit
+CPU/GPU/I/O contention. Do not copy author speedups, SSD bandwidth, lack-of-OOM
+claims or qualitative quality labels into SPOJ conclusions. No engine or model
+was run in this study.
+
+### Paper reading queue and candidate combinations
+
+`software-paper-backlog.json` is the deduplicated queue for this extension. It
+includes primary-artifact citations for Mixtral offloading, Pre-gated MoE,
+FastMoE/FasterMoE, Tutel, PagedAttention, DistServe, Mooncake, LMCache,
+CacheGen/CacheBlend, TENT and partial-rank failure work. Secondary discovery
+leads include ProMoE, MoE-Lightning, HOBBIT and Lina. LLM in a Flash is a
+reference found in the Flash-MoE report; its primary full text remains unread.
+SiDA's paper citation is a discovery lead alongside its thin primary artifact.
+Do not confuse the diffusion-routing repository named ProMoE with the
+proactive-caching inference paper. Links are not performance endorsements.
+
+| Candidate combination, all explanatory proposals | Why it might help | Falsifier / required evidence |
+| --- | --- | --- |
+| Two supported Macs over TB5/JACCL plus an ordinary TCP/Ethernet expert host | Low-latency fast tier plus cheaper colder-expert capacity | Native exact-backend parity and topology first; a required cold expert can still dominate every token that selects it. Measure p95/p99 and decode barriers, not frequency alone. |
+| Mac hot expert replicas plus CPU/RAM canonical owners | Reduce common-path latency without storing every expert on every Mac | Count replicas, reserves, staging and initialization; compare with static single owners and include cold misses, phase changes and migration payback. |
+| Local CPU execution vs remote expert execution vs weight staging | Adapt compute location to reuse, payload and device service | Exact same logical experts; paired traces, cold/warm loads, realistic queueing and bytes. Reject policies that gain by omitting work or future knowledge. |
+| Expert residency policy plus KV/prompt reuse | Optimize both weight capacity and repeated agent context | Joint memory budget; identical prompt/task/quality baseline, end-to-end turn time and cache-preparation costs. A KV optimization may leave expert time unchanged. |
+| Slow placement adaptation plus fast replica dispatch | Avoid costly migration while reacting to load fluctuations | Migration budget/hysteresis; compare to static, LRU/frequency and simple estimated-finish-time policies; measure stale/incorrect observations. |
+| OS paging vs explicit cache and speculative prefetch | Test whether simpler caching wins on unified memory | Equal total footprint, cache state and workload; useful/wasted reads, compressor pressure, thermals and variance. No universal preference from one project's results. |
+| Separate prefill/decode resources with KV transfer | Match compute-heavy prompt work and latency-sensitive decode | Count handoff bytes, duplicate/shared weights, idle resources, TTFT and full-turn tails; may lose at low load or on slow links. |
+
+The first two combinations do not imply JACCL directly interoperates with a Linux
+worker. A mixed-tier application protocol/backend bridge is a research question,
+not supplied code. No multi-machine correctness or performance was established.
+Keep exact-semantic execution and approximation/quality studies in separate
+comparisons, even if both ultimately contribute to affordable local AI.
+
+Before advancing a candidate, extract the full paper's objective, assumptions,
+pseudocode, workload, precision, baselines, distributions and exclusions; map
+those to pinned artifact code. Then propose one distinguishing experiment with a
+numerical oracle, resource/traffic conservation, paired workloads, uncertainty
+and retained negative results. Pick the smallest comparison that could reverse
+our choice. Broad discovery is authorized; blindly combining all mechanisms or
+starting new hardware/runtime work is not implied.

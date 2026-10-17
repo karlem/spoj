@@ -4,6 +4,8 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Capacity goal and Colibri comparison
 
+The consolidated [software and Mac research atlas](related-projects-and-papers.md#software-research-atlas-and-apple--heterogeneous-execution-paths) maps MLX/JACCL/TB5, expert replication, offloading, KV reuse, phase scheduling and mixed-tier hypotheses. See its evidence levels and [paper reading queue](software-paper-backlog.json); no new runtime or hardware experiment was started.
+
 The consolidated [hardware-memory research section](related-projects-and-papers.md#memory-hardware-far-memory-and-near-memory-computation) adds CXL, RDMA far memory and PIM papers/artifacts, distinguishes physical hardware from simulation, and proposes a no-purchase lab ladder. No hardware, model or benchmark was run.
 
 The same [project/paper survey](related-projects-and-papers.md#affordable-local-ai-as-a-foundation-for-an-ai-os) now includes Prima.cpp, PowerInfer/PowerInfer-2, FlexGen, AIOS and IX, and a proposed method to distinguish network, memory and OS/control overhead for an affordable local-assistant goal. These are source-grounded reading leads and hypotheses, not measured platform results.

@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-17",
+  "method": "Pinned README inspection and targeted source/documentation inspection; one author technical report PDF read after pdftotext extraction",
+  "projects": [
+    {
+      "requested_repository": "LLMServe/DistServe",
+      "repository": "LLMServe/DistServe",
+      "revision": "82831f1604cc6b10bebd360f6c437a07790dde9f",
+      "readme_path": "README.md",
+      "size": 2925,
+      "sha256": "aad0ee8212a6eb505d9af513bc6789171f65a8cb409f04be91b7ed37df29e5b9",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "LMCache/LMCache",
+      "repository": "LMCache/LMCache",
+      "revision": "f24bfe9840599f796c844ac7bdfb6be791be8122",
+      "readme_path": "README.md",
+      "size": 11089,
+      "sha256": "0cd626200a287a6c51c36e59fa8f22fa830fb41420a7c24278bd340c71b64259",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "MoE-Inf/awesome-moe-inference",
+      "repository": "MoE-Inf/awesome-moe-inference",
+      "revision": "48182b8ef7654f4d2fb0de935d490ae2ea13717a",
+      "readme_path": "README.md",
+      "size": 34027,
+      "sha256": "5ab3eb0254fa6db679261b90e20ed35eaf2354ca0edff8787694fbe3cbf22d11",
+      "executed": false,
+      "evidence_level": "secondary discovery bibliography"
+    },
+    {
+      "requested_repository": "ai-dynamo/dynamo",
+      "repository": "ai-dynamo/dynamo",
+      "revision": "a29a9fde28df161df3c3e19f9170274789f698b1",
+      "readme_path": "README.md",
+      "size": 22611,
+      "sha256": "0b80d789264af104e512bca3669bf79da18dc956b6fa3f1ae29b9df3c82a399c",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "ai-dynamo/nixl",
+      "repository": "ai-dynamo/nixl",
+      "revision": "0fe526d1aa2fd10091b7ae7fb7b735c0b1103bc0",
+      "readme_path": "README.md",
+      "size": 14596,
+      "sha256": "a0efbba5419d3cb977bb3e0901b2eaa8eba0d369931b4bb8438c91c800e73bc7",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "danveloper/flash-moe",
+      "repository": "danveloper/flash-moe",
+      "revision": "3601d41882a346d85041f7955c66429d248e8cd9",
+      "readme_path": "README.md",
+      "size": 7875,
+      "sha256": "4cde0e3dfcf1a96cd62137e8657bd18ed94de972de56a544ae29f72d0d6012d9",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "paper/flash_moe.pdf",
+          "size": 217799,
+          "sha256": "ecfadb036a019a34ff12a74fc0253d5b5e17fbc399eaed4bc0023ba252e3abfc",
+          "type": "author-hosted technical report PDF; not independently validated"
+        }
+      ],
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "deepseek-ai/DeepEP",
+      "repository": "deepseek-ai/DeepEP",
+      "revision": "b5a33eefda39485f438dc764695b71ba7b9249b6",
+      "readme_path": "README.md",
+      "size": 32914,
+      "sha256": "86415f7fc11381dceb14c112b6c602103d975936444601666ab1fcfd65e8fceb",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "deepseek-ai/EPLB",
+      "repository": "deepseek-ai/EPLB",
+      "revision": "d52c72d5b2f2fb4c41afbf8eb21366820239913d",
+      "readme_path": "README.md",
+      "size": 3131,
+      "sha256": "897fa18b928858d6f4241fa910377125fbbc16fba8868b8c121eb5a8c30336ef",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "eplb.py",
+          "size": 7912,
+          "sha256": "25b37ccd83aef2369c68f2b4bb596608a4f289956d97d9a3504bfd3159459e29"
+        }
+      ],
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "deepseek-ai/FlashMLA",
+      "repository": "deepseek-ai/FlashMLA",
+      "revision": "0f11e178da1f67becb087a324b400854931ec3e3",
+      "readme_path": "README.md",
+      "size": 22629,
+      "sha256": "0a3d443119284195fd8ef144bd0325fd7d58e08070764f824a1adb6ad3333eb8",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "dvmazur/mixtral-offloading",
+      "repository": "dvmazur/mixtral-offloading",
+      "revision": "ce545188b804238f0b23a59fc45e6a8f8b390c40",
+      "readme_path": "README.md",
+      "size": 1580,
+      "sha256": "fc047d9cfa027330ea6f4e037e57b47589cb08ed22421503021aa5658eb6059b",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "exo-explore/exo",
+      "repository": "exo-explore/exo",
+      "revision": "bc412e2230f395e652c23426a5eb88dfa515769b",
+      "readme_path": "README.md",
+      "size": 21897,
+      "sha256": "176868021ebcf900b1397d5cb8d4ae94d5c196fbeae094bc5b57673a3586f09e",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "kvcache-ai/Mooncake",
+      "repository": "kvcache-ai/Mooncake",
+      "revision": "19e0ab28f125346f7348e8ac9d043537d7202771",
+      "readme_path": "README.md",
+      "size": 42953,
+      "sha256": "35bf154190466d207c3ff037c45d55857c3be07c6bd2486b223970af8338e669",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "laekov/fastmoe",
+      "repository": "laekov/fastmoe",
+      "revision": "55af4f98eee087cf5b3aac34318abf80c3bcbafd",
+      "readme_path": "README.md",
+      "size": 6111,
+      "sha256": "f90379b83146c5299ad43b44e26e2139146e8972d319d3f794272b7950e5157f",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "microsoft/Tutel",
+      "repository": "microsoft/Tutel",
+      "revision": "175ad8075acf7783e42d8de4473aa120dcc9e4d0",
+      "readme_path": "README.md",
+      "size": 26138,
+      "sha256": "942c79a00e05e74e61914e45c3c2a16fa67bab209026447c56dcccabb9340475",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "ml-explore/mlx",
+      "repository": "ml-explore/mlx",
+      "revision": "b6642e604843776705b57b1eaecb6f57e519b793",
+      "readme_path": "README.md",
+      "size": 4597,
+      "sha256": "df7d58237b57e70595c5a19b72acb4053d28a47235033bd2cbfd66eea73e1c7d",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "docs/src/usage/distributed.rst",
+          "size": 22592,
+          "sha256": "72870321282ca63f901c53c2998244c70598b313b8c7f93f9b9ac2a14795ebe1"
+        },
+        {
+          "path": "docs/src/usage/launching_distributed.rst",
+          "size": 7931,
+          "sha256": "952be025299ca1b749d355db5ae40971170c129997c4c89a9d0e183257e973a0"
+        },
+        {
+          "path": "mlx/distributed/jaccl/lib/README.md",
+          "size": 8892,
+          "sha256": "ccc60539e33f3a4139fb6cf37834467edec88ed083b92b06ce34913ac1c06e51"
+        },
+        {
+          "path": "mlx/distributed/jaccl/lib/jaccl/rdma.cpp",
+          "size": 11648,
+          "sha256": "0b3d7e113a75815178ad479b3f218993b957b1a453be63400ccec82bb8aedf33"
+        },
+        {
+          "path": "mlx/distributed/jaccl/lib/jaccl/mesh.cpp",
+          "size": 8561,
+          "sha256": "5cf12862defe97324261acf7ccd89cea91e674ee86784001c055672145c6d344"
+        },
+        {
+          "path": "mlx/distributed/jaccl/lib/jaccl/jaccl.cpp",
+          "size": 8592,
+          "sha256": "05a52ccc57463b701151586733cb219f6853395543eabeda49ac7f43f81cba3f"
+        }
+      ],
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "ml-explore/mlx-examples",
+      "repository": "ml-explore/mlx-examples",
+      "revision": "796f5b53cab69a3d48a44233ce21aae889e94a08",
+      "readme_path": "README.md",
+      "size": 2820,
+      "sha256": "4b8d8cc5f34dc9453497f9e645ae3c83229859c4e7253c23ef2ca18a1319702b",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "ml-explore/mlx-lm",
+      "repository": "ml-explore/mlx-lm",
+      "revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "readme_path": "README.md",
+      "size": 8569,
+      "sha256": "fc4dc67d70ca364ef8c2f94e84d170072d3c5f4fdfd2aa7a7be7a38a6b3d0008",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "examples/sharded_generate.py",
+          "size": 2301,
+          "sha256": "9b87aba4fa0d5be56537de766064c4701a99be4897d028254826b6a8455aed73"
+        }
+      ],
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "ranggihwang/Pregated_MoE",
+      "repository": "ranggihwang/Pregated_MoE",
+      "revision": "6b0a6660ea792a7a9e128c592fa4641d11228dc8",
+      "readme_path": "README.md",
+      "size": 26383,
+      "sha256": "9a9278b9cae75f2e5be5226477285c0750d699db81cb04d3459b2be7aa530aa4",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "sgl-project/sglang",
+      "repository": "sgl-project/sglang",
+      "revision": "05ce0e980f00aa80864190d6f1cd5d9b685802f1",
+      "readme_path": "README.md",
+      "size": 8824,
+      "sha256": "7c99b50fa5ef9f4a666a2f73860f746d3fc259e7e7912d4bff88dffdc1dc4c5e",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "thu-pacman/FasterMoE",
+      "repository": "thu-pacman/FasterMoE",
+      "revision": "de4d5ac7547978bad56fed716d1a78203e9b64d7",
+      "readme_path": "README.md",
+      "size": 1170,
+      "sha256": "f0b4219c22b9547a09f9ba4ca7991f7cc371233a3b890bb1b86b99d3d3c9f358",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "timlee0212/SiDA-MoE",
+      "repository": "timlee0212/SiDA-MoE",
+      "revision": "752882890c788551f071970c051548b2fb757567",
+      "readme_path": "README.md",
+      "size": 499,
+      "sha256": "bdaf772abcadd479aaed9a2724fb6c002a1033542ae4498c0eeb68dc243a8827",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    },
+    {
+      "requested_repository": "vllm-project/vllm",
+      "repository": "vllm-project/vllm",
+      "revision": "7879f3687b5b6a4be4754242e70b9c21cf7b4183",
+      "readme_path": "README.md",
+      "size": 5772,
+      "sha256": "4dc7399323b9660117f8cc1226afb7a81cdbb912dbb4ae74b66d89052417d11c",
+      "executed": false,
+      "evidence_level": "primary project documentation; selected source depth stated separately"
+    }
+  ],
+  "full_text_report_read": "danveloper/flash-moe/paper/flash_moe.pdf (13 pages); author-hosted technical report, peer review not established",
+  "other_full_paper_texts_read": false,
+  "source_projects_executed": false,
+  "hardware_or_model_experiments_run": false,
+  "discovery_limits": [
+    "GitHub repository search is not exhaustive scholarly search",
+    "Prior arXiv/publisher proxy restrictions remain; no policy bypass",
+    "nvidia/nixl returned404; resolved primary artifact is ai-dynamo/nixl",
+    "sarathi-serve/sarathi-serve returned404; no project absence conclusion",
+    "ali-vilab/ProMoE is a different diffusion-routing project; do not confuse with the proactive-caching paper"
+  ]
+}
