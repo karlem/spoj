@@ -16,7 +16,7 @@ from spoi.tcp_wire import ProtocolError
 CASES = list(itertools.product(range(1, 5), (0, 1), (1, 2), (False, True)))
 
 
-@pytest.fixture(scope='module', params=CASES)
+@pytest.fixture(scope='class', params=CASES)
 def running(request):
     workers, seed, top_k, norm = request.param
     block, state = build_reference(ExperimentConfig(num_experts=5, seed=seed, top_k=top_k, norm_topk_prob=norm))
@@ -26,15 +26,16 @@ def running(request):
     assert session.exitcodes == [0]*workers
 
 
-@pytest.mark.parametrize('shape', [(1, 16, 64), (1, 128, 64), (8, 128, 64)])
-def test_seeded_tcp_contribution_and_final_parity(running, shape):
-    block, state, session = running
-    x = torch.randn(shape, generator=torch.Generator().manual_seed(state.config.seed+121))
-    pids = [r['pid'] for r in session.ready]
-    value = session.forward(x)  # validates every HF contribution, coverage and final output
-    with torch.inference_mode():
-        torch.testing.assert_close(value, block(x), rtol=1e-5, atol=1e-6)
-    assert [r['pid'] for r in session.ready] == pids and len(set(pids)) == session.count
+class TestSeededTCPParity:
+    @pytest.mark.parametrize('shape', [(1, 16, 64), (1, 128, 64), (8, 128, 64)])
+    def test_seeded_tcp_contribution_and_final_parity(self, running, shape):
+        block, state, session = running
+        x = torch.randn(shape, generator=torch.Generator().manual_seed(state.config.seed+121))
+        pids = [r['pid'] for r in session.ready]
+        value = session.forward(x)  # validates every HF contribution, coverage and final output
+        with torch.inference_mode():
+            torch.testing.assert_close(value, block(x), rtol=1e-5, atol=1e-6)
+        assert [r['pid'] for r in session.ready] == pids and len(set(pids)) == session.count
 
 
 def controlled():
