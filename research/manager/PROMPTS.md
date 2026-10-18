@@ -84,8 +84,8 @@ the proposed improvement. Prefer a decisive small test over another survey.
    separate validator. If it is accepted, do not recreate it. Changed environments
    require a scoped capability check, not automatic repetition of all accepted work.
    If delegation is absent, label work single-agent and independent validation unavailable.
-4. Select one primary hypothesis and at most one complementary one. D7 is the last
-   suggested candidate, not a measured winner. Reconcile current evidence before selection.
+4. Select one primary hypothesis and at most one complementary one. D7 has a newer qualification packet in #7/PR #8; read it before selecting
+   a next experiment. It is not a measured winner. Reconcile current evidence before selection.
    Fill the task packet with a concrete numerical practical threshold and strongest
    feasible baseline. A weaker baseline requires a stated limitation and cannot justify
    superiority over the untested strongest competitor.
@@ -429,11 +429,20 @@ As recorded on 2026-10-18:
   Input SHA256:
   df02c5bf848f4d30871d93f8c223c6ce6da23e9bebaf4fe3da0adadeced079af.
   This proves the bounded orchestration fixture only. Product acceptance gates were
-  not run or waived. Cross-run resumption remains the next acceptance check.
-- Current preferred research candidate is D7; a precise hypothesis and threshold still
-  need selection from raw evidence. No complementary hypothesis is activated by this file.
+  not run or waived. Issue #9 comment 6251422551 subsequently records one cross-run
+  resumption: frozen source/evidence/input hashes checked and accepted fixture skipped.
+  That is one recorded resume/deduplication observation, not concurrent-manager exclusion.
+- Newer issue #9 comment 6251422551 points to D7 qualification packet
+  c6cefdd90f6fe1f80d71c024e52065eb1147e826 in #7/PR #8. Read its decision memo and
+  protocol rather than duplicate initial qualification. The ledger describes Colibri
+  unset DROP versus DROP=1 as an upstream configuration comparison and marks the physical
+  study blocked on a permitted g64 artifact/file-backed storage, independent same-container
+  oracle and single-token observation hook. No measured SPOJ advantage is recorded.
+  D1-D6 remain queued; no complementary hypothesis is activated by this file.
 - Existing droplet 610251852 was active, but SSH from the prior cloud execution runtime
-  failed with Network is unreachable before authentication. No remote experiment or
+  failed with Network is unreachable before authentication. A later runtime reported
+  connection refused (comment 6251422551), also before authentication; neither observation
+  establishes the server-side cause. No remote experiment or
   scheduled-manager SSH integration was verified. A desktop alias is not that proof.
 - The one existing droplet is authorized expenditure and bills until deleted; last
   quoted price was $0.03571/hour, about $24/month. No additional expenditure is authorized.
