@@ -1,0 +1,43 @@
+{
+  "command": [
+    "timeout",
+    "--kill-after=2s",
+    "300s",
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "recovery_fixture.py"
+  ],
+  "cwd": "/workspace/scratch/5623eb67b0bb/spoj-startup-20261018/implementer",
+  "started_at_utc": "2026-10-18T14:05:43.170338+00:00",
+  "ended_at_utc": "2026-10-18T14:05:43.269152+00:00",
+  "elapsed_seconds": 0.09894348300076672,
+  "exit_code": 0,
+  "raw_stdout": "{\"claims\": \"Local SQLite atomic transaction and unique-ID duplicate suppression only; injected exceptions and database reopen, no process kill, network or distributed exactly-once claim.\", \"events\": [{\"fault\": \"precommit\", \"job_id\": \"job-a\", \"status\": \"precommit failure\"}, {\"fault\": null, \"job_id\": \"job-a\", \"status\": \"committed\"}, {\"fault\": \"lost-ack\", \"job_id\": \"job-b\", \"status\": \"postcommit acknowledgement lost\"}, {\"fault\": null, \"job_id\": \"job-b\", \"status\": \"duplicate-suppressed\"}, {\"fault\": null, \"job_id\": \"job-c\", \"status\": \"committed\"}, {\"fault\": null, \"job_id\": \"job-c\", \"status\": \"duplicate-suppressed\"}], \"input\": {\"delivery_plan\": [\"job-a:precommit-failure\", \"job-a:retry\", \"job-b:postcommit-lost-ack\", \"job-b:retry\", \"job-c:normal\", \"job-c:duplicate\"], \"jobs\": [[\"job-a\", 3], [\"job-b\", 7], [\"job-c\", 11]]}, \"input_sha256\": \"df02c5bf848f4d30871d93f8c223c6ce6da23e9bebaf4fe3da0adadeced079af\", \"naive_duplicate_count\": 2, \"naive_rows\": [[\"job-a\", 3, 9], [\"job-b\", 7, 49], [\"job-b\", 7, 49], [\"job-c\", 11, 121], [\"job-c\", 11, 121]], \"negative_checks_rejected\": [\"wrong-result-new-id\", \"wrong-result-existing-id\", \"conflicting-input-same-id\"], \"reopened_rows\": [[\"job-a\", 3, 9], [\"job-b\", 7, 49], [\"job-c\", 11, 121]], \"status\": \"PASS\"}\n",
+  "raw_stderr": "",
+  "source_sha256": "f61e3dce52afde95f05c7d1cc62d8da110bae7b2e71806d90d0bd7e31102e62d",
+  "input_sha256": "df02c5bf848f4d30871d93f8c223c6ce6da23e9bebaf4fe3da0adadeced079af",
+  "source_revision": "571d5dde2aac38a59f01022b39eac10150fc42bf",
+  "source_inspected_before_execution": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "sqlite": "3.53.1",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "limits": {
+    "wall_seconds": 300,
+    "address_space_bytes": 2147483648,
+    "cpu_seconds": 30,
+    "per_file_bytes": 10485760,
+    "core_bytes": 0
+  },
+  "total_directory_bytes": 34511,
+  "harness": "collaboration child agent plus functions.exec exec_command",
+  "agent": "/root/startup_experiment",
+  "model_id": "unavailable",
+  "gate": "Three jobs correct exactly once after reopen; wrong values and conflicting same ID rejected; append-only SQLite baseline duplicates exactly two records.",
+  "limitations": [
+    "Local deterministic SQLite fixture only; no actual process crash, network failure, concurrent workers or distributed exactly-once proof.",
+    "No product acceptance scripts, Torch tests, SPOJ performance or novelty claim.",
+    "Source revision is local isolated root commit; manager records remote publication revision."
+  ]
+}
