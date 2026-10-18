@@ -1,0 +1,12 @@
+# Command provenance
+
+All external content was read through HTTPS using the installed Python standard library; no downloaded code was imported or executed. No dependency installation/build/checkpoint acquisition occurred.
+
+1. Read local manager contract with `cat AGENTS.md docs/engineering/factory.md research/manager/README.md research/manager/PROMPTS.md` in `/workspace/spoj-d2`; output truncation was followed by `sed -n '1,110p' research/manager/PROMPTS.md` to inspect the Common contract and role instructions.
+2. Requested `https://api.github.com/repos/{owner}/{repo}/commits/HEAD` then `.../git/trees/{sha}?recursive=1` for `ServerlessLLM/ServerlessLLM` and `ggml-org/llama.cpp` using `urllib.request.urlopen(url, timeout=30).read()`. Raw replies are `{serverlessllm,llama}-{commit,tree}.json`. These establish the pinned revisions and file names; no full repository clone was downloaded.
+3. Ran `python /workspace/scratch/d2-sources/retrieve.py` for the first target set. Each successful response was persisted and logged with UTC time, URL, byte count and SHA256 in `manifest.jsonl`. Raw 404 text was appended to `failures.txt`. The script itself is retained. It is acquisition tooling, not a reproducible benchmark.
+4. Follow-up acquisition used the same `urllib.request.urlopen(url, timeout=30).read(2000000)` operation, for four llama.cpp paths (`src/llama-sampler.cpp`, `src/llama-model.cpp`, `src/llama-kv-cache.h`, `tools/server/README.md`), then ServerlessLLM `sllm/backends/backend_utils.py`; all immutable URLs and UTC times are in the manifest. Each wrote bytes and computed `hashlib.sha256(data).hexdigest()` exactly as in `retrieve.py`.
+5. Inspected locally with `rg -n` searches for migration/token/cache/state/sampler/allocator functions and targeted `sed -n` line slices. Final report cites exact file/functions/lines. The corpus is sufficient to reproduce those observations without network access.
+6. Independently rehashed every successful source using local `hashlib.sha256` and checked byte sizes against manifest; raw generated result is `verification.json`. This is artifact integrity verification, **not independent scientific validation**.
+
+Data cap was bounded by targeted requests and per-source read limit, not a kernel download quota. Observed payload was below 10 MiB. None of the inspected source files approached the 2,000,000-byte per-response read cap. No benchmark was run, so there are no hidden experimental stdout/stderr or timing results.

@@ -1,0 +1,18 @@
+{
+  "layers": 32,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "scalar_bytes": 2,
+  "contexts": [8192, 32768, 131072],
+  "wait_seconds": [0.05, 0.25, 1, 5, 30, 120],
+  "bandwidth_gib_s": [0.5, 2, 8, 32],
+  "prefill_tokens_s": [2000, 20000, 100000],
+  "capacity_domains": ["separate", "same"],
+  "allocator_releases": [false, true],
+  "export_fixed_seconds": 0.005,
+  "restore_fixed_seconds": 0.005,
+  "replay_fixed_seconds": 0.02,
+  "min_wait_saving_fraction": 0.25,
+  "max_resume_seconds": 0.25,
+  "state_compatible": true
+}

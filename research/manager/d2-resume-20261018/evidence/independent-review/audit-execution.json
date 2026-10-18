@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/d2-validator/review_checks.py"
+  ],
+  "started_at": "2026-10-18T15:41:14.621895+00:00",
+  "elapsed_seconds": 0.11507602800020322,
+  "exit_code": 0,
+  "frozen_commit": "ad562a27560091abac92c3af38cb6062969f4ae0",
+  "worker": "/root/d2_validator",
+  "model_id": "unavailable; not exposed by harness",
+  "provider_run_id": "unavailable; not exposed by harness",
+  "same_host": true,
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "limits": {
+    "wall_seconds": 300,
+    "cpu_seconds": 60,
+    "address_space_bytes": 2147483648,
+    "per_file_bytes": 16777216
+  },
+  "sha256": {
+    "review_checks.py": "ad7d9aacae7081ef84ecb8f6b01348d35e548da9ed6c51f128913d247ab52320",
+    "audit.stdout": "b8753e48816793b08e2b733bb42a4ecae28fe6abf29c7796216ec25d171b7a5d",
+    "audit.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

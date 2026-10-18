@@ -1,0 +1,38 @@
+{
+  "run_id": "d2-resume-20261018-1531",
+  "started_utc": "2026-10-18T15:31:11Z",
+  "packaged_utc": "2026-10-18T15:43:43.126868+00:00",
+  "claim_expires_utc": "2026-10-18T16:01:11Z",
+  "manager": "/root",
+  "workers": [
+    "/root/d2_sources",
+    "/root/d2_validator"
+  ],
+  "provider_run_id": null,
+  "model_ids": null,
+  "child_start_end_times": "Exact provider lifecycle timestamps unavailable; source retrieval and actual experiment/validation timestamps retained in manifests and execution records. Validator completed 2026-10-18T15:42:44.681976+00:00.",
+  "evaluated_commit": "ad562a27560091abac92c3af38cb6062969f4ae0",
+  "evidence_verdict": "ACCEPT: source-supported observations and assumed-input arithmetic only",
+  "research_verdict": "UPSTREAM generic mechanisms; UNRESOLVED useful measured advantage",
+  "product_status": "BLOCKED: offline product test setup lacks Torch; no product tests executed",
+  "active_hypotheses": [
+    "D7 physical study blocked",
+    "D2 real workload qualification pending"
+  ],
+  "queued": [
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "next_assignment": "On an existing authorized model/backend, compare resident/replay/upstream save-restore/built-in idle cache in a two-session tool-turn trace; distinguish allocated memory, reusable cells and complete resume correctness.",
+  "remote_machine_status": "User deferred providing a usable box. No SSH or provisioning attempted this run.",
+  "notes": [
+    "Existing startup fixture not repeated.",
+    "No measured inference or physical memory effect.",
+    "Full whitespace check warns on one byte-preserved upstream EOF blank line; authored-files check passed.",
+    "No scheduler-level ownership mutex claimed.",
+    "All worker outputs copied after writers stopped."
+  ]
+}
