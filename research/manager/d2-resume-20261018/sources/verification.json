@@ -1,0 +1,78 @@
+{
+  "verified_utc": "2026-10-18T15:37:45.292365+00:00",
+  "source_count": 16,
+  "source_bytes": 1206822,
+  "files": [
+    {
+      "path": "serverlessllm/sllm/backends/transformers_backend.py",
+      "sha256_matches": true
+    },
+    {
+      "path": "serverlessllm/sllm/backends/vllm_backend.py",
+      "sha256_matches": true
+    },
+    {
+      "path": "serverlessllm/sllm/routers/migration_router.py",
+      "sha256_matches": true
+    },
+    {
+      "path": "serverlessllm/docs/features/live_migration.md",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/include/llama.h",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/src/llama-context.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/src/llama-kv-cache.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/common/sampling.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/tools/server/server-context.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/src/llama-sampler.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/src/llama-model.cpp",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/src/llama-kv-cache.h",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/tools/server/README.md",
+      "sha256_matches": true
+    },
+    {
+      "path": "serverlessllm/sllm/backends/backend_utils.py",
+      "sha256_matches": true
+    },
+    {
+      "path": "serverlessllm/LICENSE",
+      "sha256_matches": true
+    },
+    {
+      "path": "llama/LICENSE",
+      "sha256_matches": true
+    }
+  ],
+  "all_passed": true,
+  "external_code_executed": false,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+  },
+  "model_id": "unavailable; not exposed by harness"
+}

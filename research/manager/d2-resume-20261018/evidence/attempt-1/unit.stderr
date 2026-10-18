@@ -1,0 +1,14 @@
+test_exact_threshold_and_adjacent_failure (test_cost_model.EconomicBoundTests.test_exact_threshold_and_adjacent_failure) ... ok
+test_gqa_bytes (test_cost_model.EconomicBoundTests.test_gqa_bytes) ... ok
+test_hand_calculated_snapshot (test_cost_model.EconomicBoundTests.test_hand_calculated_snapshot) ... ok
+test_incompatible_state_never_qualifies (test_cost_model.EconomicBoundTests.test_incompatible_state_never_qualifies) ... ok
+test_invalid_inputs_rejected (test_cost_model.EconomicBoundTests.test_invalid_inputs_rejected) ... ok
+test_preallocated_pool_has_no_physical_saving (test_cost_model.EconomicBoundTests.test_preallocated_pool_has_no_physical_saving) ... ok
+test_replay_accounts_for_prefill_and_overhead (test_cost_model.EconomicBoundTests.test_replay_accounts_for_prefill_and_overhead) ... ok
+test_return_during_export (test_cost_model.EconomicBoundTests.test_return_during_export) ... ok
+test_same_domain_has_no_physical_saving (test_cost_model.EconomicBoundTests.test_same_domain_has_no_physical_saving) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
