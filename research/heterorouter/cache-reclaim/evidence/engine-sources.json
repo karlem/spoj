@@ -1,0 +1,52 @@
+{
+  "repository": "JustVugg/colibri",
+  "revision": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+  "files": [
+    {
+      "path": "c/colibri.c",
+      "size": 820461,
+      "sha256": "23154484d1df560e41490060e91d96487a39f5aa9c569c2a3ce0becdd7447563"
+    },
+    {
+      "path": "c/tier.h",
+      "size": 2939,
+      "sha256": "b03ca03b4366f6bdf4a7bcd94efef2d59d51b9025323f089c7387ae3d82ede4d"
+    },
+    {
+      "path": "c/autotune.py",
+      "size": 28804,
+      "sha256": "e1bb41cb64eccc0f3983384255ae742b724bb17d05a988eda2a72385b22b1898"
+    },
+    {
+      "path": "docs/tuning.md",
+      "size": 14987,
+      "sha256": "28a8b738b78c74323ab1f71c5c5adc5ae39bffcc75430101c51fb1004367eb89"
+    },
+    {
+      "path": "docs/cluster.md",
+      "size": 983,
+      "sha256": "8ceb29dd7c03341090138b482c03ee5ebfae8d6d99055156602545f2d0de18d5"
+    },
+    {
+      "path": "c/Makefile",
+      "size": 165594,
+      "sha256": "10666421bde71dabbe69f02624434c477321caae655144c2057814182b6e7604"
+    },
+    {
+      "path": "README.md",
+      "size": 45240,
+      "sha256": "84eb7fff9bb64f52b6f6bff55e8eb1abcd24ac439a5949ff13db1cf0666329ed"
+    },
+    {
+      "path": "c/oracle.h",
+      "size": 3329,
+      "sha256": "1f0dfc2e31fd169ada45248d38fd2debe514718ee4ea3aa590a8464fd0837664"
+    },
+    {
+      "path": "c/tools/make_glm_oracle.py",
+      "size": 16465,
+      "sha256": "7864aadbfe886385a87e051932e98732c58a45c4c17f4ea7f0ba9c43e730ab6a"
+    }
+  ],
+  "executed": false
+}

@@ -1,0 +1,284 @@
+{
+  "repository": "karlem/skills",
+  "revision": "c41b2b27c91da7155d555eb4946ece348ac08657",
+  "installed_skill_count": 11,
+  "installed_file_count": 44,
+  "files": [
+    {
+      "source_path": "architecture/distributed-systems/SKILL.md",
+      "installed_path": ".agents/skills/distributed-systems/SKILL.md",
+      "size": 3565,
+      "sha256": "6299853ef4b36db77b5ddbdd4035c05e0655b402c94c6cd749eed046de0e7ae4"
+    },
+    {
+      "source_path": "architecture/distributed-systems/references/sources.md",
+      "installed_path": ".agents/skills/distributed-systems/references/sources.md",
+      "size": 2970,
+      "sha256": "0d875accf2c9db398f228cb2c09449c50bc2fc81f76961a1160810ecf8aa1942"
+    },
+    {
+      "source_path": "architecture/distributed-systems/references/failure-ledger.md",
+      "installed_path": ".agents/skills/distributed-systems/references/failure-ledger.md",
+      "size": 3725,
+      "sha256": "4c4bdcde901345ac3d6af7dce56849ea7ef5eade3f645f8bab5c9e061cb4c101"
+    },
+    {
+      "source_path": "architecture/distributed-systems/references/consistency.md",
+      "installed_path": ".agents/skills/distributed-systems/references/consistency.md",
+      "size": 3688,
+      "sha256": "322592ba85e5ab808c967a1307dcdb59d86fd94a3158d39ea79851c8cdd09899"
+    },
+    {
+      "source_path": "performance/linux-performance/SKILL.md",
+      "installed_path": ".agents/skills/linux-performance/SKILL.md",
+      "size": 3188,
+      "sha256": "76ad4f3a811bd3bbb9649265c6cdbfbe02b0abb6cea592626b1b24d6c9a7779e"
+    },
+    {
+      "source_path": "performance/linux-performance/references/sources.md",
+      "installed_path": ".agents/skills/linux-performance/references/sources.md",
+      "size": 2758,
+      "sha256": "43ab6abd22186ed1090764b8f6cf1399a725474806d0f179afa80561258261c1"
+    },
+    {
+      "source_path": "performance/linux-performance/references/experiments.md",
+      "installed_path": ".agents/skills/linux-performance/references/experiments.md",
+      "size": 3025,
+      "sha256": "058c5468f784324b44bcfcdf2e201e5b79c4c09322f59455fe9c5698d1396cfb"
+    },
+    {
+      "source_path": "performance/linux-performance/references/measurements.md",
+      "installed_path": ".agents/skills/linux-performance/references/measurements.md",
+      "size": 3310,
+      "sha256": "296c0c0f029d8ade9f9916d14eaf542844baca7c142800fb2bf95a56c44f0e30"
+    },
+    {
+      "source_path": "performance/systems-profiling/SKILL.md",
+      "installed_path": ".agents/skills/systems-profiling/SKILL.md",
+      "size": 3025,
+      "sha256": "e0a03eb457eb8cf9fe8724f2400b93db66653d3d86ad43613232ab14479b2bd9"
+    },
+    {
+      "source_path": "performance/systems-profiling/references/sources.md",
+      "installed_path": ".agents/skills/systems-profiling/references/sources.md",
+      "size": 2758,
+      "sha256": "43ab6abd22186ed1090764b8f6cf1399a725474806d0f179afa80561258261c1"
+    },
+    {
+      "source_path": "performance/systems-profiling/references/profiles.md",
+      "installed_path": ".agents/skills/systems-profiling/references/profiles.md",
+      "size": 3023,
+      "sha256": "a560892d9121af7b674d341ed67ece9d6bc404d653c55819f294ae4814ad3651"
+    },
+    {
+      "source_path": "architecture/architecture-tradeoffs/SKILL.md",
+      "installed_path": ".agents/skills/architecture-tradeoffs/SKILL.md",
+      "size": 2952,
+      "sha256": "8b64fb7c2c0a3c1322c26e822ff756ea80d2ea0d6fbadaeb090bc0ec3838af1b"
+    },
+    {
+      "source_path": "architecture/architecture-tradeoffs/references/sources.md",
+      "installed_path": ".agents/skills/architecture-tradeoffs/references/sources.md",
+      "size": 2195,
+      "sha256": "837ff6e5b505fd15854ff26fdc4fa9dd48a913893687a5f026ff5851db450d8e"
+    },
+    {
+      "source_path": "architecture/architecture-tradeoffs/references/boundaries.md",
+      "installed_path": ".agents/skills/architecture-tradeoffs/references/boundaries.md",
+      "size": 3453,
+      "sha256": "0cdd898be79f290e28febe3a29805f8eba71f2e2b23d6cf4c6b6ab35a9b4220b"
+    },
+    {
+      "source_path": "architecture/architecture-tradeoffs/references/migration.md",
+      "installed_path": ".agents/skills/architecture-tradeoffs/references/migration.md",
+      "size": 2707,
+      "sha256": "8f9ac7192e5aeeae6811d93b6363ceadd5bccd77f01085bd1072fb4e3763c39b"
+    },
+    {
+      "source_path": "databases/database-internals/SKILL.md",
+      "installed_path": ".agents/skills/database-internals/SKILL.md",
+      "size": 2972,
+      "sha256": "931686dc0b5b8f0270db6cbaeec8785ece1f2b05bda6aa4c9145dc06650c909b"
+    },
+    {
+      "source_path": "databases/database-internals/references/sources.md",
+      "installed_path": ".agents/skills/database-internals/references/sources.md",
+      "size": 2423,
+      "sha256": "6d83664d9885e6aaff25a1337c5d874a81ab4a001aae9b48b3a6f1ce6024400e"
+    },
+    {
+      "source_path": "databases/database-internals/references/recovery.md",
+      "installed_path": ".agents/skills/database-internals/references/recovery.md",
+      "size": 2932,
+      "sha256": "ff72ac3e5a9aa729aef0df6483fa40a590f89fbd624b90a9d49aacb0bbfe9675"
+    },
+    {
+      "source_path": "databases/database-internals/references/storage.md",
+      "installed_path": ".agents/skills/database-internals/references/storage.md",
+      "size": 3841,
+      "sha256": "b05cce5c3583361c6a76c850762a05da3bd27b5c6b4e7bc0db1b38d666a0dce5"
+    },
+    {
+      "source_path": "engineering/systems-programming/SKILL.md",
+      "installed_path": ".agents/skills/systems-programming/SKILL.md",
+      "size": 2872,
+      "sha256": "53a3a959a15a9245923aa095118e797cd0f2ea55f9069a8c83ec417654a322cc"
+    },
+    {
+      "source_path": "engineering/systems-programming/references/sources.md",
+      "installed_path": ".agents/skills/systems-programming/references/sources.md",
+      "size": 2388,
+      "sha256": "d88cf9bd554727ca9c3c6e175e421205851a5bbd8174e5122e87f38fa3b2a78a"
+    },
+    {
+      "source_path": "engineering/systems-programming/references/io.md",
+      "installed_path": ".agents/skills/systems-programming/references/io.md",
+      "size": 2905,
+      "sha256": "0060cf440afd02622b32564390475508844265283c9024e78ad2c4d1613db419"
+    },
+    {
+      "source_path": "engineering/systems-programming/references/memory.md",
+      "installed_path": ".agents/skills/systems-programming/references/memory.md",
+      "size": 3354,
+      "sha256": "b94d98909906e47fc8519be98da9b3cf279c3fc01215ba234f76c8121518a7a3"
+    },
+    {
+      "source_path": "reliability/production-reliability/SKILL.md",
+      "installed_path": ".agents/skills/production-reliability/SKILL.md",
+      "size": 2865,
+      "sha256": "fc3da6764f785e91fdb57144953d545d375c28d6383e46baa21b493f85bb11eb"
+    },
+    {
+      "source_path": "reliability/production-reliability/references/sources.md",
+      "installed_path": ".agents/skills/production-reliability/references/sources.md",
+      "size": 2267,
+      "sha256": "5f698f6d48d277897c190de68197ed779ce97ad9452b24565051d3f622b84bff"
+    },
+    {
+      "source_path": "reliability/production-reliability/references/containment.md",
+      "installed_path": ".agents/skills/production-reliability/references/containment.md",
+      "size": 3086,
+      "sha256": "f292451dbe566da29247121d13a9a9a28885a919fa92faa8f9300d4e4e0166c2"
+    },
+    {
+      "source_path": "reliability/production-reliability/references/retries.md",
+      "installed_path": ".agents/skills/production-reliability/references/retries.md",
+      "size": 3032,
+      "sha256": "4ba23599a1e59106416188381fcf7f94e9e82a16aaacbd9c0325cf7b1d5d059b"
+    },
+    {
+      "source_path": "concurrency/concurrent-programming/SKILL.md",
+      "installed_path": ".agents/skills/concurrent-programming/SKILL.md",
+      "size": 2883,
+      "sha256": "c8ef6ece0497f75e41782760f7afe4e3d041dad5af5b15a2d48b41744c3baa8c"
+    },
+    {
+      "source_path": "concurrency/concurrent-programming/references/sources.md",
+      "installed_path": ".agents/skills/concurrent-programming/references/sources.md",
+      "size": 2814,
+      "sha256": "0ee99625f1f1fc24bffea113925f222a7be206e737a40ac7ec2da35d34259aa0"
+    },
+    {
+      "source_path": "concurrency/concurrent-programming/references/correctness.md",
+      "installed_path": ".agents/skills/concurrent-programming/references/correctness.md",
+      "size": 3161,
+      "sha256": "ae2965e5a707c19f9a1681a67dff0db68467966c51a5cf82972e29abcbecb0d5"
+    },
+    {
+      "source_path": "concurrency/concurrent-programming/references/progress.md",
+      "installed_path": ".agents/skills/concurrent-programming/references/progress.md",
+      "size": 3110,
+      "sha256": "36ecbfdd9bf253a590f22b80b017dd135104cc4f97fadbbd7aeabcc5ad35c2fc"
+    },
+    {
+      "source_path": "architecture/architecture-patterns/SKILL.md",
+      "installed_path": ".agents/skills/architecture-patterns/SKILL.md",
+      "size": 2929,
+      "sha256": "589cfc534c229983d1f77d98de3ba2ab2c06f33509a8f9fea32ad466f71a3925"
+    },
+    {
+      "source_path": "architecture/architecture-patterns/references/sources.md",
+      "installed_path": ".agents/skills/architecture-patterns/references/sources.md",
+      "size": 2988,
+      "sha256": "ad6d34fab55c057081630dc6f32188d42b431bc72e8896714434f3e5a0c5bcd7"
+    },
+    {
+      "source_path": "architecture/architecture-patterns/references/fitness.md",
+      "installed_path": ".agents/skills/architecture-patterns/references/fitness.md",
+      "size": 2521,
+      "sha256": "37ee42620ee55d93e104bc597d1f6ef8855ce4892692fd1b2f6a49bd170a4bec"
+    },
+    {
+      "source_path": "architecture/architecture-patterns/references/selection.md",
+      "installed_path": ".agents/skills/architecture-patterns/references/selection.md",
+      "size": 3513,
+      "sha256": "1326f17357223f09c051e4cd37ea712721507750e52d63d165dfaeeedbfc0fc5"
+    },
+    {
+      "source_path": "engineering/design-patterns/SKILL.md",
+      "installed_path": ".agents/skills/design-patterns/SKILL.md",
+      "size": 2767,
+      "sha256": "47e683f089ea4593e108069d488b55685d70cacb6ac63666982fc9d67ce37f4f"
+    },
+    {
+      "source_path": "engineering/design-patterns/references/sources.md",
+      "installed_path": ".agents/skills/design-patterns/references/sources.md",
+      "size": 1970,
+      "sha256": "e2ae32ca22dab8894a612d8a5db1d5e02912d78c1589ab5d06c8cd94bec0d12c"
+    },
+    {
+      "source_path": "engineering/design-patterns/references/example.md",
+      "installed_path": ".agents/skills/design-patterns/references/example.md",
+      "size": 2518,
+      "sha256": "98e641bad6259ecb5ea1af378a0ae88afae3a22cc9a737fd541bad74378f9526"
+    },
+    {
+      "source_path": "engineering/design-patterns/references/selection.md",
+      "installed_path": ".agents/skills/design-patterns/references/selection.md",
+      "size": 3236,
+      "sha256": "d515329cd6c2f6977a5b573b77b83793ec95fb16b2ffb0c47abe93543a025b58"
+    },
+    {
+      "source_path": "networking/network-engineering/SKILL.md",
+      "installed_path": ".agents/skills/network-engineering/SKILL.md",
+      "size": 2936,
+      "sha256": "b4e7ff81eccd204a9555707a7ce2d75de8cb61d2b11adecc168c9b3a4902568d"
+    },
+    {
+      "source_path": "networking/network-engineering/references/sources.md",
+      "installed_path": ".agents/skills/network-engineering/references/sources.md",
+      "size": 3793,
+      "sha256": "7d55be60d7b1b830be0b2b720a7c8f0fc80d820061abefa316496aac57b8bee7"
+    },
+    {
+      "source_path": "networking/network-engineering/references/transports.md",
+      "installed_path": ".agents/skills/network-engineering/references/transports.md",
+      "size": 2823,
+      "sha256": "fdde3fa72fc9b6285d1d7260d0c6de9b8fe1c01b7d136854afedd4a8acfe232d"
+    },
+    {
+      "source_path": "networking/network-engineering/references/layers.md",
+      "installed_path": ".agents/skills/network-engineering/references/layers.md",
+      "size": 3726,
+      "sha256": "12db45f83d3c585288230ea48f4d5bff96c222190c2d506bc1115ad83f927bea"
+    },
+    {
+      "source_path": "networking/network-engineering/references/paths.md",
+      "installed_path": ".agents/skills/network-engineering/references/paths.md",
+      "size": 3042,
+      "sha256": "d12694d207e20b83088324ad847438bb73120b6720a03b9fd67af109a3fc8a70"
+    }
+  ],
+  "install_commands": [
+    {
+      "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /workspace/spoj/.agents/skills --all --dry-run",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /workspace/spoj/.agents/skills --all",
+      "exit_code": 0
+    }
+  ],
+  "host_registry_hot_reload_verified": false,
+  "skills_manually_read_and_applied": true
+}

@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-18",
+  "branches": [
+    {
+      "name": "issue-1",
+      "sha": "79d0a2eb76ed4c1b61ede61454f0541932cf0b24"
+    },
+    {
+      "name": "local-tcp-demo",
+      "sha": "6e82bd19d3fa6c113f79001299dfb1b727cf0c13"
+    },
+    {
+      "name": "main",
+      "sha": "5d7e915ab5be07f14b573eda51c91c9039a5e9b4"
+    },
+    {
+      "name": "research/heterorouter",
+      "sha": "ddce2f549decbd6ba8ae3bcfb3ecd2706e7d85bd"
+    }
+  ],
+  "open_pull_requests": [
+    {
+      "number": 8,
+      "title": "Explore HetRoute primary algorithms and synthetic joint routing",
+      "draft": true,
+      "url": "https://github.com/karlem/spoj/pull/8",
+      "head": "ddce2f549decbd6ba8ae3bcfb3ecd2706e7d85bd",
+      "head_ref": "research/heterorouter",
+      "base": "local-tcp-demo"
+    },
+    {
+      "number": 6,
+      "title": "Demonstrate local TCP MoE parity with raw contribution evidence",
+      "draft": true,
+      "url": "https://github.com/karlem/spoj/pull/6",
+      "head": "6e82bd19d3fa6c113f79001299dfb1b727cf0c13",
+      "head_ref": "local-tcp-demo",
+      "base": "issue-1"
+    },
+    {
+      "number": 3,
+      "title": "Draft: prove tiny Qwen3 MoE parity across two CPU workers",
+      "draft": true,
+      "url": "https://github.com/karlem/spoj/pull/3",
+      "head": "79d0a2eb76ed4c1b61ede61454f0541932cf0b24",
+      "head_ref": "issue-1",
+      "base": "main"
+    }
+  ],
+  "research_base": "ddce2f549decbd6ba8ae3bcfb3ecd2706e7d85bd",
+  "product_evaluated_historical_commit": "1193fcf8733ae73bde4ff3f18fdaf2c5c61932d7"
+}

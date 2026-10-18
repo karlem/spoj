@@ -1,0 +1,34 @@
+{
+  "status": "source-derived bounds only; physical inputs absent",
+  "representation": "int4-g64 routed experts, f32 per-group scales; actual checkpoint metadata unverified",
+  "hidden_D": null,
+  "expert_intermediate_I": null,
+  "expert_weights_bytes_formula": "2*I*ceil(D/2)+D*ceil(I/2)",
+  "expert_scale_bytes_formula": "4*(2*I*ceil(D/64)+D*ceil(I/64))",
+  "when_D_and_I_are_multiples_of_64": {
+    "weights_bytes": "1.5*D*I",
+    "scales_bytes": "0.1875*D*I",
+    "combined_bytes": "1.6875*D*I",
+    "bits_per_weight_including_scales": 4.5
+  },
+  "baseline_buffered_contiguous_successful_read_api_calls_per_expert": {
+    "weight": 1,
+    "scale": 3,
+    "note": "Wrapper operations; actual pread syscalls may repeat after EINTR/short reads."
+  },
+  "treatment_advice_api_calls_per_expert": {
+    "synchronous_contiguous_success_path": 4,
+    "io_uring": "one per completed read request; derive from actual trace"
+  },
+  "intervention_eliminates_pread_copy": false,
+  "intervention_frees_owned_slabs": false,
+  "page_bytes_in_observed_guest": 4096,
+  "checkpoint_bytes_observed": null,
+  "physical_storage_bytes_read": null,
+  "matched_sustainable_storage_bytes_per_second": null,
+  "untraced_baseline_seconds": null,
+  "exposed_affected_critical_path_fraction_p": null,
+  "maximum_ideal_speedup_formula": "1/(1-p), 0<=p<1; p is exclusive affected critical-path time, not summed loader service",
+  "numerical_speedup_bound": null,
+  "reason_not_implemented": "No measured affected fraction or matched physical bandwidth; best-case benefit cannot justify a new implementation. Existing one-knob experiment specified, not run."
+}
