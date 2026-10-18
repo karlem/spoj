@@ -1,0 +1,12 @@
+{
+  "completed_utc": "2026-10-18T18:09:03.988452+00:00",
+  "task_id": "hardware-os-20261018-1801/hardware-sources",
+  "worker_id": "/root/hardware_sources",
+  "model_id": "unavailable",
+  "actual_source_bytes_retained": 2001099,
+  "external_code_executed": false,
+  "hardware_experiments": false,
+  "source_families": 8,
+  "decision": "PURSUE bounded locality/traffic measurement; new OS UNRESOLVED and unjustified; no hardware performance validated",
+  "independent_validation": "not performed by this author"
+}

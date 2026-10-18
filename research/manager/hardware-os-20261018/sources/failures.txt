@@ -1,0 +1,12 @@
+Intel source retrieval: initial original newsroom URL HTTP200 redirected to https://www.intel.com/content/www/us/en/newsroom/home.html; irrelevant source, excluded from technical claims.
+Intel guessed product URL: HTTP Error 404: Not Found; excluded.
+Intel alternate newsroom host: HTTP200 redirected to same unrelated newsroom home, identical hash; excluded.
+
+Failed inline helper, exit1 (before corrected final_fetch.py):
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+FileNotFoundError: [Errno 2] No such file or directory: 'manifest.json'

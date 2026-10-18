@@ -1,0 +1,7 @@
+{
+  "command": "UV_OFFLINE=1 UV_CACHE_DIR=/workspace/scratch/hardware-offline-uv-cache HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 ./scripts/check.sh",
+  "started_at": "2026-10-18T18:11:45.866153+00:00",
+  "elapsed_seconds": 0.11522482399959699,
+  "exit_code": 1,
+  "note": "Offline cache isolation avoids dependency downloads; product tests did not run."
+}

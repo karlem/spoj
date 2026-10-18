@@ -1,0 +1,195 @@
+[
+  {
+    "id": "h100",
+    "url": "https://www.nvidia.com/en-us/data-center/h100/",
+    "retrieved_utc": "2026-10-18T18:04:00.819013+00:00",
+    "status": 200,
+    "final_url": "https://www.nvidia.com/en-us/data-center/h100/",
+    "bytes": 302797,
+    "sha256": "9b4ec239a494c7f78ea9b5d0d922aa92b09eb59669ff2fe313baf952e9d4458d",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 400,
+        "last_line": 405,
+        "text": "GPU Memory\n80GB\n94GB\nGPU Memory Bandwidth\n3.35TB/s\n3.9TB/s"
+      }
+    ]
+  },
+  {
+    "id": "connectx7",
+    "url": "https://docs.nvidia.com/networking/display/connectx7vpi/specifications",
+    "retrieved_utc": "2026-10-18T18:04:00.819552+00:00",
+    "status": 200,
+    "final_url": "https://networking-docs.nvidia.com/connectx7hw/specifications",
+    "bytes": 121410,
+    "sha256": "28f2c2dda53a3336f1451b3b49e63f24e1621c5c6f4301a6042ba7f105c8be89",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 51,
+        "last_line": 57,
+        "text": "Networking Port: Single OSFP InfiniBand and Ethernet\nData Rate\nInfiniBand (Default)\nNDR/NDR200/HDR/HDR100/EDR/FDR/SDR\nEthernet\n400/200/100/50/40/10/1 Gb/s Ethernet\nProtocol Support"
+      },
+      {
+        "first_line": 105,
+        "last_line": 105,
+        "text": "b. This table lists the electrical protocols. A wide range of optical protocols are delivered through the C2M interfaces listed in this table and optical modules. Examples are 100GBASE-SR4 and 400GBASE-DR4."
+      }
+    ]
+  },
+  {
+    "id": "gpudirect",
+    "url": "https://docs.nvidia.com/cuda/gpudirect-rdma/index.html",
+    "retrieved_utc": "2026-10-18T18:04:00.819956+00:00",
+    "status": 200,
+    "final_url": "https://docs.nvidia.com/cuda/gpudirect-rdma/index.html",
+    "bytes": 144435,
+    "sha256": "5c6a0e936d8c2414774e92d3128bb4f16b65be0f90dc6f06f32103f009cd5713",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 62,
+        "last_line": 64,
+        "text": "GPUDirect RDMA is a technology introduced in Kepler-class GPUs and CUDA 5.0 that enables a direct path for data exchange between the GPU and a third-party peer device using standard features of PCI Express. Examples of third-party devices are: network interfaces, video acquisition devices, storage adapters.\nGPUDirect RDMA is available on both Tesla and Quadro GPUs.\nA number of limitations can apply, the most important being that the two devices must share the same upstream PCI Express root complex. Some of the limitations depend on the platform used and could be lifted in current/future products."
+      }
+    ]
+  },
+  {
+    "id": "mlx-distributed",
+    "url": "https://ml-explore.github.io/mlx/build/html/usage/distributed.html",
+    "retrieved_utc": "2026-10-18T18:04:00.820259+00:00",
+    "status": 200,
+    "final_url": "https://ml-explore.github.io/mlx/build/html/usage/distributed.html",
+    "bytes": 171607,
+    "sha256": "5470aa3d49beb11ce28a5910363c3966a4fa2a3c07a9e3fb31e4771f6e5f1a0c",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 1221,
+        "last_line": 1224,
+        "text": "Starting from macOS 26.2, RDMA over thunderbolt is available and\nenables low-latency communication between Macs with thunderbolt 5. MLX provides\nthe JACCL backend that uses this functionality to achieve communication latency\nan order of magnitude lower than the ring backend."
+      },
+      {
+        "first_line": 1274,
+        "last_line": 1276,
+        "text": "The JACCL backend supports only fully connected topologies. Namely, there needs\nto be a thunderbolt cable connecting all pairs of Macs directly. For example, in\nthe following topology visualizations, the left one is valid because there is a"
+      }
+    ]
+  },
+  {
+    "id": "thunderbolt5",
+    "url": "https://www.intel.com/content/www/us/en/newsroom/news/intel-introduces-thunderbolt-5-connectivity-standard.html",
+    "retrieved_utc": "2026-10-18T18:04:01.871247+00:00",
+    "status": 200,
+    "final_url": "https://www.intel.com/content/www/us/en/newsroom/home.html",
+    "bytes": 551619,
+    "sha256": "6334aa2df3336775b2481795427f5c00564f3c40e0c5ded474a7667ddfa62eb8",
+    "accepted_for_claims": false
+  },
+  {
+    "id": "linux-memory",
+    "url": "https://docs.kernel.org/admin-guide/mm/index.html",
+    "retrieved_utc": "2026-10-18T18:04:02.874097+00:00",
+    "status": 200,
+    "final_url": "https://docs.kernel.org/admin-guide/mm/index.html",
+    "bytes": 14149,
+    "sha256": "51234a5393a1325b9d833ca7b11708a45d54e860879b5cbe5bff947590fd645a",
+    "accepted_for_claims": true
+  },
+  {
+    "id": "io-uring",
+    "url": "https://man7.org/linux/man-pages/man7/io_uring.7.html",
+    "retrieved_utc": "2026-10-18T18:04:03.312732+00:00",
+    "status": 200,
+    "final_url": "https://man7.org/linux/man-pages/man7/io_uring.7.html",
+    "bytes": 44797,
+    "sha256": "1ed71f55954959fc551915363b054c62fb28ba57ede487303d4cb2de0057feb9",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 216,
+        "last_line": 223,
+        "text": "       kernel that you have queued SQEs on to the SQ.  With SQ Polling,\nio_uring\nstarts a kernel thread that polls the submission queue\n       for any I/O requests you submit by adding SQEs.  With SQ Polling\n       enabled, there is no need for you to call\nio_uring_enter(2)\n,\n       letting you avoid the overhead of system calls.  A designated"
+      }
+    ]
+  },
+  {
+    "id": "ix",
+    "url": "https://raw.githubusercontent.com/ix-project/ix/550bf28a4ddd5fafcec707a14acd502712a10dae/README.md",
+    "retrieved_utc": "2026-10-18T18:04:03.994369+00:00",
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/ix-project/ix/550bf28a4ddd5fafcec707a14acd502712a10dae/README.md",
+    "bytes": 2219,
+    "sha256": "251ad4749104c03f941df024c1ba06cd95042c8cad15aa3be9182dfa768c6f8a",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 1,
+        "last_line": 14,
+        "text": "## Overview\n\nIX a protected dataplane operating system project from Stanford and EPFL. It provides event-driven applications with:\n* low-latency (including at the tail)\n* high-throughput\n* efficient use of resources (to support workload consolidation and energy proportionality)\n\nIX is licensed under an MIT-style license.  See LICENSE.\n\n## Requirements\n\nIX requires Intel DPDK and a supported Intel NIC: \n- Intel 82599\n- Intel X520"
+      }
+    ]
+  },
+  {
+    "id": "thunderbolt5-product",
+    "url": "https://www.intel.com/content/www/us/en/architecture-and-technology/thunderbolt/thunderbolt-5.html",
+    "retrieved_utc": "2026-10-18T18:04:41.904524+00:00",
+    "failure": "HTTP Error 404: Not Found",
+    "accepted_for_claims": false
+  },
+  {
+    "id": "linux-numa",
+    "url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html",
+    "retrieved_utc": "2026-10-18T18:04:41.905102+00:00",
+    "status": 200,
+    "final_url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html",
+    "bytes": 39556,
+    "sha256": "6e123a7e256ce2f1196bf2b306272b822ee938af87c6250e2343cf3f34f4d4dd",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 69,
+        "last_line": 72,
+        "text": "In the Linux kernel, \u201cmemory policy\u201d determines from which node the kernel will\nallocate memory in a NUMA system or in an emulated NUMA system.  Linux has\nsupported platforms with Non-Uniform Memory Access architectures since 2.4.?.\nThe current memory policy support was added to Linux 2.6 around May 2004.  This"
+      }
+    ]
+  },
+  {
+    "id": "linux-thp",
+    "url": "https://docs.kernel.org/admin-guide/mm/transhuge.html",
+    "retrieved_utc": "2026-10-18T18:04:41.905377+00:00",
+    "status": 200,
+    "final_url": "https://docs.kernel.org/admin-guide/mm/transhuge.html",
+    "bytes": 55719,
+    "sha256": "9210d85532f46083a1d410b574cbc02ac63f1228479ea1cba7e8792bd3b91a25",
+    "accepted_for_claims": true,
+    "extracts": [
+      {
+        "first_line": 150,
+        "last_line": 152,
+        "text": "Applications that gets a lot of benefit from hugepages and that don\u2019t\nrisk to lose memory by using hugepages, should use\nmadvise(MADV_HUGEPAGE) on their critical mmapped regions."
+      }
+    ]
+  },
+  {
+    "id": "ix-license",
+    "url": "https://raw.githubusercontent.com/ix-project/ix/550bf28a4ddd5fafcec707a14acd502712a10dae/LICENSE",
+    "retrieved_utc": "2026-10-18T18:04:41.905688+00:00",
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/ix-project/ix/550bf28a4ddd5fafcec707a14acd502712a10dae/LICENSE",
+    "bytes": 1172,
+    "sha256": "3135634b1d53cee8fb2e6c5c1d8e00f6301cd9acffb510dd58187d27d60a04dc",
+    "accepted_for_claims": true
+  },
+  {
+    "id": "thunderbolt5-news",
+    "url": "https://newsroom.intel.com/client-computing/intel-introduces-thunderbolt-5-connectivity-standard",
+    "retrieved_utc": "2026-10-18T18:05:54.180101+00:00",
+    "status": 200,
+    "final_url": "https://www.intel.com/content/www/us/en/newsroom/home.html",
+    "bytes": 551619,
+    "sha256": "6334aa2df3336775b2481795427f5c00564f3c40e0c5ded474a7667ddfa62eb8",
+    "accepted_for_claims": false
+  }
+]
