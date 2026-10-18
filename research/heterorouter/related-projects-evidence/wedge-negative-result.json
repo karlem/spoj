@@ -1,0 +1,6 @@
+{
+  "command": "spoi/.venv/bin/python research/heterorouter/wedge_probe.py --eplb-source /workspace/scratch/wedge/wrong-source.py",
+  "exit_code": 2,
+  "expected_exit_code": 2,
+  "source_rejected_before_import": true
+}

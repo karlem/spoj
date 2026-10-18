@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-10-18T09:06:06.186196+00:00",
+  "evaluated_probe_sha256": "e901b764d572a24acfab25bc6de22feb5c247e94972dddbec24834a29f1320af",
+  "parent_probe_command": "spoi/.venv/bin/python research/heterorouter/wedge_probe.py --eplb-source /workspace/scratch/software-atlas/deepseek-ai--EPLB/eplb.py",
+  "parent_exit_code": 0,
+  "independent_exit_code": 0,
+  "complete_parsed_json_matches": true,
+  "constructed_cases": 4,
+  "finite_feasible_assignments_per_case": [
+    6,
+    6,
+    6,
+    4
+  ],
+  "source_hash_negative_exit_code": 2,
+  "negative_expected": true,
+  "primary_readme_hashes_verified": [
+    "jundot/omlx",
+    "mostlygeek/llama-swap",
+    "waybarrios/vllm-mlx",
+    "osaurus-ai/osaurus",
+    "ggml-org/llama.cpp",
+    "JustVugg/colibri"
+  ],
+  "issue_snapshot_hashes_verified": 6,
+  "issue_comments_fetched": 56,
+  "issue_comment_status": "all retrieved; bodies and selected comment passages inspected, not independently verified reports",
+  "git_diff_check_exit_code": 0,
+  "existing_lock_sha256": "84c7d962a98809b1d158c99bbf37426262a62451dabdd2efc2f82d244775f2e7",
+  "torch_matches_lock_base_version": true,
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.1+cu130"
+  },
+  "setup_sync_executed_in_this_study": false,
+  "product_tests_run": false,
+  "native_mac_run": false,
+  "model_execution_or_download": false,
+  "physical_network_benchmark": false,
+  "deployment_advantage_established": false,
+  "goal_blocker": "Actual target devices, model artifact and a qualified local-bot task/SLO unavailable; source-only and constructed-input policy evaluation cannot establish a deployment advantage."
+}

@@ -1,0 +1,243 @@
+{
+  "source_revision": "d52c72d5b2f2fb4c41afbf8eb21366820239913d",
+  "source_sha256": "25b37ccd83aef2369c68f2b4bb596608a4f289956d97d9a3504bfd3159459e29",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.1+cu130"
+  },
+  "observed_upstream_physical_expert_order": [
+    0,
+    3,
+    1,
+    2
+  ],
+  "cases": [
+    {
+      "name": "equal_devices",
+      "input_provenance": "constructed/assumed",
+      "loads": [
+        100,
+        90,
+        10,
+        1
+      ],
+      "assumed_service_rates": [
+        1,
+        1
+      ],
+      "capacity_slots": [
+        2,
+        2
+      ],
+      "eplb_owners": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "eplb_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          101.0,
+          100.0
+        ],
+        "parallel_makespan_work_units": 101.0,
+        "sum_service_work_units": 201.0
+      },
+      "feasible_assignments": 6,
+      "finite_oracle_owners": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "finite_oracle_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          101.0,
+          100.0
+        ],
+        "parallel_makespan_work_units": 101.0,
+        "sum_service_work_units": 201.0
+      }
+    },
+    {
+      "name": "device0_tenfold_service",
+      "input_provenance": "constructed/assumed",
+      "loads": [
+        100,
+        90,
+        10,
+        1
+      ],
+      "assumed_service_rates": [
+        10,
+        1
+      ],
+      "capacity_slots": [
+        2,
+        2
+      ],
+      "eplb_owners": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "eplb_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          10.1,
+          100.0
+        ],
+        "parallel_makespan_work_units": 100.0,
+        "sum_service_work_units": 110.1
+      },
+      "feasible_assignments": 6,
+      "finite_oracle_owners": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "finite_oracle_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          19.0,
+          11.0
+        ],
+        "parallel_makespan_work_units": 19.0,
+        "sum_service_work_units": 30.0
+      }
+    },
+    {
+      "name": "device1_tenfold_service",
+      "input_provenance": "constructed/assumed",
+      "loads": [
+        100,
+        90,
+        10,
+        1
+      ],
+      "assumed_service_rates": [
+        1,
+        10
+      ],
+      "capacity_slots": [
+        2,
+        2
+      ],
+      "eplb_owners": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "eplb_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          101.0,
+          10.0
+        ],
+        "parallel_makespan_work_units": 101.0,
+        "sum_service_work_units": 111.0
+      },
+      "feasible_assignments": 6,
+      "finite_oracle_owners": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "finite_oracle_score": {
+        "occupancy": [
+          2,
+          2
+        ],
+        "device_service_work_units": [
+          11.0,
+          19.0
+        ],
+        "parallel_makespan_work_units": 19.0,
+        "sum_service_work_units": 30.0
+      }
+    },
+    {
+      "name": "unequal_capacity_slots",
+      "input_provenance": "constructed/assumed",
+      "loads": [
+        100,
+        90,
+        10,
+        1
+      ],
+      "assumed_service_rates": [
+        10,
+        1
+      ],
+      "capacity_slots": [
+        3,
+        1
+      ],
+      "eplb_owners": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "eplb_score": null,
+      "feasible_assignments": 4,
+      "finite_oracle_owners": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "finite_oracle_score": {
+        "occupancy": [
+          3,
+          1
+        ],
+        "device_service_work_units": [
+          19.1,
+          10.0
+        ],
+        "parallel_makespan_work_units": 19.1,
+        "sum_service_work_units": 29.1
+      }
+    }
+  ],
+  "cold_exposure_thought_model": {
+    "experts_per_layer": 64,
+    "cold_experts_per_layer": 1,
+    "topk": 2,
+    "layers": 32,
+    "assumption": "uniform top-k without replacement per layer; independent layers",
+    "cold_placement_fraction": 0.015625,
+    "probability_token_requires_cold_tier": 0.6379447107436834
+  },
+  "limits": [
+    "not measured device/link rates",
+    "not MoE token end-to-end latency",
+    "no weights, model forward pass or generation",
+    "no transport/hardware experiment",
+    "no proof of SPOJ speedup or application usefulness",
+    "finite assignment oracle only",
+    "EPLB evaluated outside its equal-slot homogeneous-rate model; not an upstream bug claim"
+  ]
+}

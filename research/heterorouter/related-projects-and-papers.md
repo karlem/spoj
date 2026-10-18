@@ -633,3 +633,225 @@ numerical oracle, resource/traffic conservation, paired workloads, uncertainty
 and retained negative results. Pick the smallest comparison that could reverse
 our choice. Broad discovery is authorized; blindly combining all mechanisms or
 starting new hardware/runtime work is not implied.
+
+
+## Wedge decision: affordable capacity, with a hard usefulness gate
+
+Date2026-10-18. Human objective: find a defensible open-source advantage for
+SPOJ around affordable local inference or long-running bots; run useful research
+experiments if needed. This permits this bounded source/policy study under issue
+#7. It does not start a replacement runtime, new hardware deployment, issue #2,
+checkpoint download, full-model generation, or merge. The earlier local TCP
+correctness and outstanding native Mac acceptance remain unchanged.
+
+**Decision: investigate one narrow candidate, not another general inference
+server. No independently demonstrated SPOJ application advantage exists yet.**
+The proposed user is someone with an existing inference-capable machine and a
+spare RAM-rich host who cannot fit the desired model locally at the required
+context/precision. The proposed job is: **borrow capacity from that host while
+keeping the actual bot task within its latency and reliability budget**. This is
+an assumption based on the human's stated motivation, not a completed user study.
+An asynchronous question requests actual devices and a blocked/slow bot task.
+
+### What would be the deliverable, if the experiment earns it?
+
+Start with **one existing engine and model family**, not a new inference engine:
+a small measured placement/admission component and donor-host expert-execution
+integration, plus a replayable capacity/latency report. Use exact selected experts
+and explicitly supported precision. Colibri's existing expert-worker path is the
+first integration comparator to audit because it already moves activations to
+resident CPU experts. An existing engine adapter may be the entire contribution;
+an upstream patch is a better outcome than a separate framework without a reason
+to exist. Mac/Metal interoperability is a separate backend prerequisite, not
+already supplied by this recommendation.
+
+Potential advantage to test: with the **same owned devices**, improve a feasible
+placement's end-to-end task service, or enable a useful configuration that the
+single primary machine cannot hold. Capacity success has no speedup ratio against
+an OOM baseline. Compare absolute service and alternatives, including a smaller
+local model that meets the task target. A larger model is worthwhile only if its
+measured task quality/utility justifies its extra cost. No novelty or superiority
+claim follows from remote experts or cost-aware scheduling alone.
+
+### Candidates we should deprioritize
+
+| Candidate | Competitive evidence | Decision |
+| --- | --- | --- |
+| Another local bot server / menu-bar app | oMLX, vllm-mlx and Osaurus already describe serving, caching or local-agent features | No standalone wedge established; reuse rather than recreate |
+| Generic model swapping / idle eviction | llama-swap and oMLX already document it | Do not build a new project for this feature |
+| Persistent/tiered KV cache | oMLX, LMCache, vLLM/MLX ecosystem already cover substantial ground | Only pursue a demonstrated missing invariant or target workload; not generic novelty |
+| Distributed MoE / remote experts | Colibri already has expert workers; exo and others distribute models | Necessary mechanisms, not differentiation |
+| Generic heterogeneous bandwidth-aware placement | exo#957 and the paper survey already discuss it | Compare as a baseline/upstream opportunity, not an invented research novelty |
+| Capacity donor with measured usefulness/admission for one supported mixed setup | User questions and source limits make this plausible, but current projects and beta work may already solve enough | Highest-priority falsifiable candidate; kill it if an existing engine solves the task equally well |
+| MoE backend conformance/fault harness | Current SPOJ evidence validates a bounded block/TCP boundary, and upstream reports mention cache identity failures | Useful developer contribution/fallback, not yet a proven consumer product or absence of upstream tests |
+
+Newly inspected primary documentation:
+- [jundot/omlx](https://github.com/jundot/omlx/blob/165be1ff5933a020f2f5a7544e1e95a2797f777f/README.md).
+- [mostlygeek/llama-swap](https://github.com/mostlygeek/llama-swap/blob/a2796fb0306215c6883454a8707dfb22d25c3068/README.md).
+- [waybarrios/vllm-mlx](https://github.com/waybarrios/vllm-mlx/blob/ab74aa6606a1ac7647f4981320e863edee70823a/README.md).
+- [osaurus-ai/osaurus](https://github.com/osaurus-ai/osaurus/blob/1e5bfab23ecf630546a1f82cc882aa3c76473d8d/README.md).
+- [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp/blob/547208dca250ceb3e4c8615598d043f2b602a527/README.md).
+- [JustVugg/colibri](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/README.md).
+
+oMLX documents unequal-memory Mac pipeline serving, byte-aware shard planning,
+**measured compute/link rebalancing**, and headroom-aware tuning as well as tiered
+KV cache, model LRU/TTL and memory enforcement. Thus measured placement alone,
+even across unequal-memory Macs, is not an unoccupied wedge. A local
+bot-serving layer is also occupied ground. These are README claims, not our
+verified compatibility, throughput or reliability results. Osaurus's broad
+security/reliability marketing is not adopted as evidence here.
+
+### Concrete need signals, and evidence against our favorite story
+
+Six selected GitHub issue bodies and selected comments were inspected; all
+available comments were fetched for context. Source metadata is in
+`wedge-sources.json`; user numbers/hardware descriptions were not independently
+verified. These show interest or reported pain, **not market size, willingness to
+adopt, unresolved feature absence, or proven benchmark results**.
+
+- [exo#1102](https://github.com/exo-explore/exo/issues/1102) asks for Mac/Spark and
+  mixed-device use. Importantly, a comment points to **public beta#1776**; later
+  comments discuss progress and stability. We must not pitch Mac+NVIDIA as a
+  capability nobody has. Validate current beta/version behavior before any claim.
+- [exo#957](https://github.com/exo-explore/exo/issues/957) already proposes using
+  bandwidth/latency rather than RAM-proportional placement. A discussion models
+  stage bottlenecks with CPU STREAM data. That is not GPU inference or measured
+  single-request latency; pipeline sum and concurrent-stage maximum are different
+  objectives. This is prior work to compare, not novelty to claim.
+- [exo#2373](https://github.com/exo-explore/exo/issues/2373) reports daily mixed-Mac
+  operation and manual management workarounds. Treat it as one anecdote about
+  operational friction; do not repeat its speed/hardware figures as verified facts.
+- [MLX-LM#1438](https://github.com/ml-explore/mlx-lm/issues/1438) requests
+  expert streaming above RAM capacity. Discussion already explores LRU, locality,
+  file-handle reuse, packed reads and failed heat-pinning/prefetch hypotheses.
+  Initial I/O-level predictions must be separated from later claimed in-engine
+  results and negative results; none were reproduced here. Later discussion also
+  reports cache-size peaks (more hits but slower decode), coalescing nulls on an
+  already-packed/concurrent engine, and existing streaming PR#1588. These weaken
+  generic pinning/prefetch/repacking pitches; inspect current artifacts first.
+- [MLX-LM#1194](https://github.com/ml-explore/mlx-lm/issues/1194) reports in-process
+  prefix-cache API friction for persistent applications. Existing cache helpers
+  and server caches are part of the discussion; a documentation/helper patch may
+  solve it more directly than a new cache platform.
+- [Colibri#2109](https://github.com/JustVugg/colibri/issues/2109) reports slow cache
+  warmup. **Comments already identify prewarming work#2111 on dev** and a separate
+  Windows warm-start fix#2131. Open issue status does not establish missing
+  implementation. Do not use prewarming as our defensible differentiator.
+
+This source triangulation is stronger than collecting more project names, but
+it still does not replace observing the human's real task on their actual setup.
+
+### Executed probe: why an existing homogeneous policy is insufficient evidence
+
+`wedge_probe.py` executes the previously inspected, SHA256-pinned upstream
+DeepSeek EPLB function on CPU. It compares four constructed cases against all
+feasible assignments of four experts to two devices. Loads are `[100,90,10,1]`;
+expert sizes are equal abstract slots; service rates and capacities are **assumed**.
+No expert math, model, link, queue, migration, arrival trace or hardware latency
+is measured. This is a scope/assumption test, not a new placement algorithm.
+
+The actual upstream output is physical expert order `[0,3,1,2]`, yielding logical
+owners `[0,1,1,0]`. With one replica per expert:
+
+| Constructed case | Upstream score | Finite assignment oracle | What this establishes |
+| --- | --- | --- | --- |
+| Equal rates1/1, two slots each |101 |101 | Policy matches the minimum maximum assigned service for this tiny homogeneous case |
+| Rates10/1, two slots each |100 |19 | Load count alone can make a poor assignment under an assumed rate asymmetry |
+| Rates1/10, two slots each |101 |19 | Merely swapping assumed rates changes cost but not that load-only mapping |
+| Rates10/1, capacities3/1 slots | Mapping violates one-slot bound |19.1 | Equal-count packing cannot express this constructed asymmetric capacity; this is outside upstream's equal-slot contract, not an upstream bug |
+
+Scores are synthetic service-work units; the oracle's objective is maximum
+assigned service under this finite independent-work model, not MoE token latency
+or global optimality of the paper/system. Six assignments are feasible in each
+2/2 case, four in the3/1 case. No quoted ratio is a measured speedup. Current
+SPOJ has not implemented or benchmarked a heterogeneous replacement policy.
+
+A source-hash corruption check rejects an unrelated Python file with expected
+exit2 **before importing it**. It does not test numerical model faults. Parent
+probe exit0 and independent reviewer exit0 outputs match completely; retained
+raw JSON and logs are in `related-projects-evidence/wedge-*`.
+
+A second analytical sanity check challenges 'cold experts are harmless': assume
+64 experts per layer, uniform top2 selection without replacement, one cold expert
+per layer, and32 independent layers. Only1/64=1.5625% of placements are cold, yet
+
+`P(token needs cold tier) = 1 - (C(63,2)/C(64,2))^32 = 0.6379447107`.
+
+That is **63.79% under these assumptions**, not an observed routing statistic.
+Real layer/token correlations, learned routing, owner placement and overlap can
+change it. Frequency alone cannot prove cold-tier latency is negligible; trace
+actual required expert completion barriers and quantify tails before buying RAM
+or writing an adaptive router.
+
+### The smallest decision experiment, proposed but not started
+
+Use one real task and one exact model representation on a primary host plus one
+existing RAM donor. Do not begin with multiple donors, CXL, RDMA, a new OS or
+full agent framework. Transport can remain ordinary TCP for the first comparison.
+One supported existing engine is the execution baseline; the present tiny HF/TCP
+experiment remains its own correctness evidence, not a deployable model server.
+
+1. **Establish task adequacy and the capacity problem.** Freeze task success,
+   model/precision/context, hardware, memory reserves and user latency budget.
+   Compare a smaller fully local model that actually completes the task. Inventory
+   owned resources; no hardware price/savings claim without costs and power data.
+2. **Measure simple alternatives before a new policy.** Same model/workload where
+   feasible: local resident; local offload/streaming; existing remote expert engine
+   with static ownership; a simple measured placement; only then proposed adaptive
+   placement/replica dispatch. Equal initialization, cache state and memory budget.
+   'Local resident' may be infeasible; report that rather than invent a ratio.
+3. **Check the complete resource path.** No hidden full-model copy on coordinator;
+   direct shard loading, per-tier peak including initialization/staging/replicas,
+   non-expert/KV/workspace/OS reserves, bytes transferred and cold-expert requests.
+   Mac unified memory counts once. Use actual selected expert IDs and independently
+   check contributions/output at the applicable precision/backend contract.
+4. **Replay a persistent-bot-shaped workload.** Include cold start, extending turns,
+   repeated tool prefixes, changed/forked prefixes, pauses/resume, context growth,
+   bounded concurrent requests and donor disconnect. Measure full-turn completion,
+   TTFT/inter-token tails, task/tool-call success, queueing, CPU/GPU/IO service,
+   useful/wasted transfers and recoverable failure. HTTP health is not generation
+   health. A prompt cache is not the bot's durable application/tool state.
+5. **Predeclare the pass and kill criteria.** Proposed engineering gate, subject
+   to workload qualification before execution: either useful new capacity within
+   the user's SLO, or at least20% lower p95 full-turn time versus the strongest
+   feasible same-hardware baseline, with a paired-run confidence interval excluding
+   no improvement, no task-quality regression and a declared throughput/energy
+   budget. Choose enough independent sessions and repeated cold/warm runs to
+   estimate tails; never report a reliable p95 from a handful of requests. Record
+   costs, failures and negative results. This threshold is a proposed decision
+   rule, not an achieved result or the human's already-approved SLO.
+
+**Kill/pivot:** if current Colibri/exo/oMLX already meets the real task equally
+well, use or improve it upstream. If the donor causes unacceptable tails, do not
+force distribution; compare a smaller local model or local streaming. If gains
+exist only under oracle future demand, uncharged staging/replication, different
+precision, dropped experts or a weak baseline, reject the apparent advantage.
+If a small upstream patch solves the pain, ship that patch rather than a new
+SPOJ runtime. A no-win result is a successful decision experiment.
+
+### Reproduce this bounded probe and current stopping point
+
+From the repository root at this research revision, frozen project environment:
+
+```sh
+uv sync --frozen --project spoi
+gh api -H 'Accept: application/vnd.github.raw+json' 'repos/deepseek-ai/EPLB/contents/eplb.py?ref=d52c72d5b2f2fb4c41afbf8eb21366820239913d' > /tmp/spoj-eplb.py
+spoi/.venv/bin/python research/heterorouter/wedge_probe.py --eplb-source /tmp/spoj-eplb.py > /tmp/spoj-wedge-results.json
+```
+
+Compare parsed JSON to `related-projects-evidence/wedge-probe-results.json`;
+environment versions may differ on another platform, but source output, cases,
+arithmetic and limits should match. This run used Python3.12.14 and
+PyTorch2.14.1+cu130 on Linux CPU policy tensors. Torch's base version matches
+`spoi/uv.lock`; no dependency, numerical tolerance or compatibility guard changed.
+The existing environment was reused; `uv sync` above is a reproduction instruction,
+not a newly executed setup check. Product tests were not rerun for this isolated
+research probe. No native Mac or multi-machine outcome is implied.
+
+**Physical/application validation is blocked on a specified real workload,
+available target devices and model artifact access under the existing
+no-checkpoint-download constraint.** No such advantage can be established from
+this worker's source inspection or synthetic probe. What is complete here is a
+ranked, falsifiable candidate and an evidence-backed rejection of several broad
+pitches; what remains unproven is a real deployment win or reason to maintain a
+standalone SPOJ product. Keep that distinction in the goal handoff.
