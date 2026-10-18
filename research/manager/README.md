@@ -1,7 +1,11 @@
 # SPOJ cloud research manager
 
-Status: configured; hosted execution and delegation require acceptance evidence.
+Status: startup fixture evidence is in PR #11; current capabilities and resumption status are tracked in issue #9.
 Owner: user. Scope: discover and validate a useful systems advantage for SPOJ.
+
+## Reusable prompts
+
+Use [PROMPTS.md](PROMPTS.md) for the pasteable manager entry prompt, workspace acceptance, worker roles, seven discovery briefs and assignment/evidence handoff format. The manager fills a task packet before dispatching a worker. These prompts do not instantiate persistent agents or create a separate Codex Cloud chat. Read the current issue #9 ledger before using the dated handoff.
 
 ## Operating contract
 Read AGENTS.md and docs/engineering/factory.md before work. Preserve existing product/native Mac acceptance gates. This charter authorizes bounded research, reversible userspace experiments, research issues and draft PRs; it does not authorize merges, purchases, paid services, checkpoint downloads, host OS changes, token launches or payment transactions.
