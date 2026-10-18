@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 1,
+      "finding": "JSON-shape assertion compared SQLite tuples with expected lists; retained raw output; fixture logic did not reach acceptance"
+    },
+    {
+      "attempt": 2,
+      "fixture_exit_code": 0,
+      "unit_exit_code": 0
+    }
+  ],
+  "commands": [
+    "/usr/bin/timeout 300s python -B -m unittest -v test_recovery_contract.py",
+    "/usr/bin/timeout 300s python -B run_fixture.py"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "limitations": [
+    "no LLM or KV checkpoint",
+    "no process/power failure",
+    "SQLite WAL is not a power-loss proof",
+    "no recovery latency or overhead measurement",
+    "not a novelty proof"
+  ],
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "data_cap_bytes": 104857600,
+    "timeout_seconds_each": 300
+  },
+  "product_checks": "not run; no product code changed",
+  "raw_outputs": [
+    "attempt-1-unit.stdout",
+    "attempt-1-unit.stderr",
+    "unit.stdout",
+    "unit.stderr",
+    "fixture.json",
+    "fixture.stderr"
+  ],
+  "run_id": "d1-recovery-20261018-1705",
+  "scope": "control-plane correctness simulation only",
+  "sha256": {
+    "README.md": "e39b8093ac266275f914dfa6d4ac3e3a3d19061992477a0d0ce29e6739e02b66",
+    "fixture.json": "204bfe3a1ad8ee10dd3fc8e36d174d105244a1e88796dab76ef2efbe153daf09",
+    "recovery_contract.py": "fc707adfac09dcdcfaf8cf586058034935b9b8394dcadf844580d07786dc696b",
+    "run_fixture.py": "ce2c9efbf796ecb4cfb2194a962acf779046fa819cb6aa2ea9389053a3dd929a",
+    "test_recovery_contract.py": "c83ee83e029e805b38b0959feaa54abf9cb704b42cd58ecb387d2dc2253fc599"
+  }
+}
