@@ -1,0 +1,15 @@
+{
+  "pair": null,
+  "position": null,
+  "transport": "tcp",
+  "mode": "corrupt",
+  "name": "10-tcp-corrupt",
+  "command": [
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+    "tcp",
+    "corrupt"
+  ],
+  "exit": 42,
+  "wall_s": 0.0020697740001196507,
+  "timeout": false
+}

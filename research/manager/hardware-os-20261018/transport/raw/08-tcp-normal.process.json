@@ -1,0 +1,15 @@
+{
+  "pair": 5,
+  "position": 1,
+  "transport": "tcp",
+  "mode": "normal",
+  "name": "08-tcp-normal",
+  "command": [
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+    "tcp",
+    "normal"
+  ],
+  "exit": 0,
+  "wall_s": 0.007341789001657162,
+  "timeout": false
+}

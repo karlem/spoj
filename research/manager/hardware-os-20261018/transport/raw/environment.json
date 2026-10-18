@@ -1,0 +1,48 @@
+{
+  "time_utc": "2026-10-18T18:06:54Z",
+  "uname": [
+    "Linux",
+    "681be08c9e09",
+    "6.18.55",
+    "#1 SMP Wed Oct 14 19:45:18 UTC 2026",
+    "x86_64",
+    ""
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "cpu_quota": "400000 100000",
+  "memory_max": "17179869184",
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "cpu_model_lines": [
+    "processor\t: 0",
+    "model name\t: AMD EPYC 9V45 96-Core Processor",
+    "processor\t: 1",
+    "model name\t: AMD EPYC 9V45 96-Core Processor",
+    "processor\t: 2",
+    "model name\t: AMD EPYC 9V45 96-Core Processor",
+    "processor\t: 3",
+    "model name\t: AMD EPYC 9V45 96-Core Processor",
+    "processor\t: 4",
+    "model name\t: AMD EPYC 9V45 96-Core Processor"
+  ],
+  "git_head": "2a02ae97421521848f333c5550fbac74f3b209bf",
+  "source_sha256": {
+    "echo.c": "735f77f06a7b7dab408a82248f20662b2a0f1f1b6ad5cc121155d47284a6ffeb",
+    "run.py": "7962fd64967add5d8f58fc067e38d1a7111c0790777bd940e3ca35f30ce2d33e",
+    "PROTOCOL.md": "5327364978107ae0c474eed7beac12d5f3b0ffb233f5e5616dbe0b1f7fe54bf2"
+  },
+  "binary_sha256": "4f759d3a61b5d5de3fde4ebc05daede1ac267f09955b3272f45e4b43c0a4328a",
+  "limits": {
+    "as_bytes_per_process": 268435456,
+    "cpu_s_per_process": 30,
+    "file_bytes": 16777216,
+    "session_timeout_s": 20,
+    "socket_timeout_s": 5
+  }
+}

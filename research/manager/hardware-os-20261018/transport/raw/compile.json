@@ -1,0 +1,17 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.c",
+    "-o",
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}
