@@ -1,0 +1,10 @@
+Full 864-row grid byte-for-byte equal: cf0b9c951ccf44f5724989a44c97075cca558e06287f4709b8c180f79d01fe0c
+Original source/input/output manifest: all entries match
+Pinned manifest source files checked: 16 bundle entries checked: 26
+Independent event-interval oracle passed for 2592 policy outcomes
+Adversarial shared-prefix ownership: only 2/10 cells reusable; 25% impossible even with arbitrarily long wait. Confirms exclusive-KV limitation.
+Adversarial asymmetric transfer: waits 5/120/1000000s never hide 2.005s restore; all physical candidates rejected.
+Incompatible-state negative control rejects every policy; no state payload inspected by this arithmetic.
+All audit checks PASS; model inference correctness remains UNVERIFIED.
+Completed UTC: 2026-10-18T15:41:14.697272+00:00
+README candidate counts independently counted: {"replay": {"physical_economic_candidate": 48, "slot_economic_candidate": 96}, "resident": {"physical_economic_candidate": 0, "slot_economic_candidate": 0}, "snapshot": {"physical_economic_candidate": 48, "slot_economic_candidate": 192}}

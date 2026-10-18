@@ -1,0 +1,54 @@
+{
+  "records": [
+    {
+      "name": "unit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_cost_model"
+      ],
+      "cwd": "/workspace/spoj-d2-review/research/manager/d2-resume-20261018",
+      "started_at": "2026-10-18T15:39:40.732471+00:00",
+      "elapsed_seconds": 0.06468075700013287,
+      "exit_code": 0
+    },
+    {
+      "name": "grid",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "cost_model.py"
+      ],
+      "cwd": "/workspace/spoj-d2-review/research/manager/d2-resume-20261018",
+      "started_at": "2026-10-18T15:39:40.797166+00:00",
+      "elapsed_seconds": 0.11518909200003691,
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "README.md": "59dea07ad4125577550b4099e7445dd2cda4eb4e8014348fa7cc9b0b6275e295",
+    "cost_model.py": "0c89d9ea840b7d61f8b082b4235ca1152225dd6d0e0120f94dede33b7675ef3f",
+    "inputs.json": "888850ffd9a713956f5825bd24caac9e523a08ab3c2b42e57640a3f4e6a8cf6b",
+    "protocol.md": "7d8f9e821e879f1a7789700ead7f9c085c7137775fed2ab451223e9ab971e45e",
+    "run_evidence.py": "8e89878a2795a06a9cea3e690594d9e653764ae7e2fc5d644be1504b1823e239",
+    "test_cost_model.py": "5527cc0251280f5748e122a8ea8f5045d50c390c4db1c4532c97535846316383"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "limits": {
+    "wall_seconds_per_command": 300,
+    "cpu_seconds": 60,
+    "address_space_bytes": 2147483648,
+    "per_file_bytes": 16777216
+  },
+  "scope": "local arithmetic; elapsed runner times are not inference timings",
+  "output_sha256": {
+    "grid.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "grid.stdout": "cf0b9c951ccf44f5724989a44c97075cca558e06287f4709b8c180f79d01fe0c",
+    "unit.stderr": "288b839269a9f9845ee6e09b7750e4015ee68931876167e47a0b65c012e8dcd0",
+    "unit.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

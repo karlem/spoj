@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "72219b9b4ba769e8d1f88454953d191684355adc..HEAD"
+      ],
+      "exit_code": 2,
+      "stdout": "research/manager/d2-resume-20261018/sources/serverlessllm/docs/features/live_migration.md:210: new blank line at EOF.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "72219b9b4ba769e8d1f88454953d191684355adc..HEAD",
+        "--",
+        "research/manager/d2-resume-20261018",
+        ":(exclude)research/manager/d2-resume-20261018/sources"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "interpretation": "Whole diff includes one unchanged upstream blank EOF line. Exact upstream source bytes retained; authored arithmetic/report files pass scoped whitespace check."
+}
