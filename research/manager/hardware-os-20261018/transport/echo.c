@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
             unsigned n = corrupt ? 1U : counts[p] + 2U;
             for (unsigned i = 0; i < n; ++i) {
                 if (transfer(peer, server, sizes[p], 0)) _exit(5);
-                if (corrupt) server[sizes[p] - 1] ^= 1U;
+                if (corrupt) server[127] ^= 1U; /* negative mode is exactly 128 bytes */
                 if (transfer(peer, server, sizes[p], 1)) _exit(6);
             }
         }
