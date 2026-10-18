@@ -1,0 +1,5 @@
+{"kind":"setup","transport":"tcp","setup_ns":438449,"sndbuf":3939840,"rcvbuf":131072,"tcp_nodelay":true}
+{"kind":"request","payload_bytes":128,"sequence":1,"warmup":false,"rtt_verify_ns":38157,"io_ok":true,"equal":false,"completed_echo_bytes":256}
+{"kind":"rusage","role":"server","user_us":98,"system_us":0,"maxrss_kib":1184,"minor_faults":49,"major_faults":0,"voluntary_switches":2,"involuntary_switches":0}
+{"kind":"rusage","role":"client","user_us":2181,"system_us":0,"maxrss_kib":14508,"minor_faults":759,"major_faults":0,"voluntary_switches":1,"involuntary_switches":0}
+{"kind":"final","child_exit":0,"exit":42,"successful_requests":0,"completed_echo_bytes":256}

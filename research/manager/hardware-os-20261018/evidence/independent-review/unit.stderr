@@ -1,0 +1,13 @@
+test_amdahl_gate (test_architecture.ArchitectureTests.test_amdahl_gate) ... ok
+test_cpu_can_be_the_bottleneck (test_architecture.ArchitectureTests.test_cpu_can_be_the_bottleneck) ... ok
+test_dimensions_and_line_units (test_architecture.ArchitectureTests.test_dimensions_and_line_units) ... ok
+test_independent_hand_cell (test_architecture.ArchitectureTests.test_independent_hand_cell) ... ok
+test_invalid_parameters (test_architecture.ArchitectureTests.test_invalid_parameters) ... ok
+test_monotonic_link_rtt_and_sharing (test_architecture.ArchitectureTests.test_monotonic_link_rtt_and_sharing) ... ok
+test_whole_grid_invariants (test_architecture.ArchitectureTests.test_whole_grid_invariants) ... ok
+test_zero_miss_no_network (test_architecture.ArchitectureTests.test_zero_miss_no_network) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.086s
+
+OK

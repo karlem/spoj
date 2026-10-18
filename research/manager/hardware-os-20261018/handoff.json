@@ -1,0 +1,80 @@
+{
+  "run_id": "hardware-os-20261018-1801",
+  "issue": "karlem/spoj#9",
+  "run_started_at": "2026-10-18T18:01:51Z",
+  "evidence_packaged_at": "2026-10-18T18:17:55.371389+00:00",
+  "claim_expires_at": "2026-10-18T18:31:51Z",
+  "manager": "/root",
+  "workers": [
+    "/root/hardware_sources",
+    "/root/hardware_transport",
+    "/root/hardware_validator"
+  ],
+  "child_count": 3,
+  "grandchildren": 0,
+  "model_provider_id": null,
+  "worker_exact_start_end_times": "Not exposed as execution metadata; command times retained where captured. Source completion captured in sources/summary.json.",
+  "base_commit": "72219b9b4ba769e8d1f88454953d191684355adc",
+  "evaluated_commit": "e9f9d08f8bfb5ded804cc5f79fb0f2b4c913b064",
+  "branch": "research/hardware-os-20261018",
+  "research_status": "Bounded research complete; independent ACCEPT at conditional arithmetic/source/local-transport scope. No product merge readiness.",
+  "H1": {
+    "decision": "PURSUE real placement and transfer-granularity experiment",
+    "physical_performance": "UNRESOLVED",
+    "cases": 1620,
+    "near_weight_conditional_wins": 1248,
+    "no_robust_winner": 372,
+    "staging_conditional_wins": 0,
+    "counts_are_probabilities": false,
+    "outside_grid_counterexample": "CPU expert service 100 ms at 400 Gb/s: staging serial 391.8096384 ms versus near-weight lower 3209.6 ms. Slow compute reverses preference."
+  },
+  "H2": {
+    "decision": "New OS UNRESOLVED and currently unjustified",
+    "local_positive_requests": 1520,
+    "application_bytes_including_warmups_negative": 90117376,
+    "negative_exit": 42,
+    "timing_result": "Small-payload winner reverses with AB/BA order; no stable transport or inference speedup.",
+    "OS_bound": "20% latency reduction requires at least 20% truly removable nonoverlapped critical-path time under perfect elimination."
+  },
+  "review": {
+    "report": "evidence/independent-review/REVIEW.md",
+    "verdict": "ACCEPT scoped evidence only",
+    "unit_tests": 8,
+    "grid_rerun": "Byte-identical and independent recomputation of every row",
+    "raw_source_documents_hashed": 12,
+    "excerpts_checked": 10,
+    "validator_application_bytes_two_minimal_runs": 36047360
+  },
+  "retained_failures": [
+    "Transport initial strict compilation failed; one index correction, second passed.",
+    "Reviewer metadata parsers failed twice after successful experiment checks; no third benchmark run. Final read-only audit of retained results passed.",
+    "Intel guessed URL and redirected source retrievals excluded from unsupported rate claims.",
+    "Offline scripts/check.sh exit 1: missing cached Torch before collection."
+  ],
+  "product_acceptance": "BLOCKED: offline Torch dependency absent; native Mac gates unexecuted. No waiver.",
+  "hardware_access": "No physical GPU/NIC inference benchmark or remote command; no SSH access claimed. Hardware/model/task inventory remains unavailable.",
+  "proposal": "Existing engine and OS; agent lifecycle/admission, explicit weights/KV/workspace/staging ledger, measured placement policy, supported IPC/TCP/RDMA; no scheduler or fresh kernel implemented.",
+  "next_assignment": {
+    "inputs": [
+      "Existing authorized machine inventory including CPU/NUMA/RAM, GPU/VRAM, PCIe/NIC/cable/switch, storage and OS/driver versions",
+      "Existing model artifact and representative agent task/SLO"
+    ],
+    "sequence": [
+      "One-host reference with prefill/decode/tool wait/resume and fixed correctness policy",
+      "Small-message RTT/collectives and bulk payload bandwidth independently",
+      "Matched supported staging versus resident remote compute/coarse layers; independent-job throughput baseline",
+      "Trace useful compute, copies, queueing, misses, memory residency, wire bytes, failures and full task latency; energy if metered"
+    ],
+    "gate": "Preregister 20% end-to-end reduction or useful capacity within task SLO; charge all costs, independently validate."
+  },
+  "queue": {
+    "D1": "PR #13: standalone recovery REJECT; correctness envelope UPSTREAM; physical performance UNRESOLVED. Parked this run.",
+    "D2": "PR #12: UPSTREAM/UNRESOLVED. Parked this run.",
+    "D7": "Existing storage bounds retained; this run adds hardware/OS conditional designs. Real artifact/storage/oracle gates remain.",
+    "D3-D6": "Queued; no hardware purchase or price qualification this run."
+  },
+  "external_expenditure": 0,
+  "model_downloads": false,
+  "host_OS_changes": false,
+  "merge_authorized": false
+}
