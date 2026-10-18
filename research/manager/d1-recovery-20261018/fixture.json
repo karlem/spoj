@@ -1,0 +1,87 @@
+{
+  "checks": {
+    "acked_monotonic_to_3": true,
+    "client_accepts_exactly_once": true,
+    "lost_ack_redelivery_deduplicated": true,
+    "stale_and_conflicting_rejected": true
+  },
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "events": [
+    {
+      "event": "receive_1",
+      "result": "accepted"
+    },
+    {
+      "event": "receive_2_ack_lost",
+      "result": "accepted"
+    },
+    {
+      "event": "stale_expected_generation",
+      "rejected": "stale_expected_generation"
+    },
+    {
+      "event": "stale_owner",
+      "rejected": "stale_owner"
+    },
+    {
+      "event": "incompatible_identity",
+      "rejected": "incompatible_identity"
+    },
+    {
+      "event": "incompatible_checkpoint",
+      "rejected": "incompatible_checkpoint"
+    },
+    {
+      "event": "redeliver_2",
+      "result": "deduplicated"
+    },
+    {
+      "event": "receive_3",
+      "result": "accepted"
+    },
+    {
+      "event": "conflicting_output",
+      "rejected": "conflicting_output"
+    },
+    {
+      "event": "client_digest_conflict",
+      "rejected": "client_digest_conflict"
+    }
+  ],
+  "final_state": {
+    "acked_index": 3,
+    "client_accepts": [
+      [
+        1,
+        "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8"
+      ],
+      [
+        2,
+        "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753"
+      ],
+      [
+        3,
+        "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67"
+      ]
+    ],
+    "generation": 2,
+    "produced_index": 3
+  },
+  "fixture": "epoch-fenced-output-contract-v1",
+  "input_hashes": {
+    "checkpoint": "70e7cb3745900eff22efccfb1d84fec9fce59632b81577fc2c089e8e9b6fc331",
+    "identity": "e5b77ef3392de171256bb7d8a9ef6e3efd6723758bfe5a4ba7e110d4b5791b48",
+    "tokens": "a7df1cdba5ef99d9e72717c88a75ad3cabdf5c35ea63ef3a4ff76e6372ac35d2"
+  },
+  "naive_append_indices": [
+    1,
+    2,
+    2,
+    3
+  ],
+  "naive_duplicate_count": 1,
+  "scope": "control-plane simulation; no model, KV restore, process kill, power-loss or network measurement"
+}
