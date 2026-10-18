@@ -1,0 +1,6 @@
+test_deterministic_contract (test_recovery_contract.RecoveryContractTest.test_deterministic_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.029s
+
+OK
