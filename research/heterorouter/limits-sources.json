@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-18",
+  "scope": "Research on typed decision controllers, online learning and communication/memory limits; no product implementation or deployments",
+  "primary_sources": [
+    {
+      "repository": "ByteDance-Seed/ShadowKV",
+      "requested_repository": "ByteDance-Seed/ShadowKV",
+      "revision": "e51904cdeab7d4d34013370f09f2cf5fcd655e15",
+      "path": "README.md",
+      "size": 5964,
+      "sha256": "5690e77aff5abe44307750107745790401bacde14e0a5505b588175647dbeb74",
+      "executed": false
+    },
+    {
+      "repository": "Selimonder/ring-attention",
+      "requested_repository": "Selimonder/ring-attention",
+      "revision": "b83631d5a33552d745bfa04e4b05055d4a43e34f",
+      "path": "README.md",
+      "size": 9008,
+      "sha256": "d40d03fbb3eccdd39d9ef048b86dfb27cad031806159a4dc0c0aa44ad2b58d24",
+      "executed": false
+    },
+    {
+      "repository": "Thesys-lab/Helix-ASPLOS25",
+      "requested_repository": "Thesys-lab/Helix-ASPLOS25",
+      "revision": "8639497a4aaf1eb3b7594614cb0bbd376c1342b3",
+      "path": "readme.md",
+      "size": 20152,
+      "sha256": "ef73c040bc5e29c4cc7cb211e3718a53a2a0ca37c491aa1d2b87fae78678ebbd",
+      "executed": false
+    },
+    {
+      "repository": "alibaba/llm-scheduling-artifact",
+      "requested_repository": "alibaba/llm-scheduling-artifact",
+      "revision": "a90824307249573f9c7548645c22994c65f83a08",
+      "path": "README.md",
+      "size": 10567,
+      "sha256": "0f5f7850aaac260be66728bcbc19f58bde22c0c96851d10b25355c2d3b13f93a",
+      "executed": false
+    },
+    {
+      "repository": "hongzimao/decima-sim",
+      "requested_repository": "hongzimao/decima-sim",
+      "revision": "c010dd74ff4b7566bd0ac989c90a32cfbc630d84",
+      "path": "README.md",
+      "size": 1101,
+      "sha256": "470d6d66b4c57c7bcacea13d6c4158c328b0ca1e51c409692724589d1ee13129",
+      "executed": false
+    },
+    {
+      "repository": "mit-han-lab/duo-attention",
+      "requested_repository": "mit-han-lab/duo-attention",
+      "revision": "fe93c314ae87306ef6629dc16713250b4718ffe7",
+      "path": "README.md",
+      "size": 9820,
+      "sha256": "a15604920dd1fc6f908a15e34771f4627d2a10bf66c8634ab086caa58f881248",
+      "executed": false
+    },
+    {
+      "repository": "snu-comparch/InfiniGen",
+      "requested_repository": "snu-comparch/InfiniGen",
+      "revision": "3754f52d131c30ab7a310e3c4cf356e8e3326ac3",
+      "path": "README.md",
+      "size": 2590,
+      "sha256": "f6a08e32c16d3fdbe8839a95775f2b1e2a2690e36e6ee9d8ec683d6c24e89a90",
+      "executed": false
+    },
+    {
+      "repository": "typesafe-ai/skills",
+      "requested_repository": "typesafe-ai/skills",
+      "revision": "65a39f393687675ce170e6094757de20370365b9",
+      "path": "README.md",
+      "size": 1336,
+      "sha256": "799ce1dc39dc1cb98977f930610bf693a26d1a78e5912b860014447d97390282",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "skills/typesafe-ai/SKILL.md",
+          "size": 10040,
+          "sha256": "71ea90d7906c6554c4f4c460ef7361b2d26f59116ccdae986dc6d997b9389f52",
+          "purpose": "Read as primary API documentation only; no skill installation/invocation or API calls"
+        }
+      ]
+    },
+    {
+      "repository": "typesafe-ai/system-one-adapter-python",
+      "requested_repository": "typesafe-ai/system-one-adapter-python",
+      "revision": "e1d4cc938204b22fc5a3c3aca7044072fe3f712d",
+      "path": "README.md",
+      "size": 6125,
+      "sha256": "511e16b17c0bb50586f1b8a58c3f9ea96ef6e263f91af1c71368d3f72a334ca9",
+      "executed": false
+    },
+    {
+      "repository": "typesafe-ai/typesafe-public-examples",
+      "requested_repository": "typesafe-ai/typesafe-public-examples",
+      "revision": "25e9d373f4853b3e7e300e55a194f50e54838f68",
+      "path": "README.md",
+      "size": 89,
+      "sha256": "9965c8422615d53fc34f11d1b5694a6c27eef8f34a4c9fd57011938b0333d257",
+      "executed": false
+    },
+    {
+      "repository": "typesafe-ai/typesafe-sdk-python",
+      "requested_repository": "typesafe-ai/typesafe-sdk-python",
+      "revision": "f36e68549ceca3191e5791e5f99ea1baa1a258b5",
+      "path": "README.md",
+      "size": 1287,
+      "sha256": "a7be4d8a5858889256141b995fdc6f40c88a5106116d2f1807f99c554c2e3312",
+      "executed": false
+    }
+  ],
+  "source_depth": "Eleven pinned primary READMEs and one official TypeSafe API/agent documentation file; no full paper text read in this extension",
+  "jev_article": {
+    "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "observed_http_status": 403,
+    "fetch_exit_code": 22,
+    "read": false,
+    "fallback": "Official public TypeSafe GitHub SDK/adapter/documentation inspected; no credentials, API calls or model availability/performance validation"
+  },
+  "projects_installed_or_executed": false,
+  "our_probe": "Local generated float32 attention tensors and analytical byte model only; no downloaded weights, network transfer, remote worker, RL training or API call",
+  "jev_meaning": "User explicitly clarified TypeSafe System One/Jev, not JEPA"
+}

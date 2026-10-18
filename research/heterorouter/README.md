@@ -4,6 +4,8 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Capacity goal and Colibri comparison
 
+The [limits ledger](related-projects-and-papers.md#limits-ledger-learned-control-and-kv-resident-attention) connects user-specified TypeSafe Jev, online/RL control and KV-sharing alternatives to physical bounds. A local float32 attention-shard probe passed; it is not a network or speed result.
+
 Start with the [wedge decision and executed assumption probe](related-projects-and-papers.md#wedge-decision-affordable-capacity-with-a-hard-usefulness-gate): one capacity-donor candidate, direct competitor/user-need evidence, explicit kill criteria, and no claimed deployment advantage. Physical validation needs a real task and target devices.
 
 The consolidated [software and Mac research atlas](related-projects-and-papers.md#software-research-atlas-and-apple--heterogeneous-execution-paths) maps MLX/JACCL/TB5, expert replication, offloading, KV reuse, phase scheduling and mixed-tier hypotheses. See its evidence levels and [paper reading queue](software-paper-backlog.json); no new runtime or hardware experiment was started.

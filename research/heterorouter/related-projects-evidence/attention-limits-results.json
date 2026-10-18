@@ -1,0 +1,273 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.1+cu130"
+  },
+  "oracle": "direct PyTorch scaled_dot_product_attention, CPU float32",
+  "tolerances": {
+    "rtol": 1e-05,
+    "atol": 1e-06
+  },
+  "positive_cases": [
+    {
+      "seed": 0,
+      "shard_sizes": [
+        6,
+        5,
+        6
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 0,
+      "shard_sizes": [
+        6,
+        6,
+        5
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 0,
+      "shard_sizes": [
+        9,
+        0,
+        8
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 1,
+      "shard_sizes": [
+        6,
+        5,
+        6
+      ],
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "seed": 1,
+      "shard_sizes": [
+        6,
+        6,
+        5
+      ],
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "seed": 1,
+      "shard_sizes": [
+        9,
+        0,
+        8
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 7,
+      "shard_sizes": [
+        6,
+        5,
+        6
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 7,
+      "shard_sizes": [
+        6,
+        6,
+        5
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 7,
+      "shard_sizes": [
+        9,
+        0,
+        8
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "seed": 42,
+      "shard_sizes": [
+        6,
+        5,
+        6
+      ],
+      "max_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "seed": 42,
+      "shard_sizes": [
+        6,
+        6,
+        5
+      ],
+      "max_absolute_error": 1.7881393432617188e-07
+    },
+    {
+      "seed": 42,
+      "shard_sizes": [
+        9,
+        0,
+        8
+      ],
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "case": "extreme_shard_maxima",
+      "max_absolute_error": 0.0
+    }
+  ],
+  "bounded_observed_tensor_trace": {
+    "query": [
+      0.32227492332458496,
+      -1.2633347511291504,
+      0.34998318552970886,
+      0.30813392996788025,
+      0.11984150856733322,
+      1.237657904624939,
+      1.1167771816253662,
+      -0.2472781538963318
+    ],
+    "allowed_kv_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "shards": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    ],
+    "null_maximum_means": "minus infinity; no allowed keys in this shard",
+    "local_m_z_u": [
+      {
+        "m": -0.2143305093050003,
+        "z": 3.5351738929748535,
+        "u": [
+          -2.1721062660217285,
+          -1.660219669342041,
+          0.006307296454906464,
+          0.9523732662200928,
+          -5.844479560852051,
+          1.5291141271591187,
+          -4.726823806762695,
+          -0.7279113531112671
+        ]
+      },
+      {
+        "m": null,
+        "z": 0.0,
+        "u": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "m": null,
+        "z": 0.0,
+        "u": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "merged_output": [
+      -0.6144269704818726,
+      -0.46962884068489075,
+      0.0017841545632109046,
+      0.2693992555141449,
+      -1.653236746788025,
+      0.4325428307056427,
+      -1.3370838165283203,
+      -0.20590539276599884
+    ],
+    "direct_sdpa_output": [
+      -0.6144269704818726,
+      -0.4696289300918579,
+      0.0017841208027675748,
+      0.2693992555141449,
+      -1.653236746788025,
+      0.4325428009033203,
+      -1.3370838165283203,
+      -0.20590539276599884
+    ]
+  },
+  "negative_cases": [
+    {
+      "fault": "average_normalized_shard_outputs",
+      "validation": "rejected",
+      "max_absolute_error": 0.5
+    },
+    {
+      "fault": "ignore_required_attention_mask",
+      "validation": "rejected",
+      "max_absolute_error": 1.0
+    }
+  ],
+  "derived_byte_model": {
+    "provenance": "declared hypothetical dimensions/formats; not measured",
+    "layers": 32,
+    "kv_heads": 8,
+    "query_heads": 32,
+    "head_dim": 128,
+    "context_tokens": 32768,
+    "context_shards": 2,
+    "kv_and_query_format": "FP16",
+    "partial_output_and_stats_format": "FP32",
+    "full_kv_bytes": 4294967296,
+    "per_decode_query_bytes": 524288,
+    "per_decode_partial_bytes": 1048576,
+    "per_decode_stats_bytes": 16384,
+    "per_decode_kv_append_bytes": 131072,
+    "per_decode_total_bytes": 1720320,
+    "serial_layer_rpc_count": 32,
+    "assumed_RTT_seconds": 0.0005,
+    "serial_RTT_floor_seconds": 0.016,
+    "read_full_kv_at_assumed_1GBps_seconds": 4.294967296
+  },
+  "limits": [
+    "algebra validation only; no sockets, serialization or worker execution",
+    "no model weights, generation, checkpoint, RL training or JEV API calls",
+    "no measured performance, GPU/Mac acceptance, distributed cache coherence or capacity result",
+    "FP32 tensor parity does not validate hypothetical FP16 wire representation",
+    "no stale/mixed-model KV sharing permitted by this experiment"
+  ]
+}

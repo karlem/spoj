@@ -855,3 +855,232 @@ this worker's source inspection or synthetic probe. What is complete here is a
 ranked, falsifiable candidate and an evidence-backed rejection of several broad
 pitches; what remains unproven is a real deployment win or reason to maintain a
 standalone SPOJ product. Keep that distinction in the goal handoff.
+
+
+## Limits ledger: learned control and KV-resident attention
+
+Date2026-10-18. Human direction: explore mechanisms beyond spare-RAM donation,
+including TypeSafe's Jev/System One models, online/reinforcement learning, cheap
+hardware and sharing/offloading KV. These are research paths, not chosen product
+requirements. The user clarified Jev with
+https://typesafe.ai/blog/introducing-system-one-models-and-jev; it is **not JEPA**.
+
+There is no evidence that these ingredients or all their combinations have never
+been tried. Most have substantial prior art. The opportunity would be a specific
+measured improvement or useful supported configuration, not an unverified claim
+of a new category. Earlier capacity-donor qualification remains conditional.
+
+### Jev-style decisions and online learning solve different problems
+
+The supplied blog returned HTTP403 (curl exit22). Official TypeSafe GitHub SDK,
+adapter and documentation were inspected instead; `limits-sources.json` records
+pins/hashes. Their System One interface accepts application state and typed
+questions: Choice, Noul and Score return structured judgments/probabilities.
+The documentation describes Jev as a focused typed-judgment model. We did not
+validate its latency, calibration, local weights, hardware needs or model
+licensing. Open-source SDK/adapter code is not evidence of open local Jev weights.
+No TypeSafe service, key or hosted-model call was used.
+
+A plausible role is **semantic outer-loop control**: distinguish an interactive
+tool turn from background indexing, infer which task phase has begun, prioritize
+sessions, or suggest which already-feasible execution mode to consider. Known
+bytes, measured service, hard deadlines and memory arithmetic belong in code.
+A typed answer is not proof of a correct performance prediction. The adapter can
+compare other LLM APIs and documents probability normalization; summing to one
+is not empirical calibration. Measure error, calibration and actual controller
+cost on the target workload rather than borrowing vendor claims.
+
+This is different from **learning from outcomes**. A fixed decision model does
+not automatically update its policy when a transfer or expert call is slow.
+Online regression/system identification, contextual bandits, model-predictive
+control and RL offer different adaptation mechanisms:
+
+| Controller | Useful role | Main evidence/failure question |
+| --- | --- | --- |
+| Rules + measured cost/queue estimates | Transparent baseline and conservative fallback | Does a more complex policy beat it after paying its own overhead? |
+| Online regression + constrained short-horizon planning | Update service/transfer predictions and plan staging/placement | Validate uncertainty, nonstationarity, overlap and prediction error against actual completion time. |
+| Contextual bandit | Learn among a few feasible execution modes when feedback is sufficiently immediate | Exploration costs real user latency; delayed effects and unchosen-action outcomes require care. |
+| RL with resource/cache state | Plan actions whose residency/queue effects have delayed rewards | Requires representative transition/reward data; simulator exploitation, drift and migration cost can erase gains. |
+| Jev-style semantic features plus any controller above | Add task meaning that numeric telemetry misses | Ablate semantic features, include model memory/API/latency cost, and test whether they add value over measured telemetry alone. |
+
+Possible actions: select an identical replica, execute at a resident owner, stage
+weights to faster compute, adjust bounded batching, or change a slower residency
+plan. The learned MoE gate still chooses logical expert IDs. Invalid memory,
+backend/precision, ownership, dependency or deadline actions must be filtered by
+code; a policy cannot silently replace experts or omit required calls. Low
+confidence or stale measurements need a defined baseline fallback.
+
+Train/replay with past-only observations; do not fit/evaluate on future demand.
+A trace from one policy may not identify the outcomes of actions it never took,
+especially with queue/cache interference. Compare actual action outcomes or a
+separately calibrated model; label counterfactual assumptions. Start with a
+small action set and measured baselines before a neural RL agent. A controller
+wins only if saved critical-path work exceeds its inference, profiling,
+exploration, memory and data-movement costs. This is a proposal, not deployed
+learning code or proof that RL beats simple heuristics.
+
+### Three different meanings of remote/shared KV
+
+1. **Reuse an identical prefix across requests or bots.** A local/shared cache
+   can avoid recomputing that prefix. Identical model/weights/adapters, actual
+   token prefix, positions/positional encoding, mask/state, precision and cache
+   representation matter; similar meaning is not cache identity. Diverging
+   branches need independent suffix state/copy-on-write. Hybrid recurrent models
+   can need state beyond K/V. These are cache compatibility constraints, not
+   permission to share arbitrary prompts or models.
+2. **Store inactive or precomputed state remotely, then restore it.** Transfer
+   occurs on cache restoration or prefill/decode handoff, not necessarily every
+   generated token. A very fast link is not always required: savings must exceed
+   transfer/rebuild cost, and idle time or repeated reuse may help amortize it.
+3. **Keep live KV on another host during every decode step.** Fetching all dense
+   KV back for each token can be prohibitive. Another design computes attention
+   beside KV and returns sufficient partial results. That saves wire bytes but
+   leaves attention work/memory reads at those owners and adds layer dependencies.
+
+Ordinary remote memory, RDMA and CXL do not automatically provide correct cache
+identity, cache coherence, model semantics or inexpensive attention computation.
+A memory donor may also need to be an attention executor; otherwise its link can
+become the decode bandwidth bottleneck.
+
+Explanatory design only; no sockets or remote process were exercised below:
+
+```text
+coordinator / current layer queries
+          |                    |
+          v                    v
+   KV-context shard A    KV-context shard B
+   compute m,z,u         compute m,z,u
+          |                    |
+          +---- stable merge --+
+                    |
+            attention output
+                    |
+          next layer dependency
+```
+
+Append the new token's K/V at the correct context owner; query fan-out, versions,
+mask/position identity and bounded completion/failure are additional protocol
+obligations. The diagram omits those implementation details and proves no
+cross-machine correctness.
+
+### Executed tensor check: compact attention reduction
+
+`attention_limits_probe.py` generates CPU float32 Q/K/V tensors and compares a
+partitioned calculation with **direct PyTorch scaled_dot_product_attention**.
+For each shard i, it computes row maximum m_i, exponential sum z_i, and
+unnormalized value numerator u_i. With M=max_i(m_i):
+
+`attention = sum_i(exp(m_i-M)*u_i) / sum_i(exp(m_i-M)*z_i)`.
+
+All-masked/empty shards contribute zero; an all-masked query returns zero under
+the tested PyTorch convention. Averaging separately normalized shard outputs is
+incorrect. KV-position coverage, query/key-head mapping and masks are part of
+the computation contract. This is standard softmax-reduction algebra; it is not
+a claimed new method or a reproduction of a named distributed paper.
+
+Observed: **13 positive cases**, max absolute error **4.76837158203125e-7**,
+rtol1e-5/atol1e-6. Cases include four seeded grouped-query tensors (2KV/4query
+heads), causal masks, all-masked rows, contiguous/interleaved/unequal/empty shards
+and extreme logits. Both injected faults were rejected: naive shard-output
+averaging (maxerror0.5) and ignoring a required mask (maxerror1.0). Parent and
+independent reviewer runs exit0 with identical full JSON. A bounded actual tensor
+trace records one query, allowed positions, shards, local statistics and direct/
+merged outputs; JSON null for a shard maximum means minus infinity/no allowed
+keys, explicitly labeled. This is **local numerical evidence only**; no codec,
+transfer, remote state, backend interoperability or performance is tested.
+
+### Byte and latency bounds: a declared thought experiment
+
+Assume32 attention layers,8KV heads,32query heads, head dimension128,32768 cached
+tokens, FP16K/V and queries, and two context shards returning FP32partial
+numerators and max/sum statistics. One query token, no KV replication, dense
+attention and ordinary per-layer dependencies:
+
+| Derived quantity | Value / condition |
+| --- | --- |
+| Full KV footprint `2*L*Hkv*D*T*2bytes` |4,294,967,296bytes =4GiB |
+| Pull full KV at assumed effective1GB/s each decode step |4.294967296seconds for bytes alone; headers/compute/contention excluded |
+| Broadcast query bytes to two shards |524,288bytes per decode step across all layers |
+| Return FP32partial numerator bytes |1,048,576bytes |
+| Return FP32max/sum statistics |16,384bytes |
+| Append one token's FP16K/V to owners |131,072bytes |
+| Total modeled wire bytes |1,720,320bytes ≈1.64MiB per decode step; no framing, replication, retries or auxiliary metadata |
+|32sequential layer RPCs at assumed0.5ms RTT |16ms propagation/round-trip component alone if both shard calls per layer run in parallel |
+
+The tensor experiment was float32; it **does not validate these hypothetical
+FP16wire/cache formats**. These are arithmetic bounds, not measured traffic,
+latency or speedup. Attention owners still scan/process their portions of dense
+KV; memory bandwidth, CPU/GPU kernels, dtype conversion, queues, synchronization
+and repeated layers may dominate. Parallel shard calls cost the required
+completion barrier, not the sum of unrelated peer RTTs. More devices cannot
+remove serial model dependencies. Combining remote attention and remote MoE
+experts may introduce two sequential remote boundaries per layer; the32RPC
+example covers attention only, not complete model execution. Exact dense
+attention need not send its entire
+KV across the network, but its work and data access still have to occur somewhere.
+
+### Other paths worth discriminating, with their actual trade-offs
+
+| Path to investigate | Why it could help | What can defeat it / first discriminating evidence |
+| --- | --- | --- |
+| Cheap RAM+compute host owns long-context KV; fast device owns other compute | Replace repeated bulk KV movement with query/partial exchanges | Owner memory/compute service and layer RTT; compare actual complete attention with local/offloaded baseline at the same numerical contract. |
+| Shared-prefix directory and inactive-session KV tier | Many long-running bots reuse system/tool prefixes or pause | Identity/invalidation, changed templates, recurrent state and restore cost; measure task-shaped prefix hits and resume tails, not only stored bytes. |
+| Joint expert+KV residency planning | Separate optimizers can steal each other's RAM/page-cache budget | Stage/replica peaks, correlated demand, transfer contention; compare one joint budget against strong simple separate policies. |
+| Task-aware mixture of small local models and a larger streamed/distributed model | Avoid paying the largest model cost for every routine bot decision | Changes model/task-quality semantics; test routing errors, tool success, escalation and quality against a single-model baseline. |
+| Draft locally, verify blocks on a larger model | Potentially amortize target execution and links across accepted tokens | Correct speculative verification can preserve the target sampling distribution, not identical RNG outputs; low acceptance, extra expert I/O and KV synchronization may lose. |
+| Select architectures with GQA/MLA or recurrent/hybrid state | Reduce KV or per-token state demand at the model-design level | Different model/quality/training contract; compare task utility and support rather than claim same-model execution speedup. |
+| APU/unified memory, more memory channels, striped NVMe or PIM near memory | Change the real memory hierarchy instead of tuning one scheduler | Shared bandwidth, actual kernels, IO concurrency, power and cost; use hardware only after profiling predicts a discriminating win. No purchase/availability claim. |
+| Typed task-phase judgment + bounded online controller | Adapt to foreground/background phases, load and observations | Semantic feature may add nothing; benchmark controller overhead and use held-out changing workloads, safe action set and simple baselines. |
+| Use tool-wait/idle intervals for bounded state or weight movement | Persistent bots often wait between model calls, allowing preparation away from an active decode path | Only known state and past-only predictions; unknown tool results cannot be prefetched as facts. Charge wrong transfers, cache interference, cancellation and contention with active sessions. |
+
+### Primary reading leads added in this pass
+
+Eleven primary READMEs plus the official TypeSafe API-documentation file were
+inspected and hashed; **full research papers were not read in this extension**.
+No listed project was installed or run. Author claims remain source claims.
+- [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/README.md): Official typed-choice API example; no local model/performance proof.
+- [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python/blob/e1d4cc938204b22fc5a3c3aca7044072fe3f712d/README.md): Comparison adapter for LLM APIs; native-looking interface/probability normalization does not give JEV architecture, speed or calibration.
+- [typesafe-ai/skills](https://github.com/typesafe-ai/skills/blob/65a39f393687675ce170e6094757de20370365b9/README.md): Author description of System One/Jev, Choice/Noul/Score and confidence semantics; read as research documentation, not installed/invoked.
+- [typesafe-ai/typesafe-public-examples](https://github.com/typesafe-ai/typesafe-public-examples/blob/25e9d373f4853b3e7e300e55a194f50e54838f68/README.md): Official examples repository identity; its short root README establishes no performance result.
+- [hongzimao/decima-sim](https://github.com/hongzimao/decima-sim/blob/c010dd74ff4b7566bd0ac989c90a32cfbc630d84/README.md): Decima SIGCOMM19 simulator: reinforcement-learned cluster scheduling; not LLM inference, local hardware validation or ready-trained SPOJ controller.
+- [Thesys-lab/Helix-ASPLOS25](https://github.com/Thesys-lab/Helix-ASPLOS25/blob/8639497a4aaf1eb3b7594614cb0bbd376c1342b3/readme.md): Helix paper arXiv2406.01566: heterogeneous GPU/network placement and max-flow scheduling, simulator plus prototype; solver/runtime assumptions do not prove local Mac applicability.
+- [alibaba/llm-scheduling-artifact](https://github.com/alibaba/llm-scheduling-artifact/blob/a90824307249573f9c7548645c22994c65f83a08/README.md): Llumnix OSDI24: serving scheduling/migration artifact; example cluster4x4A10, not an affordable-local result.
+- [Selimonder/ring-attention](https://github.com/Selimonder/ring-attention/blob/b83631d5a33552d745bfa04e4b05055d4a43e34f/README.md): Ring Attention arXiv2310.01889 and BPT2305.19370: blockwise/distributed context mechanisms; long-context training overlap claims are not batch-one remote-decode results.
+- [snu-comparch/InfiniGen](https://github.com/snu-comparch/InfiniGen/blob/3754f52d131c30ab7a310e3c4cf356e8e3326ac3/README.md): InfiniGen OSDI24/arXiv2406.19707: predicts selected KV fetches; selective attention/state handling requires model-quality/semantic evaluation.
+- [mit-han-lab/duo-attention](https://github.com/mit-han-lab/duo-attention/blob/fe93c314ae87306ef6629dc16713250b4718ffe7/README.md): DuoAttention ICLR25/arXiv2410.10819: retrieval versus streaming heads and reduced cache; approximate/model-adapted lane, not strict full-attention parity.
+- [ByteDance-Seed/ShadowKV](https://github.com/ByteDance-Seed/ShadowKV/blob/e51904cdeab7d4d34013370f09f2cf5fcd655e15/README.md): ShadowKV ICML25/arXiv2410.21465: KV-management research artifact with CUDA/A100-oriented setup; no Metal or exact full-attention guarantee inferred from README.
+
+Mooncake, LMCache, DistServe, EPLB, Colibri, oMLX and earlier hardware sources
+remain relevant; do not reopen the false premise that KV pooling, learned
+scheduling or measured placement is unoccupied ground.
+
+The physical limit ledger is: capacity by tier and initialization peak; bytes
+that must move on each path; memory traffic and compute where executed; model
+critical-path dependencies; and task-quality/error budgets. Plot a Pareto frontier
+of task success, p95turn time, usable context/model capacity, watts and cost.
+A faster OS, language, controller or link helps only the part of that critical
+path it actually changes. No universal absolute maximum follows from one model,
+one cache trace, peak bandwidth or this algebra probe.
+
+**Recommended research comparison:** retain the capacity-donor candidate, but
+add KV-owner attention as a distinct testable path; compare simple measured
+control with an online controller, then ablate whether semantic/Jev-style task
+features help. Require actual device/runtime profiles before physical claims.
+These are candidates for a new approved experiment, not changes to the main
+three-worker TCP milestone or issue#2. No checks, tolerances, guards or native
+Mac acceptance were bypassed; no checkpoints, machines, paid APIs, RL training,
+full-model generation or infrastructure purchase occurred.
+
+Reproduce the local algebra probe using the existing frozen environment from
+repository root:
+
+```sh
+uv sync --frozen --project spoi
+spoi/.venv/bin/python research/heterorouter/attention_limits_probe.py > /tmp/spoj-attention-limits.json
+```
+
+Only the second command ran in this study; the environment was already present.
+It used Python3.12.14/PyTorch2.14.1+cu130 on CPU. Compare parsed JSON with
+`related-projects-evidence/attention-limits-results.json`; environment fields
+may differ elsewhere. Retained evidence explicitly separates observed tensors,
+negative tests, derived bytes and untested physical/backend boundaries.
