@@ -1,0 +1,69 @@
+{
+  "run_id": "inference-designs-20261018-1841",
+  "worker_id": "/root/inference_fundamentals",
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/README.md",
+      "sha256": "5f7971552e9c57d8ac75f06969c907ac32061c3474a0010a32fcd53df76701f5",
+      "retrieved_at": "2026-10-18T18:42:15.730113+00:00",
+      "locator": "README Sources and coverage",
+      "bounded_excerpt": "Coverage is partial for every",
+      "applied_guidance_or_primary_claim": "Repository explicitly describes partial book coverage. No whole-book validation is claimed.",
+      "classification": "skill guidance"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/concurrency/concurrent-programming/references/progress.md",
+      "sha256": "36ecbfdd9bf253a590f22b80b017dd135104cc4f97fadbbd7aeabcc5ad35c2fc",
+      "retrieved_at": "2026-10-18T18:42:41.039874+00:00",
+      "locator": "ABA and pointer reuse",
+      "bounded_excerpt": "Safe reclamation is a separate requirement",
+      "applied_guidance_or_primary_claim": "Reference counts or pointer tags alone do not establish safe reclamation; stalled participants can retain memory.",
+      "classification": "skill guidance"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/networking/network-engineering/references/paths.md",
+      "sha256": "d12694d207e20b83088324ad847438bb73120b6720a03b9fd67af109a3fc8a70",
+      "retrieved_at": "2026-10-18T18:42:41.585143+00:00",
+      "locator": "Bandwidth-delay product",
+      "bounded_excerpt": "A larger application buffer does not automatically increase the congestion window.",
+      "applied_guidance_or_primary_claim": "BDP and window bounds need actual path, transport, and application assumptions.",
+      "classification": "skill guidance"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/reliability/production-reliability/references/containment.md",
+      "sha256": "f292451dbe566da29247121d13a9a9a28885a919fa92faa8f9300d4e4e0166c2",
+      "retrieved_at": "2026-10-18T18:42:42.184984+00:00",
+      "locator": "Bulkheads and admission",
+      "bounded_excerpt": "Limit both running work and waiting work.",
+      "applied_guidance_or_primary_claim": "Bound admission by running and waiting resources; a semaphore alone can leave unbounded waiters.",
+      "classification": "skill guidance"
+    },
+    {
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "sha256": "79e2ff81a15c55de870492231e81e36c50366389c118a7317b5877f603cfa2a0",
+      "retrieved_at": "2026-10-18T18:43:03.427723+00:00",
+      "locator": "Section 2.1, paper page 467",
+      "bounded_excerpt": "Each object has a unique name and a type",
+      "applied_guidance_or_primary_claim": "Specify legal sequential operations before checking histories; this does not prove this design or its liveness.",
+      "classification": "directly read primary source"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/Documentation/core-api/dma-api-howto.rst",
+      "sha256": "c1667316a8214647f9ed5a3726bed18a9897727c25f732a52ddc614569822d6e",
+      "retrieved_at": "2026-10-18T18:43:03.427028+00:00",
+      "locator": "Streaming DMA mapping, lines 549\u2013550",
+      "bounded_excerpt": "You should call dma_unmap_single() when the DMA activity is finished",
+      "applied_guidance_or_primary_claim": "DMA completion must precede unmapping. CPU/NIC/GPU implementation contracts require additional API-specific verification.",
+      "classification": "directly read primary source"
+    },
+    {
+      "url": "https://people.eecs.berkeley.edu/~kubitron/courses/cs252-S10/handouts/papers/RooflineVyNoYellow.pdf",
+      "sha256": "a75362d86d207fd5f8612bd99e1af745cf5e4f15a41140db7a33b0a9cd5613b1",
+      "retrieved_at": "2026-10-18T18:43:50.667594+00:00",
+      "locator": "Section 4, preprint page 2",
+      "bounded_excerpt": "The Roofline model gives an upper bound to performance.",
+      "applied_guidance_or_primary_claim": "Roofline is a bound and bottleneck model at a declared memory boundary using sustainable bandwidth; not an inference latency prediction.",
+      "classification": "directly read primary source"
+    }
+  ]
+}

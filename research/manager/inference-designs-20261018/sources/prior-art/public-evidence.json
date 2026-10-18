@@ -1,0 +1,167 @@
+[
+  {
+    "id": "sglang-frontend",
+    "requested_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/python/sglang/lang/interpreter.py",
+    "fetched_at_utc": "2026-10-18T18:43:07.273448+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/python/sglang/lang/interpreter.py",
+    "size": 36153,
+    "sha256": "6dcff66a47adb598a6d9c3d9eb8728e9bc7ce83efd5ce2dfe17bd7ba07f2c8de",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 370,
+        "text": "    def fork("
+      }
+    ]
+  },
+  {
+    "id": "sglang-radix-cache",
+    "requested_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/python/sglang/srt/mem_cache/radix_cache.py",
+    "fetched_at_utc": "2026-10-18T18:43:07.220401+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/python/sglang/srt/mem_cache/radix_cache.py",
+    "size": 31391,
+    "sha256": "eea7015fcf678167ac7296b08c8dc568ccbe42a4bb106da23b33a7c59debec01",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 582,
+        "text": "    def inc_lock_ref(self, node: TreeNode) -> IncLockRefResult:"
+      },
+      {
+        "line": 597,
+        "text": "    def dec_lock_ref("
+      }
+    ]
+  },
+  {
+    "id": "sglang-dcp-doc",
+    "requested_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/docs/docs/advanced_features/dcp.mdx",
+    "fetched_at_utc": "2026-10-18T18:43:57.980851+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/sgl-project/sglang/05ce0e980f00aa80864190d6f1cd5d9b685802f1/docs/docs/advanced_features/dcp.mdx",
+    "size": 11339,
+    "sha256": "e796fcd8c63beb45d79772d39420b64156e3bd2372d8573345af268487a15077",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 122,
+        "text": "For context partition `r`, the kernel returns locally normalized output `o_r` and `lse_r`. The global result is `lse = logsumexp_r(lse_r)` and `o = sum_r(exp(lse_r - lse) * o_r)`. This is exact aside from floating-point reduction order. The merge uses the attention backend's LSE base, either base-e or base-2."
+      },
+      {
+        "line": 139,
+        "text": "DCP adds a context-independent decode collective while cutting context-dependent KV storage and reads by about `c`. Extend is outside that decode cost model: it may gather cached prefix shards, restore token order, and append new tokens, and that work grows with prefix length."
+      }
+    ]
+  },
+  {
+    "id": "parrot-semantic-doc",
+    "requested_url": "https://raw.githubusercontent.com/microsoft/ParrotServe/a72ad158604661e06b5ea38db5dcc026884a398c/docs/sys_design/app_layer/semantic_variable.md",
+    "fetched_at_utc": "2026-10-18T18:43:57.981703+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/microsoft/ParrotServe/a72ad158604661e06b5ea38db5dcc026884a398c/docs/sys_design/app_layer/semantic_variable.md",
+    "size": 1980,
+    "sha256": "737353c088cbb8ac4a058690970537b6d7e45666a79a9cf704a39904958f7cf0",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 19,
+        "text": "- `submit`: Submit a request to Parrot serve layer, with input/output semantic variables specified."
+      },
+      {
+        "line": 20,
+        "text": "- `get`: Get the value of a Semantic Variable."
+      }
+    ]
+  },
+  {
+    "id": "vllm-context-pinned",
+    "requested_url": "https://raw.githubusercontent.com/vllm-project/vllm/7879f3687b5b6a4be4754242e70b9c21cf7b4183/docs/serving/context_parallel_deployment.md",
+    "fetched_at_utc": "2026-10-18T18:44:28.415303+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/vllm-project/vllm/7879f3687b5b6a4be4754242e70b9c21cf7b4183/docs/serving/context_parallel_deployment.md",
+    "size": 6138,
+    "sha256": "504f128d86e36d8c022e51663c2ae180be70be86a5093a12b5375d2ceb66682a",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 52,
+        "text": "Decode context parallel is supported in vLLM, for both MLA and GQA models. Some attention backends also support the combination of decode context parallel and MTP (multi-token prediction) to further accelerate the decoding phase."
+      }
+    ]
+  },
+  {
+    "id": "flashdecoding-blog",
+    "requested_url": "https://crfm.stanford.edu/2023/10/12/flashdecoding.html",
+    "fetched_at_utc": "2026-10-18T18:43:34.850963+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://crfm.stanford.edu/2023/10/12/flashdecoding.html",
+    "size": 19860,
+    "sha256": "668ef1ccd6f12e329aa15439d012a3f335b67b690fcbcff87da0868181ee9ebd",
+    "content_type": "text/html; charset=utf-8",
+    "extracts": [
+      {
+        "line": 304,
+        "text": "<p>Flash-Decoding works in 3 steps:</p>"
+      }
+    ]
+  },
+  {
+    "id": "ring-readme",
+    "requested_url": "https://raw.githubusercontent.com/lhao499/llm_large_context/d2ea1af9a288f85ea2fd74690ece1c16d2eebc83/README.md",
+    "fetched_at_utc": "2026-10-18T18:45:08.995874+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/lhao499/llm_large_context/d2ea1af9a288f85ea2fd74690ece1c16d2eebc83/README.md",
+    "size": 3829,
+    "sha256": "779ec9e6b919991646fe4998eac225668d89456b5ba5f846456cb7828d41fac5",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 3,
+        "text": "This codebase provides the implementation of the Ring Attention with Blockwise Transformers. The model is described in the paper [Ring Attention with Blockwise Transformers for Near-Infinite Context](https://arxiv.org/pdf/2310.01889.pdf) and [Blockwise Parallel Transformer for Large Context Models](https://arxiv.org/pdf/2305.19370.pdf)."
+      }
+    ]
+  },
+  {
+    "id": "distserve-readme",
+    "requested_url": "https://raw.githubusercontent.com/LLMServe/DistServe/82831f1604cc6b10bebd360f6c437a07790dde9f/README.md",
+    "fetched_at_utc": "2026-10-18T18:43:08.051118+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/LLMServe/DistServe/82831f1604cc6b10bebd360f6c437a07790dde9f/README.md",
+    "size": 2925,
+    "sha256": "aad0ee8212a6eb505d9af513bc6789171f65a8cb409f04be91b7ed37df29e5b9",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 1,
+        "text": "# DistServe"
+      }
+    ]
+  },
+  {
+    "id": "mamba2-module",
+    "requested_url": "https://raw.githubusercontent.com/state-spaces/mamba/e9594ce1c732d97440f0332fdc43170a2294dbfa/mamba_ssm/modules/mamba2.py",
+    "fetched_at_utc": "2026-10-18T18:45:08.997580+00:00",
+    "executed": false,
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/state-spaces/mamba/e9594ce1c732d97440f0332fdc43170a2294dbfa/mamba_ssm/modules/mamba2.py",
+    "size": 17479,
+    "sha256": "605e4439ff0baec8d8acaf4a191d9f0570eea9900065a065909124c472b08707",
+    "content_type": "text/plain; charset=utf-8",
+    "extracts": [
+      {
+        "line": 345,
+        "text": "    def allocate_inference_cache(self, batch_size, max_seqlen, dtype=None, **kwargs):"
+      }
+    ]
+  }
+]

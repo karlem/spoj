@@ -1,0 +1,16 @@
+{
+  "run_id": "inference-designs-20261018-1841",
+  "worker_id": "/root/inference_prior_art",
+  "provider_model_id": null,
+  "first_recorded_clock_utc": "2026-10-18T18:42:28Z",
+  "report_completed_utc": "2026-10-18T18:47:23.228591+00:00",
+  "source_families": 7,
+  "retrievals": 40,
+  "successful_retrievals": 38,
+  "http_failures": 2,
+  "downloaded_bytes": 4691024,
+  "external_code_executed": false,
+  "models_downloaded": false,
+  "scope": "primary source inspection, no reproduced hardware/model benchmark",
+  "worker_end_utc": "2026-10-18T18:47:50.813852+00:00"
+}

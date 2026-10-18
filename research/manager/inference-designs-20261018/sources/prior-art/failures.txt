@@ -1,0 +1,3 @@
+Initial search tool returned isError=true with empty content. No search result used.
+ring-head: https://api.github.com/repos/Selimonder/RingAttention/commits/main -> HTTP Error 404: Not Found
+ring-repo: https://api.github.com/repos/Selimonder/RingAttention -> HTTP Error 404: Not Found
