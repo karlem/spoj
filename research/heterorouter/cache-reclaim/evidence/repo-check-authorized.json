@@ -1,0 +1,9 @@
+{
+  "timestamp_utc": "2026-10-18T14:07:50.288812+00:00",
+  "evaluated_commit": "af9d34c32cf6ea464705b6dae730fc130bcbce6f",
+  "command": "UV_CACHE_DIR=/workspace/scratch/uv-cache UV_OFFLINE=1 ./scripts/check.sh",
+  "execution_context": "Authorized local IPC/socket access (require_escalated), same checks and guards",
+  "exit_code": 0,
+  "log": "repo-check-authorized.log",
+  "scope": "Existing Linux product tests only; not native Mac or trained-model streaming acceptance."
+}

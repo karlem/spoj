@@ -280,5 +280,13 @@
     }
   ],
   "host_registry_hot_reload_verified": false,
-  "skills_manually_read_and_applied": true
+  "skills_manually_read_and_applied": true,
+  "personal_installation": {
+    "destination": "/home/agent/.agents/skills",
+    "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /home/agent/.agents/skills --all",
+    "exit_code": 0,
+    "byte_identical_files": 44,
+    "license_copied_and_verified": true,
+    "persistence": "This worker account only; project-local copy also retained for repository portability. Host registry refresh not verified."
+  }
 }

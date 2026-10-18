@@ -2,6 +2,9 @@
 
 2026-10-18 · issue [#7](https://github.com/karlem/spoj/issues/7) · research only.
 
+Start with the [one-page decision memo](decision-memo.md). This document supplies
+its source analysis, execution diagram, bounds and reproduction commands.
+
 **Pursue one existing upstream configuration experiment, provisionally.** No
 SPOJ advantage is established. Do not implement a new allocator, kernel bypass,
 OS, or expert-cache controller on this evidence. The physical A/B is **BLOCKED**:
@@ -60,6 +63,12 @@ exhaust their combinations. Qualify applicable configurations before freezing
 a winner. Preserve fixed routing and quantization; cache-aware rerouting is a
 different quality contract and is excluded.
 
+Both `DROP` states are already upstream configurations. The unset state is a
+controlled reference for isolating this mechanism, not a claim that it is the
+strongest configuration before comparison. The winning state becomes part of
+the strongest upstream baseline. This study cannot establish a SPOJ improvement
+over that baseline merely by finding a better existing switch setting.
+
 The native [replay loop](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L9456)
 discards logits: fixed token inputs are **not** a numerical-parity check. Also,
 `autotune.create_replay` generates a calibration continuation and its GLM runner
@@ -67,7 +76,10 @@ sets `REF_FORCE=1`. Neither action was run. Under the current no-generation and
 no-guard-bypass constraints, use the inspected candidate logic with a separately
 supplied valid fixed oracle; do not run that calibration or set `REF_FORCE`.
 The upstream HF oracle builder is for a tiny random fixture, not this trained
-g64 container. The missing independent same-container oracle is an explicit gate.
+g64 container. Strict teacher forcing covers batched prefill; single-token
+decode also needs independent prediction checks. Existing `CONSIST` is a
+self-comparison, not that oracle. The missing same-container oracle and bounded
+single-token observation hook are explicit gates.
 
 If mmap or direct I/O wins, **do not force buffered reads to make this experiment
 look useful**. Report the winning configuration and reject the duplicate-buffered
@@ -103,6 +115,7 @@ flowchart TD
 | File → owned memory | `expert_load_impl`, [3170–3284](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L3170): aligned anonymous weight/scale slabs; contiguous same-file weights use one coalesced read operation, then three scale reads. Buffered reads can be served from existing file pages or require storage I/O. They still copy into the owned slab. |
 | Representation | `qt_resolve_fmt` verifies byte/scale geometry; g64 uses grouped int4, not the older per-row representation. The owned path calls `qt_planarize`; applicability depends on format/CPU. Read-only mmap skips that transformation. Duplicate semantic weights need not have identical physical layout. |
 | Advice | [3295–3300](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L3295) advises away backing file ranges **after the reads**, before publication. It does not remove the copy or free the anonymous slab. The synchronous path's single weight span is exact only for the verified contiguous layout. Advice return values are not checked there. |
+| Kernel buffered read | In the pinned Linux [`filemap_get_pages`/`filemap_read`](https://github.com/gregkh/linux/blob/725bd2f3c81d54edccb66fead01d4c0c222e2231/mm/filemap.c#L2622), cached folios may suffice; otherwise readahead/`read_folio` obtain data. `copy_folio_to_iter` at 2811 copies file-cache bytes toward the read destination. This substantiates the generic file-cache → owned-slab copy model, **not** the unobserved model filesystem/device path. |
 | Kernel behavior | Matching release-name [Linux v6.18.55, `mm/fadvise.c:113–170`](https://github.com/gregkh/linux/blob/725bd2f3c81d54edccb66fead01d4c0c222e2231/mm/fadvise.c#L113): normally preserve partial pages except the EOF case, drain LRU additions, try invalidation and possibly retry after a wider drain. DAX/noop backing may ignore advice; a filesystem may override `fadvise`. This source is **not verified as the exact running kernel binary**, and no model/device path was traced. |
 | Completion dependency | [6520](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L6520) waits for each required PIPE slot. [6576–6578](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L6576) computes the expert and accumulates its weighted contribution. [6735](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L6735) promotes by buffer swaps, not an extra weight copy. |
 
@@ -112,6 +125,10 @@ Direct reads can fall back to buffered reads, and scale reads remain buffered in
 the synchronous direct path. A configured flag does not establish the path used.
 The [RSS guard](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/colibri.c#L9780)
 already shrinks idle LRU slabs; existing memory adaptation is not missing.
+The same kernel file also contains dropbehind handling keyed by `IOCB_DONTCACHE`;
+that is further evidence that cache retention is established kernel policy,
+not evidence this engine uses it or that its userspace availability/performance
+has been validated. No second intervention is proposed here.
 
 Potential contention is storage bandwidth/IOPS, reclaim, memory bandwidth for
 copies, loader/compute CPU contention, or advice's cache-maintenance work. Which
@@ -172,8 +189,11 @@ Guest `vda`/`pmem0` names do not establish host media or persistent-memory acces
 `perf`/bpftrace/Nsight are absent; an own-process disabled userspace perf event
 opened successfully, which does **not** establish hardware-counter or sampling
 access. Tracepoint directories are absent. `strace /bin/true` failed with
-`PTRACE_TRACEME: Operation not permitted`; its failure is retained. No guard,
-sysctl, kernel permission or compatibility check was bypassed.
+`PTRACE_TRACEME: Operation not permitted` in restricted execution; the same
+own-child readiness probe succeeded with authorized tracing access. Both
+[contexts](evidence/strace-readiness-authorized.json) are retained. This is tool
+readiness, not an inference trace. No guard, sysctl, kernel setting or
+compatibility check was weakened.
 
 [Checkpoint searches](evidence/artifact-search.json) found no matching checkpoint
 in accessible searched paths; one inaccessible daemon directory was excluded
@@ -196,3 +216,56 @@ oracle gate. Run there without purchasing anything. Conclude pursue/upstream
 only if mechanism and end-to-end effects agree; reject if reuse, advice overhead
 or a better existing path wins. The [independent review](evidence/independent-review.md)
 checks this packet's reasoning, not unperformed physical results.
+
+## Reproduce the completed checks
+
+Read [validation.json](evidence/validation.json) for the evaluated commit, exact
+commands/exit codes, retained failures and unrun gates. Check out the **publication
+commit linked in issue #7** for the complete evidence bundle. Its
+`evaluated_code_commit` identifies the unchanged product revision tested;
+the publication adds documentation, installation provenance, evidence and an
+explicit Linux-only guard to the readiness collector, which was rerun separately.
+To recover only the inspected source files (no models), with `gh` available:
+
+```sh
+python3 - <<'PY'
+import hashlib, json, subprocess
+from pathlib import Path
+study = Path('research/heterorouter/cache-reclaim')
+dest = Path('/tmp/spoj-cache-review-source')
+for name, directory in [('engine-sources.json', 'colibri'), ('kernel-sources.json', 'linux')]:
+    manifest = json.loads((study / 'evidence' / name).read_text())
+    for entry in manifest['files']:
+        api = f"repos/{manifest['repository']}/contents/{entry['path']}?ref={manifest['revision']}"
+        data = subprocess.check_output(['gh', 'api', '-H', 'Accept: application/vnd.github.raw+json', api])
+        assert len(data) == entry['size'] and hashlib.sha256(data).hexdigest() == entry['sha256']
+        path = dest / directory / entry['path']
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
+PY
+python3 research/heterorouter/cache-reclaim/verify_sources.py \
+  --engine-root /tmp/spoj-cache-review-source/colibri \
+  --kernel-root /tmp/spoj-cache-review-source/linux
+python3 research/heterorouter/cache-reclaim/collect_environment.py /tmp/spoj-cache-readiness
+```
+
+The verifier checks 55 source/installed files. The collector reports nested
+permission outcomes even when its collection command exits 0. Neither command
+benchmarks inference. Source paths are fetched by content revision and checked
+before writing. Skill validation additionally needs the pinned `karlem/skills`
+checkout and `python3 scripts/validate.py` there.
+
+Frozen Python environment reproduction, **not a model download**:
+
+```sh
+uv sync --project spoi --frozen --python 3.12
+UV_CACHE_DIR=/tmp/spoj-uv-cache UV_OFFLINE=1 ./scripts/check.sh
+uv run --project spoi --frozen python -m spoi.verify_tcp_trace \
+  docs/evidence/local-tcp-1193fcf/trace.json
+```
+
+Dependency installation requires package access; checks require local shared
+memory and loopback sockets. Retain a denied run instead of skipping tests or
+changing the exact lock/source guards. These Linux regression/replay checks
+establish the existing bounded product behavior, not the proposed trained-model
+mechanism. Actual run records and review are in the evidence directory.

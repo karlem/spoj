@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-18T14:09:54.434018+00:00",
+  "evaluated_code_commit": "af9d34c32cf6ea464705b6dae730fc130bcbce6f",
+  "publication_note": "Subsequent publication adds reviewed documents, installation provenance, evidence and a Linux-only guard to the readiness collector. Product tree unchanged from evaluated commit. Collector rerun separately; its actual source hash is retained.",
+  "status": "source/bounds fallback complete; physical experiment BLOCKED and conclusion provisional",
+  "completed_fallback_checks_passed": true,
+  "physical_experiment_passed": null,
+  "checks": [
+    {
+      "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /workspace/spoj/.agents/skills --all --dry-run",
+      "exit_code": 0,
+      "evidence": "skills-install.json"
+    },
+    {
+      "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /workspace/spoj/.agents/skills --all",
+      "exit_code": 0,
+      "evidence": "skills-install.json"
+    },
+    {
+      "command": "python3 /workspace/karlem-skills/scripts/install.py --dest /home/agent/.agents/skills --all",
+      "exit_code": 0,
+      "evidence": "skills-install.json"
+    },
+    {
+      "command": "python3 scripts/validate.py (pinned karlem/skills checkout)",
+      "exit_code": 0,
+      "evidence": "skills-validation.json"
+    },
+    {
+      "command": "spoi/.venv/bin/python research/heterorouter/cache-reclaim/verify_sources.py --engine-root /workspace/scratch/deep-mechanism/colibri --kernel-root /workspace/scratch/deep-mechanism/linux",
+      "exit_code": 0,
+      "evidence": "source-verification.json",
+      "checked_files": 55
+    },
+    {
+      "command": "Independent verifier rerun and skill-byte comparison",
+      "exit_code": 0,
+      "evidence": "independent-review.md"
+    },
+    {
+      "command": "spoi/.venv/bin/python research/heterorouter/cache-reclaim/collect_environment.py research/heterorouter/cache-reclaim/evidence",
+      "exit_code": 0,
+      "evidence": "environment.json",
+      "note": "Collection success; restricted nested strace exited1, not passed. Disabled software perf event opened; no sampling/hardware test."
+    },
+    {
+      "command": "spoi/.venv/bin/python -c 'import json; from spoi.qwen3_adapter import compatibility; print(json.dumps(compatibility(),indent=2))'",
+      "exit_code": 0,
+      "evidence": "compatibility.json"
+    },
+    {
+      "command": "spoi/.venv/bin/python -m spoi.verify_tcp_trace docs/evidence/local-tcp-1193fcf/trace.json",
+      "exit_code": 0,
+      "evidence": "tcp-replay.json"
+    },
+    {
+      "command": "UV_CACHE_DIR=/workspace/scratch/uv-cache UV_OFFLINE=1 ./scripts/check.sh [restricted context]",
+      "exit_code": 1,
+      "evidence": "repo-check.json",
+      "summary": "64 failed,58 passed,150 errors in43.87s; local IPC/socket permission failures; raw log gzip retained"
+    },
+    {
+      "command": "UV_CACHE_DIR=/workspace/scratch/uv-cache UV_OFFLINE=1 ./scripts/check.sh [authorized local IPC context]",
+      "exit_code": 0,
+      "evidence": "repo-check-authorized.json",
+      "summary": "272 passed in615.84s"
+    },
+    {
+      "command": "strace own /bin/true child [restricted then authorized contexts]",
+      "exit_codes": [
+        1,
+        0
+      ],
+      "evidence": "strace-readiness-authorized.json",
+      "note": "Readiness only, both results retained; no model trace."
+    },
+    {
+      "command": "Initial final-bundle metadata/source-count check",
+      "exit_code": 1,
+      "evidence": "reviewer-source-verification-initial.json",
+      "reason": "Copied earlier 54-file reviewer result after adding kernel filemap source. Retained initial result and replaced final result with actual independently rerun 55-file output; no engine/test failure."
+    },
+    {
+      "command": "Final strict evidence JSON/relative-link/source-count checks and git diff --check",
+      "exit_code": 0,
+      "evidence": "validation.json"
+    },
+    {
+      "command": "spoi/.venv/bin/python research/heterorouter/cache-reclaim/collect_environment.py /workspace/scratch/deep-mechanism/final-readiness",
+      "exit_code": 0,
+      "evidence": "environment-final-collector.json",
+      "source_sha256": "38f2d2b5df6f34a95d207ee80be32c79c365573674ddb99b5b8761ab9e47af94",
+      "note": "Final Linux-only guard evaluated on Linux; nested restricted strace still exits1. No Mac execution."
+    },
+    {
+      "command": "Independent final personal44-file/license/provenance review",
+      "exit_code": 0,
+      "evidence": "independent-review.md"
+    }
+  ],
+  "source_pins": {
+    "skills": "c41b2b27c91da7155d555eb4946ece348ac08657",
+    "colibri": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+    "linux_release_source": "725bd2f3c81d54edccb66fead01d4c0c222e2231",
+    "actual_running_kernel_binary_identity_verified": false,
+    "model_checkpoint_revision": null
+  },
+  "not_run": [
+    {
+      "check": "Trained-model invocation / strongest baseline qualification / DROP A-B",
+      "exit_code": null,
+      "reason": "No permitted checkpoint or model-sized file-backed storage available."
+    },
+    {
+      "check": "Independent same-container trained numerical oracle and S=1 observation",
+      "exit_code": null,
+      "reason": "Oracle artifact and observation hook absent; tiny oracle/native timing replay do not substitute."
+    },
+    {
+      "check": "Physical bandwidth, allocation/residency, reclaim, device timeline, profiling-overhead and paired statistical effect",
+      "exit_code": null,
+      "reason": "No actual model workload. Source formulas and readiness probes are not measurements of these."
+    },
+    {
+      "check": "Native Mac acceptance",
+      "exit_code": null,
+      "reason": "No native Mac execution; Linux suite is not Mac acceptance."
+    },
+    {
+      "check": "Full-model generation / multi-machine / speedup / reduced total memory",
+      "exit_code": null,
+      "reason": "#2/deployment/generation/purchases/merge remain outside this research result."
+    }
+  ],
+  "no_product_diff_from_evaluated_commit": true,
+  "independent_review": {
+    "outcome": "approved for provisional source/readiness/bounds packet only",
+    "evidence": "independent-review.md",
+    "scope": "Separate read-only agent in same session/shared workspace; not external physical reproduction."
+  }
+}

@@ -4,7 +4,7 @@ Date: 2026-10-17. Research-only; no changes to the correctness implementation an
 
 ## Capacity goal and Colibri comparison
 
-The focused [OS/file-cache mechanism decision](cache-reclaim/README.md) applies
+The focused [OS/file-cache mechanism decision](cache-reclaim/decision-memo.md) applies
 all eleven installed engineering skills, traces pinned Colibri/Linux source,
 and specifies one existing-knob experiment. Physical inference comparison is
 blocked by missing permitted model/storage artifacts; no synthetic speed result

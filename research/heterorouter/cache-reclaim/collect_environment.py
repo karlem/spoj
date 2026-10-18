@@ -25,6 +25,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
+    if platform.system() != "Linux":
+        parser.error("This collector uses Linux syscall numbers; run it only on Linux.")
     args.output.mkdir(parents=True, exist_ok=True)
     commands = []
     for command in (["lscpu", "--json"],

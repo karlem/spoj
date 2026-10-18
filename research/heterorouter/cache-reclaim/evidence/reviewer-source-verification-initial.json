@@ -1,0 +1,223 @@
+{
+  "ok": true,
+  "checked_files": 54,
+  "scope": "source identity only; no inference or physical comparison",
+  "checked": [
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/distributed-systems/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/distributed-systems/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/distributed-systems/references/failure-ledger.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/distributed-systems/references/consistency.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/linux-performance/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/linux-performance/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/linux-performance/references/experiments.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/linux-performance/references/measurements.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-profiling/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-profiling/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-profiling/references/profiles.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-tradeoffs/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-tradeoffs/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-tradeoffs/references/boundaries.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-tradeoffs/references/migration.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/database-internals/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/database-internals/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/database-internals/references/recovery.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/database-internals/references/storage.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-programming/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-programming/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-programming/references/io.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/systems-programming/references/memory.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/production-reliability/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/production-reliability/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/production-reliability/references/containment.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/production-reliability/references/retries.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/concurrent-programming/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/concurrent-programming/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/concurrent-programming/references/correctness.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/concurrent-programming/references/progress.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-patterns/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-patterns/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-patterns/references/fitness.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/architecture-patterns/references/selection.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/design-patterns/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/design-patterns/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/design-patterns/references/example.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/design-patterns/references/selection.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/network-engineering/SKILL.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/network-engineering/references/sources.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/network-engineering/references/transports.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/network-engineering/references/layers.md"
+    },
+    {
+      "manifest": "skills-install.json",
+      "path": ".agents/skills/network-engineering/references/paths.md"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/colibri.c"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/tier.h"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/autotune.py"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "docs/tuning.md"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "docs/cluster.md"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/Makefile"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "README.md"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/oracle.h"
+    },
+    {
+      "manifest": "engine-sources.json",
+      "path": "c/tools/make_glm_oracle.py"
+    },
+    {
+      "manifest": "kernel-sources.json",
+      "path": "mm/fadvise.c"
+    }
+  ]
+}

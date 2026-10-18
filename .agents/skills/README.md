@@ -12,8 +12,11 @@ Both commands exited 0; all 11 standalone skill folders were installed. The
 records every copied file's hash. The [assessment](../../research/heterorouter/cache-reclaim/skills-review.md)
 applies every skill to SPOJ's current workstreams.
 
-This is a project-local installation, available when this branch is checked out.
-Start a new Codex session in this repository for host skill discovery. The current
+The project-local copy is available when this branch is checked out. All eleven
+were also installed, byte-verified and licensed in this worker account's standard
+personal root, `/home/agent/.agents/skills`, so changing branches does not remove
+that copy. This does not install them into other workers or accounts.
+Start a new Codex session for host skill discovery. The current
 session read and applied the files explicitly; installation does not prove that
 the host refreshed its skill registry during this session. These are partial
 source-based engineering guides, not a certification or complete book coverage.

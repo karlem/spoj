@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-10-18T13:56:41.643349+00:00",
+  "evaluated_commit": "af9d34c32cf6ea464705b6dae730fc130bcbce6f",
+  "command": "UV_CACHE_DIR=/workspace/scratch/uv-cache UV_OFFLINE=1 ./scripts/check.sh",
+  "exit_code": 1,
+  "log": "repo-check-restricted.log.gz",
+  "scope": "Existing Linux product tests only; not native Mac or trained-model streaming acceptance.",
+  "execution_context": "restricted: torch_shm_manager/socket operations denied",
+  "observed_summary": "64 failed, 58 passed, 150 errors in 43.87s"
+}

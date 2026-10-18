@@ -32,6 +32,8 @@ or full-model generation is part of this packet.
    IDs. Supply a fixed 64-token continuation from the same task's permitted
    reference fixture. The experiment never generates a continuation. Record
    `prompt_ids`, `full_ids`, vocabulary and lengths; do not reuse the tiny oracle.
+   Retain the model's actual chat/control-token template; matching arbitrary
+   token IDs does not establish an in-distribution request.
 5. Obtain an **independent oracle for the effective weights in this exact
    quantized container**, with provenance. The existing
    [`make_glm_oracle.py`](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/tools/make_glm_oracle.py)
@@ -58,6 +60,16 @@ env -u DROP -u REF_FORCE ORACLE_STRICT=1 TF=1 SNAP="$SPOJ_MODEL" REF="$SPOJ_ORAC
 env -u REF_FORCE ORACLE_STRICT=1 TF=1 DROP=1 SNAP="$SPOJ_MODEL" REF="$SPOJ_ORACLE" \
   "$SPOJ_ENGINE" "$SPOJ_CAP" "$SPOJ_EBITS" "$SPOJ_DBITS"
 ```
+
+These strict `TF` checks cover the batched `forward_all` path. They do not alone
+validate timed single-token `step` calls. Retain predictions from those actual
+steps in a separate bounded diagnostic run and compare with the independent
+same-container oracle, including zero accepted prediction mismatches. This
+requires an observation hook/reference fixture that is **not implemented here**.
+Existing `CONSIST` at `colibri.c:9504` compares batched and single-token logits
+against the engine itself; its relative-gap gate and reported argmax flips are
+useful diagnostics, not an independent oracle. Do not relabel its default 1e-2
+threshold as SPOJ's float32 tolerance or quietly relax a failed independent gate.
 
 If quantized math and the independent reference disagree, diagnose and publish
 the mismatch before changing the acceptance contract. Do not transfer SPOJ's
@@ -90,6 +102,9 @@ is not evidence of advantage over the winning engine.
 
 For a winning buffered-slab regime, freeze its complete configuration. **Only
 `DROP` presence changes:** A unsets it; B sets `DROP=1`. `DROP=0` enables it too.
+Both arms are existing engine configurations. A is the controlled reference;
+whichever arm wins belongs in the strongest upstream baseline. A B-over-A gain
+would establish a supported configuration region, not a SPOJ-over-Colibri win.
 Keep file layout, kernel path, threads, loader backend, prompt, tokens, budgets,
 adaptive-policy settings, starting cache history and request concurrency fixed.
 Record RSS-guard/cache-controller actuations as possible mediators, including
