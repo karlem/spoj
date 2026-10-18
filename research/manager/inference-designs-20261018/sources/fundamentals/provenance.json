@@ -1,0 +1,331 @@
+{
+  "run_id": "inference-designs-20261018-1841",
+  "worker_id": "/root/inference_fundamentals",
+  "model": "unavailable",
+  "skills_revision": "c41b2b27c91da7155d555eb4946ece348ac08657",
+  "records": [
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/README.md",
+      "retrieved_at": "2026-10-18T18:42:15.730113+00:00",
+      "status": 200,
+      "bytes": 5040,
+      "sha256": "5f7971552e9c57d8ac75f06969c907ac32061c3474a0010a32fcd53df76701f5",
+      "path": "README.source.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/architecture-tradeoffs/SKILL.md",
+      "requested_path": "architecture/architecture-tradeoffs/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.153753+00:00",
+      "status": 200,
+      "bytes": 2952,
+      "sha256": "8b64fb7c2c0a3c1322c26e822ff756ea80d2ea0d6fbadaeb090bc0ec3838af1b",
+      "path": "raw/architecture/architecture-tradeoffs/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/distributed-systems/SKILL.md",
+      "requested_path": "architecture/distributed-systems/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.154166+00:00",
+      "status": 200,
+      "bytes": 3565,
+      "sha256": "6299853ef4b36db77b5ddbdd4035c05e0655b402c94c6cd749eed046de0e7ae4",
+      "path": "raw/architecture/distributed-systems/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/concurrency/concurrent-programming/SKILL.md",
+      "requested_path": "concurrency/concurrent-programming/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.154652+00:00",
+      "status": 200,
+      "bytes": 2883,
+      "sha256": "c8ef6ece0497f75e41782760f7afe4e3d041dad5af5b15a2d48b41744c3baa8c",
+      "path": "raw/concurrency/concurrent-programming/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/engineering/systems-programming/SKILL.md",
+      "requested_path": "engineering/systems-programming/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.155066+00:00",
+      "status": 200,
+      "bytes": 2872,
+      "sha256": "53a3a959a15a9245923aa095118e797cd0f2ea55f9069a8c83ec417654a322cc",
+      "path": "raw/engineering/systems-programming/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/performance/linux-performance/SKILL.md",
+      "requested_path": "performance/linux-performance/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.839082+00:00",
+      "status": 200,
+      "bytes": 3188,
+      "sha256": "76ad4f3a811bd3bbb9649265c6cdbfbe02b0abb6cea592626b1b24d6c9a7779e",
+      "path": "raw/performance/linux-performance/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/performance/systems-profiling/SKILL.md",
+      "requested_path": "performance/systems-profiling/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.856676+00:00",
+      "status": 200,
+      "bytes": 3025,
+      "sha256": "e0a03eb457eb8cf9fe8724f2400b93db66653d3d86ad43613232ab14479b2bd9",
+      "path": "raw/performance/systems-profiling/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/networking/network-engineering/SKILL.md",
+      "requested_path": "networking/network-engineering/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:24.920451+00:00",
+      "status": 200,
+      "bytes": 2936,
+      "sha256": "b4e7ff81eccd204a9555707a7ce2d75de8cb61d2b11adecc168c9b3a4902568d",
+      "path": "raw/networking/network-engineering/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/reliability/production-reliability/SKILL.md",
+      "requested_path": "reliability/production-reliability/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:25.006621+00:00",
+      "status": 200,
+      "bytes": 2865,
+      "sha256": "fc3da6764f785e91fdb57144953d545d375c28d6383e46baa21b493f85bb11eb",
+      "path": "raw/reliability/production-reliability/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/architecture-patterns/SKILL.md",
+      "requested_path": "architecture/architecture-patterns/SKILL.md",
+      "retrieved_at": "2026-10-18T18:42:25.197183+00:00",
+      "status": 200,
+      "bytes": 2929,
+      "sha256": "589cfc534c229983d1f77d98de3ba2ab2c06f33509a8f9fea32ad466f71a3925",
+      "path": "raw/architecture/architecture-patterns/SKILL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/sources/README.md",
+      "requested_path": "sources/README.md",
+      "retrieved_at": "2026-10-18T18:42:25.311762+00:00",
+      "status": 200,
+      "bytes": 8974,
+      "sha256": "4a03d9eb424e816b7b9ceb94aa9404e66e0954860c8eb39d9bcb18268dc3e7a7",
+      "path": "raw/sources/README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/LICENSE",
+      "requested_path": "LICENSE",
+      "retrieved_at": "2026-10-18T18:42:25.600169+00:00",
+      "status": 200,
+      "bytes": 1076,
+      "sha256": "4aab64801e5d7a4fa63a2f93ce2ae61b51ed7a55cdb7362d4d47bd69fe104dce",
+      "path": "raw/LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/architecture-tradeoffs/references/boundaries.md",
+      "requested_path": "architecture/architecture-tradeoffs/references/boundaries.md",
+      "retrieved_at": "2026-10-18T18:42:40.703362+00:00",
+      "status": 200,
+      "bytes": 3453,
+      "sha256": "0cdd898be79f290e28febe3a29805f8eba71f2e2b23d6cf4c6b6ab35a9b4220b",
+      "path": "raw/architecture/architecture-tradeoffs/references/boundaries.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/distributed-systems/references/failure-ledger.md",
+      "requested_path": "architecture/distributed-systems/references/failure-ledger.md",
+      "retrieved_at": "2026-10-18T18:42:40.703742+00:00",
+      "status": 200,
+      "bytes": 3725,
+      "sha256": "4c4bdcde901345ac3d6af7dce56849ea7ef5eade3f645f8bab5c9e061cb4c101",
+      "path": "raw/architecture/distributed-systems/references/failure-ledger.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/distributed-systems/references/consistency.md",
+      "requested_path": "architecture/distributed-systems/references/consistency.md",
+      "retrieved_at": "2026-10-18T18:42:40.704147+00:00",
+      "status": 200,
+      "bytes": 3688,
+      "sha256": "322592ba85e5ab808c967a1307dcdb59d86fd94a3158d39ea79851c8cdd09899",
+      "path": "raw/architecture/distributed-systems/references/consistency.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/concurrency/concurrent-programming/references/correctness.md",
+      "requested_path": "concurrency/concurrent-programming/references/correctness.md",
+      "retrieved_at": "2026-10-18T18:42:40.704390+00:00",
+      "status": 200,
+      "bytes": 3161,
+      "sha256": "ae2965e5a707c19f9a1681a67dff0db68467966c51a5cf82972e29abcbecb0d5",
+      "path": "raw/concurrency/concurrent-programming/references/correctness.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/concurrency/concurrent-programming/references/progress.md",
+      "requested_path": "concurrency/concurrent-programming/references/progress.md",
+      "retrieved_at": "2026-10-18T18:42:41.039874+00:00",
+      "status": 200,
+      "bytes": 3110,
+      "sha256": "36ecbfdd9bf253a590f22b80b017dd135104cc4f97fadbbd7aeabcc5ad35c2fc",
+      "path": "raw/concurrency/concurrent-programming/references/progress.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/engineering/systems-programming/references/memory.md",
+      "requested_path": "engineering/systems-programming/references/memory.md",
+      "retrieved_at": "2026-10-18T18:42:41.045949+00:00",
+      "status": 200,
+      "bytes": 3354,
+      "sha256": "b94d98909906e47fc8519be98da9b3cf279c3fc01215ba234f76c8121518a7a3",
+      "path": "raw/engineering/systems-programming/references/memory.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/engineering/systems-programming/references/io.md",
+      "requested_path": "engineering/systems-programming/references/io.md",
+      "retrieved_at": "2026-10-18T18:42:41.087440+00:00",
+      "status": 200,
+      "bytes": 2905,
+      "sha256": "0060cf440afd02622b32564390475508844265283c9024e78ad2c4d1613db419",
+      "path": "raw/engineering/systems-programming/references/io.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/performance/linux-performance/references/experiments.md",
+      "requested_path": "performance/linux-performance/references/experiments.md",
+      "retrieved_at": "2026-10-18T18:42:41.382361+00:00",
+      "status": 200,
+      "bytes": 3025,
+      "sha256": "058c5468f784324b44bcfcdf2e201e5b79c4c09322f59455fe9c5698d1396cfb",
+      "path": "raw/performance/linux-performance/references/experiments.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/performance/systems-profiling/references/profiles.md",
+      "requested_path": "performance/systems-profiling/references/profiles.md",
+      "retrieved_at": "2026-10-18T18:42:41.436956+00:00",
+      "status": 200,
+      "bytes": 3023,
+      "sha256": "a560892d9121af7b674d341ed67ece9d6bc404d653c55819f294ae4814ad3651",
+      "path": "raw/performance/systems-profiling/references/profiles.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/networking/network-engineering/references/paths.md",
+      "requested_path": "networking/network-engineering/references/paths.md",
+      "retrieved_at": "2026-10-18T18:42:41.585143+00:00",
+      "status": 200,
+      "bytes": 3042,
+      "sha256": "d12694d207e20b83088324ad847438bb73120b6720a03b9fd67af109a3fc8a70",
+      "path": "raw/networking/network-engineering/references/paths.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/networking/network-engineering/references/transports.md",
+      "requested_path": "networking/network-engineering/references/transports.md",
+      "retrieved_at": "2026-10-18T18:42:41.675590+00:00",
+      "status": 200,
+      "bytes": 2823,
+      "sha256": "fdde3fa72fc9b6285d1d7260d0c6de9b8fe1c01b7d136854afedd4a8acfe232d",
+      "path": "raw/networking/network-engineering/references/transports.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/reliability/production-reliability/references/containment.md",
+      "requested_path": "reliability/production-reliability/references/containment.md",
+      "retrieved_at": "2026-10-18T18:42:42.184984+00:00",
+      "status": 200,
+      "bytes": 3086,
+      "sha256": "f292451dbe566da29247121d13a9a9a28885a919fa92faa8f9300d4e4e0166c2",
+      "path": "raw/reliability/production-reliability/references/containment.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/reliability/production-reliability/references/retries.md",
+      "requested_path": "reliability/production-reliability/references/retries.md",
+      "retrieved_at": "2026-10-18T18:42:42.235292+00:00",
+      "status": 200,
+      "bytes": 3032,
+      "sha256": "4ba23599a1e59106416188381fcf7f94e9e82a16aaacbd9c0325cf7b1d5d059b",
+      "path": "raw/reliability/production-reliability/references/retries.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/architecture-patterns/references/selection.md",
+      "requested_path": "architecture/architecture-patterns/references/selection.md",
+      "retrieved_at": "2026-10-18T18:42:42.291559+00:00",
+      "status": 200,
+      "bytes": 3513,
+      "sha256": "1326f17357223f09c051e4cd37ea712721507750e52d63d165dfaeeedbfc0fc5",
+      "path": "raw/architecture/architecture-patterns/references/selection.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/architecture/architecture-patterns/references/fitness.md",
+      "requested_path": "architecture/architecture-patterns/references/fitness.md",
+      "retrieved_at": "2026-10-18T18:42:42.540150+00:00",
+      "status": 200,
+      "bytes": 2521,
+      "sha256": "37ee42620ee55d93e104bc597d1f6ef8855ce4892692fd1b2f6a49bd170a4bec",
+      "path": "raw/architecture/architecture-patterns/references/fitness.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/concurrency/concurrent-programming/references/sources.md",
+      "requested_path": "concurrency/concurrent-programming/references/sources.md",
+      "retrieved_at": "2026-10-18T18:42:42.563956+00:00",
+      "status": 200,
+      "bytes": 2814,
+      "sha256": "0ee99625f1f1fc24bffea113925f222a7be206e737a40ac7ec2da35d34259aa0",
+      "path": "raw/concurrency/concurrent-programming/references/sources.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/karlem/skills/c41b2b27c91da7155d555eb4946ece348ac08657/networking/network-engineering/references/sources.md",
+      "requested_path": "networking/network-engineering/references/sources.md",
+      "retrieved_at": "2026-10-18T18:42:42.613443+00:00",
+      "status": 200,
+      "bytes": 3793,
+      "sha256": "7d55be60d7b1b830be0b2b720a7c8f0fc80d820061abefa316496aac57b8bee7",
+      "path": "raw/networking/network-engineering/references/sources.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/Documentation/core-api/dma-api-howto.rst",
+      "retrieved_at": "2026-10-18T18:43:03.427028+00:00",
+      "kind": "original-source",
+      "status": 200,
+      "bytes": 33369,
+      "sha256": "c1667316a8214647f9ed5a3726bed18a9897727c25f732a52ddc614569822d6e",
+      "path": "raw-primary/linux-dma-api-howto-v6.18.rst",
+      "relevance": "Read Types of DMA mappings and streaming DMA map/unmap/sync lifetime contracts. This is Linux driver guidance, not a CUDA/RDMA API contract."
+    },
+    {
+      "url": "https://people.eecs.berkeley.edu/~pattrsn/roofline.pdf",
+      "retrieved_at": "2026-10-18T18:43:03.427359+00:00",
+      "kind": "original-source",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "retrieved_at": "2026-10-18T18:43:03.427723+00:00",
+      "kind": "original-source",
+      "status": 200,
+      "bytes": 2207864,
+      "sha256": "79e2ff81a15c55de870492231e81e36c50366389c118a7317b5877f603cfa2a0",
+      "path": "raw-primary/linearizability.pdf",
+      "relevance": "Verified title/authors; read abstract, introduction, sections 2.1\u20132.2. Only sequential specification and real-time history conditions used."
+    },
+    {
+      "url": "https://www.osti.gov/servlets/purl/1407075",
+      "retrieved_at": "2026-10-18T18:43:35.119669+00:00",
+      "kind": "original-source",
+      "status": 200,
+      "bytes": 362553,
+      "sha256": "5e25c20124eef987a39cc3ae71ec0e2d77d4cc73376c3270a4f94b8e4574c59b",
+      "path": "raw-primary/roofline-osti.pdf",
+      "relevance": "Excluded: retrieved paper is Porting GASNet to Portals, not Roofline. HTTP success is not source identity verification."
+    },
+    {
+      "url": "https://crd.lbl.gov/assets/pubs_presos/roofline.pdf",
+      "retrieved_at": "2026-10-18T18:43:50.667273+00:00",
+      "kind": "original-source-candidate",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://people.eecs.berkeley.edu/~kubitron/courses/cs252-S10/handouts/papers/RooflineVyNoYellow.pdf",
+      "retrieved_at": "2026-10-18T18:43:50.667594+00:00",
+      "kind": "original-source-candidate",
+      "status": 200,
+      "bytes": 2520119,
+      "sha256": "a75362d86d207fd5f8612bd99e1af745cf5e4f15a41140db7a33b0a9cd5613b1",
+      "path": "raw-primary/roofline-berkeley.pdf",
+      "relevance": "Verified title and authors; read sections 1\u20134. Author preprint revised August/October 2008; not represented as final published typography."
+    }
+  ],
+  "extra_failures": [
+    {
+      "tool": "mcp__codex_apps__search_service_web_run",
+      "outcome": "isError true, empty content; no search result used",
+      "purpose": "locate Roofline primary source"
+    }
+  ],
+  "first_recorded_at": "2026-10-18T18:42:14+00:00",
+  "worker_started_at": null,
+  "start_time_note": "First timestamp was captured after instructions were read; exact invocation start is unavailable to this worker.",
+  "ended_at": "2026-10-18T18:48:21.049898+00:00"
+}

@@ -1,0 +1,128 @@
+{
+  "run_id": "inference-designs-20261018-1841",
+  "issue": "karlem/spoj#9",
+  "started_at": "2026-10-18T18:41:00Z",
+  "packaged_at": "2026-10-18T18:55:00.591104+00:00",
+  "claim_expires_at": "2026-10-18T19:11:00Z",
+  "manager": "/root",
+  "provider_model_id": null,
+  "branch": "research/inference-designs-20261018",
+  "base_commit": "72219b9b4ba769e8d1f88454953d191684355adc",
+  "evaluated_commit": "f9730ed4c6e0ee15b063320d4359645acd904f34",
+  "workers": [
+    {
+      "id": "/root/inference_fundamentals",
+      "first_recorded_at": "2026-10-18T18:42:14+00:00",
+      "ended_at": "2026-10-18T18:48:21.049898+00:00"
+    },
+    {
+      "id": "/root/inference_prior_art",
+      "first_recorded_at": "2026-10-18T18:42:28Z",
+      "ended_at": "2026-10-18T18:47:50.813852+00:00"
+    },
+    {
+      "id": "/root/inference_design_validator",
+      "first_recorded_at": "2026-10-18T18:49:23Z",
+      "ended_at": "2026-10-18T18:53:57.270580+00:00"
+    }
+  ],
+  "worker_time_scope": "Exact invocation starts unavailable; first clock observations and reported ends recorded. Command execution times are separate evidence.",
+  "child_count": 3,
+  "grandchildren": 0,
+  "skills_revision": "c41b2b27c91da7155d555eb4946ece348ac08657",
+  "skills_used": 9,
+  "book_coverage": "Explicitly partial; no whole-book reading claimed.",
+  "inference_source_families": 7,
+  "designs": {
+    "H1": {
+      "name": "Explicit branch lifetime and admission",
+      "decision": "PURSUE bounded metadata/interleaving prototype and existing-engine API audit",
+      "novelty": "DAGs, branching and prefix sharing already implemented in prior art; incremental advantage unproven",
+      "strong_baselines": [
+        "SGLang fork/prefix cache/continuous batching",
+        "Parrot application-aware scheduling as architectural precedent; current source unmaintained/patched"
+      ],
+      "capacity_example": "Existing and proposed exact sharing both 1.5 GiB; zero added sharing gain."
+    },
+    "H2": {
+      "name": "KV-owning attention workers",
+      "decision": "Protocol qualification then hardware capacity/SLO test; physical value UNRESOLVED",
+      "novelty": "Stable distributed attention reduction and DCP already implemented",
+      "strong_baselines": [
+        "Same-capacity local supported attention",
+        "vLLM GQA/MLA DCP",
+        "SGLang supported DCP",
+        "Independent agents on resident engines"
+      ],
+      "limits": "Does not solve weight capacity, autoregressive dependence or slowest-owner bounds."
+    },
+    "queued": {
+      "name": "Versioned recurrent model state",
+      "decision": "QUEUED model-quality and state-cost comparison",
+      "basis": "Mamba/Mamba-2 state/cache implementations",
+      "limits": "Different architecture/weights/quality; mutable full state needs independent copies on divergence, hybrids may retain attention KV."
+    }
+  },
+  "review": {
+    "verdict": "ACCEPT_SCOPED_RESEARCH_DESIGN",
+    "report": "evidence/independent-review/REVIEW.md",
+    "blocking_findings": [],
+    "author_comparisons": 432,
+    "author_empty_cases": 240,
+    "author_max_absolute_error": 1.1102230246251565e-16,
+    "independent_decimal_comparisons": 96,
+    "accounting_rows": 6,
+    "retained_source_bodies_verified": 71,
+    "published_excerpt_records_verified": 16,
+    "source_sha256": "24d8c671408333e7a2cff47d4a6273fc2b1cdfd024e4f2da5e2d0fb82a459ac2"
+  },
+  "coverage_limits": [
+    "No implemented H1 lifecycle or H2 distributed protocol; pending append, cancellation, DMA, epochs, credits require future executable histories.",
+    "All-masked fixture returns None by convention; actual model semantics must be qualified.",
+    "Precomputed Q/K plus visible indices; no RoPE, additive bias, quantization, FP16 kernels, or backend layouts.",
+    "GQA main loop shares head-selection mapping between expected and actual; negative control demonstrates asymmetric inputs, not independent routing-code coverage.",
+    "Source inspection and hashes are not reproduced benchmarks or exhaustive novelty proof; skills library has explicitly partial book coverage.",
+    "No GPU, model inference, network performance, new OS or hardware validation."
+  ],
+  "next_H1_assignment": {
+    "scope": "One bounded metadata state machine plus SGLang API audit; no product engine replacement",
+    "invariants": [
+      "Immutable shared prefixes and private tail",
+      "Expected generation and stable operation identity at publication",
+      "No late commit after cancellation",
+      "No reuse while kernel/DMA/migration pins remain",
+      "Bound active and queued work, reservations, quarantine and dedup retention",
+      "Admitted work eventually retires under explicitly stated progress assumptions"
+    ],
+    "injected_histories": [
+      "Fork versus release",
+      "Cancel before/after append commit",
+      "Cancel during device or copy operation",
+      "Late duplicate completion",
+      "Allocation failure and credit exhaustion",
+      "Tool return after cancellation and sibling continuation"
+    ],
+    "acceptance": "Legal histories against sequential spec; conserved memory ledger; no premature reuse/late publication; no performance claim from model."
+  },
+  "next_H2_assignment": {
+    "scope": "CPU owner-protocol fixture before real one-layer attention benchmark",
+    "additional_checks": [
+      "Independent expected GQA head map and injected wrong map",
+      "Complete disjoint visible-position coverage",
+      "Duplicate and missing shard counterexample",
+      "Pending K/V append visibility and stale epoch",
+      "All-masked backend policy",
+      "Real backend position/bias/precision and completion APIs"
+    ],
+    "physical_gate": "Existing authorized machines/model/task and declared SLO, same-quality strong local/DCP baselines; payload savings alone are insufficient."
+  },
+  "product_acceptance": "BLOCKED: offline scripts/check.sh exit 1 before collection; missing nvidia-nccl-cu13==2.30.7 through Torch. Native-Mac checks unexecuted.",
+  "retained_failures": "Source search-tool failures, four HTTP retrieval failures across source packets and excluded wrong-paper response; analytical/reviewer executions passed first attempt; product dependency failure retained.",
+  "queue": "Prior D1 PR13, D2 PR12, hardware PR14 retained unchanged. D3-D6 queued. No new OS/hardware project started.",
+  "external_expenditure": 0,
+  "model_downloads": false,
+  "physical_inference": false,
+  "host_changes": false,
+  "remote_access_claimed": false,
+  "merge_authorized": false
+}

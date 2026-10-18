@@ -1,0 +1,6 @@
+{
+  "command": "UV_OFFLINE=1 UV_CACHE_DIR=/workspace/scratch/inference-offline-uv-cache HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 ./scripts/check.sh",
+  "started_at": "2026-10-18T18:48:28.042926+00:00",
+  "elapsed_s": 0.11472620299900882,
+  "exit_code": 1
+}

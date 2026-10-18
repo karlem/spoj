@@ -1,0 +1,1 @@
+Publish REPORT.md, manifest.json, public-evidence.json, summary.json, failures.txt, retrieval scripts and SHA256SUMS. Do not copy raw/ or ring-text.txt: full third-party content is retained only in scratch for audit. SHA256SUMS identifies raw bytes for reproducibility but does not grant redistribution rights. Selected source excerpts are bounded; all conclusions are paraphrases.

@@ -1,0 +1,72 @@
+{
+  "run_id": "inference-designs-20261018-1841",
+  "worker_id": "/root/inference_design_validator",
+  "provider_model_id": null,
+  "first_recorded_clock_utc": "2026-10-18T18:49:23Z",
+  "ended_at": "2026-10-18T18:53:57.270580+00:00",
+  "evaluated_commit": "f9730ed4c6e0ee15b063320d4359645acd904f34",
+  "verdict": "ACCEPT_SCOPED_RESEARCH_DESIGN",
+  "blocking_findings": [],
+  "author_files_modified": false,
+  "checks_passed_within_research_scope": true,
+  "product_acceptance": false,
+  "product_blocker": "Offline required check exited 1 before collection: nvidia-nccl-cu13==2.30.7 absent from isolated cache through Torch.",
+  "author_rerun": {
+    "exit_code": 0,
+    "byte_identical": true,
+    "comparisons": 432,
+    "empty_comparisons": 240
+  },
+  "independent_audit": {
+    "author_rerun_byte_identical": true,
+    "author_comparisons_verified": 432,
+    "author_empty_comparisons_verified": 240,
+    "accounting_rows_verified": 6,
+    "source_checks": {
+      "fundamentals": {
+        "retrieval_records": 35,
+        "raw_files_verified": 33,
+        "retained_failed_retrievals": 2,
+        "excerpt_records_verified": 7,
+        "manifest_files_verified": 5,
+        "raw_bytes_verified": 5220278
+      },
+      "prior-art": {
+        "retrieval_records": 40,
+        "raw_files_verified": 38,
+        "retained_failed_retrievals": 2,
+        "excerpt_records_verified": 9,
+        "manifest_files_verified": 51,
+        "raw_bytes_verified": 4691024
+      }
+    },
+    "decimal_adversarial": {
+      "precision_digits": 90,
+      "fixtures": 8,
+      "comparisons": 96,
+      "max_absolute_error": 2.8065589257859405e-17,
+      "tolerance": 1e-10
+    },
+    "duplicate_coverage_counterexample": {
+      "valid_output": 0.5,
+      "duplicated_output": 0.3333333333333333,
+      "interpretation": "Exploratory reviewer demonstration of stated protocol precondition; not a defect in the claimed arithmetic fixture."
+    },
+    "scope": "Arithmetic, source identity/excerpts and design review only; no inference or physical performance validation."
+  },
+  "reviewer_execution_attempts": 1,
+  "reviewer_execution_failures": 0,
+  "coverage_limits": [
+    "No implemented H1 lifecycle or H2 distributed protocol; pending append, cancellation, DMA, epochs, credits require future executable histories.",
+    "All-masked fixture returns None by convention; actual model semantics must be qualified.",
+    "Precomputed Q/K plus visible indices; no RoPE, additive bias, quantization, FP16 kernels, or backend layouts.",
+    "GQA main loop shares head-selection mapping between expected and actual; negative control demonstrates asymmetric inputs, not independent routing-code coverage.",
+    "Source inspection and hashes are not reproduced benchmarks or exhaustive novelty proof; skills library has explicitly partial book coverage.",
+    "No GPU, model inference, network performance, new OS or hardware validation."
+  ],
+  "next": {
+    "H1": "PURSUE bounded lifecycle prototype and existing-engine API audit",
+    "H2": "UNRESOLVED physical value; qualify protocol then capacity/SLO experiment",
+    "recurrent": "QUEUED model-quality and state-cost comparison"
+  }
+}

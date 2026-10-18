@@ -1,0 +1,37 @@
+{
+  "author_rerun_byte_identical": true,
+  "author_comparisons_verified": 432,
+  "author_empty_comparisons_verified": 240,
+  "accounting_rows_verified": 6,
+  "source_checks": {
+    "fundamentals": {
+      "retrieval_records": 35,
+      "raw_files_verified": 33,
+      "retained_failed_retrievals": 2,
+      "excerpt_records_verified": 7,
+      "manifest_files_verified": 5,
+      "raw_bytes_verified": 5220278
+    },
+    "prior-art": {
+      "retrieval_records": 40,
+      "raw_files_verified": 38,
+      "retained_failed_retrievals": 2,
+      "excerpt_records_verified": 9,
+      "manifest_files_verified": 51,
+      "raw_bytes_verified": 4691024
+    }
+  },
+  "decimal_adversarial": {
+    "precision_digits": 90,
+    "fixtures": 8,
+    "comparisons": 96,
+    "max_absolute_error": 2.8065589257859405e-17,
+    "tolerance": 1e-10
+  },
+  "duplicate_coverage_counterexample": {
+    "valid_output": 0.5,
+    "duplicated_output": 0.3333333333333333,
+    "interpretation": "Exploratory reviewer demonstration of stated protocol precondition; not a defect in the claimed arithmetic fixture."
+  },
+  "scope": "Arithmetic, source identity/excerpts and design review only; no inference or physical performance validation."
+}
