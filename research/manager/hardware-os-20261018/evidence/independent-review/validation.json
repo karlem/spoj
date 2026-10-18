@@ -1,0 +1,183 @@
+{
+  "reviewer": "/root/hardware_validator",
+  "frozen_revision": "e9f9d08f8bfb5ded804cc5f79fb0f2b4c913b064",
+  "scope": "Same-host independent worker; no physical replication or inference validation",
+  "limits": {
+    "as_bytes_per_process": 268435456,
+    "cpu_s_per_process": 30,
+    "fsize_bytes": 16777216,
+    "command_timeout_s": 30,
+    "transport_timeout_s": 20,
+    "whole_script_timeout_s": 280
+  },
+  "records": [
+    {
+      "name": "unit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_architecture"
+      ],
+      "cwd": "/workspace/spoj-hardware-review/research/manager/hardware-os-20261018",
+      "expected_exit": 0,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    },
+    {
+      "name": "grid",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "architecture_model.py"
+      ],
+      "cwd": "/workspace/spoj-hardware-review/research/manager/hardware-os-20261018",
+      "expected_exit": 0,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    },
+    {
+      "name": "compile",
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "/workspace/spoj-hardware-review/research/manager/hardware-os-20261018/transport/echo.c",
+        "-o",
+        "/workspace/scratch/hardware-validator/echo.bin"
+      ],
+      "cwd": "/workspace/scratch/hardware-validator",
+      "expected_exit": 0,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    },
+    {
+      "name": "tcp-normal",
+      "command": [
+        "/workspace/scratch/hardware-validator/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "cwd": "/workspace/scratch/hardware-validator",
+      "expected_exit": 0,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    },
+    {
+      "name": "unix-normal",
+      "command": [
+        "/workspace/scratch/hardware-validator/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "cwd": "/workspace/scratch/hardware-validator",
+      "expected_exit": 0,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    },
+    {
+      "name": "tcp-corrupt",
+      "command": [
+        "/workspace/scratch/hardware-validator/echo.bin",
+        "tcp",
+        "corrupt"
+      ],
+      "cwd": "/workspace/scratch/hardware-validator",
+      "expected_exit": 42,
+      "status_evidence": "asserted before later provenance parser failure in attempt2; audited retained stdout/stderr, no new subprocess execution"
+    }
+  ],
+  "checks": [
+    {
+      "check": "architecture_original_hashes",
+      "result": true
+    },
+    {
+      "check": "exact_full_grid_rerun",
+      "result": {
+        "case_count": 1620,
+        "sha256": "9fc32da25c70984c66335078cbb288db7fc021ecd6b44f7aa91dbe6a5b2b868b",
+        "counts": {
+          "near_weights_robust_conditional": 1248,
+          "no_robust_20pct_winner": 372,
+          "weight_staging_robust_conditional": 0
+        }
+      }
+    },
+    {
+      "check": "independent_all_row_arithmetic",
+      "result": {
+        "weight_bytes": 176160768,
+        "activation_bytes": 16384,
+        "ratio": 10752,
+        "400Gbps_raw_GBs": 50.0,
+        "HBM_to_network_nominal_ratio": 67.0
+      }
+    },
+    {
+      "check": "exploratory_slow_cpu_counterexample_not_grid_change",
+      "result": {
+        "cold_layers": 32,
+        "gpu_expert_ms": 0.2,
+        "cpu_expert_ms": 100.0,
+        "line_gbit_s": 400.0,
+        "flows": 1,
+        "rtt_ms": 0.2,
+        "payload_bytes_per_second": 40000000000.0,
+        "selected_weight_bytes_per_cold_layer": 176160768,
+        "activation_roundtrip_bytes": 16384,
+        "full_gpu_reference_ms_capacity_unverified": 9.6,
+        "weight_staging_lower_ms": 244.481024,
+        "weight_staging_serial_ms": 391.8096384,
+        "near_weights_lower_ms": 3209.6,
+        "near_weights_serial_ms": 3209.6349525333335,
+        "coarse_layer_design_ms_feasibility_unverified": 3216.201092266667,
+        "weight_staging_wire_bytes": 5637144576,
+        "near_weights_wire_bytes": 524288,
+        "coarse_layer_wire_bytes": 16384,
+        "fine_grained_serial_roundtrips": 32,
+        "coarse_serial_roundtrips": 1,
+        "conditional_decision": "weight_staging_robust_conditional",
+        "inference_correctness": "unverified",
+        "physical_performance": "not measured"
+      }
+    },
+    {
+      "check": "amdahl_latency_vs_speedup",
+      "result": true
+    },
+    {
+      "check": "transport_original_hashes",
+      "result": true
+    },
+    {
+      "check": "original_raw_positive_negative_accounting_order_reversal",
+      "result": {
+        "good_requests": 1520,
+        "application_bytes": 90117376,
+        "failure_retained": true
+      }
+    },
+    {
+      "check": "smallest_transport_independent_rerun",
+      "result": {
+        "good_requests": 304,
+        "application_bytes": 18023680,
+        "exits": [
+          0,
+          0,
+          42
+        ],
+        "source_sha256": "735f77f06a7b7dab408a82248f20662b2a0f1f1b6ad5cc121155d47284a6ffeb"
+      }
+    },
+    {
+      "check": "source_originals_and_public_excerpts",
+      "result": {
+        "hashed_raw_documents": 12,
+        "matched_excerpts": 10
+      }
+    }
+  ]
+}

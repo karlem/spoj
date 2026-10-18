@@ -1,0 +1,17 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.c",
+    "-o",
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.c: In function \u2018main\u2019:\n/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.c:90:51: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]\n   90 |                 if (corrupt) server[sizes[p] - 1] ^= 1U;\n      |                              ~~~~~~~~~~~~~~~~~~~~~^~~~~\n/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.c:55:77: note: at offset -1 into destination object of size 1048576 allocated by \u2018__builtin_calloc\u2019\n   55 |     unsigned char *tx = malloc(sizes[2]), *rx = malloc(sizes[2]), *server = malloc(sizes[2]);\n      |                                                                             ^~~~~~~~~~~~~~~~\ncc1: all warnings being treated as errors\n"
+}

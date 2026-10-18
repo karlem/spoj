@@ -1,0 +1,21 @@
+{
+  "layers": 32,
+  "hidden": 4096,
+  "intermediate": 14336,
+  "top_k": 2,
+  "weight_bytes": 0.5,
+  "activation_bytes": 2,
+  "dense_gpu_ms": 0.1,
+  "dense_cpu_ms": 0.5,
+  "pcie_gb_s": 24,
+  "payload_efficiency": 0.8,
+  "cold_layers": [0, 1, 4, 16, 32],
+  "gpu_expert_ms": [0.05, 0.2, 1],
+  "cpu_expert_ms": [0.5, 2, 10],
+  "line_gbit_s": [1, 2.5, 10, 25, 100, 400],
+  "contending_flows": [1, 4],
+  "rtt_ms": [0.02, 0.2, 1],
+  "removable_os_fractions": [0, 0.01, 0.05, 0.1, 0.2, 0.5],
+  "removed_fractions": [0.5, 0.9, 1],
+  "min_latency_reduction": 0.2
+}

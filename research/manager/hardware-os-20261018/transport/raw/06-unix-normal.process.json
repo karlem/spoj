@@ -1,0 +1,15 @@
+{
+  "pair": 4,
+  "position": 1,
+  "transport": "unix",
+  "mode": "normal",
+  "name": "06-unix-normal",
+  "command": [
+    "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+    "unix",
+    "normal"
+  ],
+  "exit": 0,
+  "wall_s": 0.005538285000511678,
+  "timeout": false
+}

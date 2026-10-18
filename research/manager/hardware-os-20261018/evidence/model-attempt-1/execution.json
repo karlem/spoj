@@ -1,0 +1,52 @@
+{
+  "records": [
+    {
+      "name": "unit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_architecture"
+      ],
+      "cwd": "/workspace/spoj-hardware/research/manager/hardware-os-20261018",
+      "started_at": "2026-10-18T18:07:50.133038+00:00",
+      "elapsed_seconds": 0.16529463799997757,
+      "exit_code": 0
+    },
+    {
+      "name": "grid",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "architecture_model.py"
+      ],
+      "cwd": "/workspace/spoj-hardware/research/manager/hardware-os-20261018",
+      "started_at": "2026-10-18T18:07:50.298349+00:00",
+      "elapsed_seconds": 0.16544719800003804,
+      "exit_code": 0
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "limits": {
+    "wall_seconds": 300,
+    "cpu_seconds": 60,
+    "address_space_bytes": 2147483648,
+    "file_bytes": 16777216
+  },
+  "source_sha256": {
+    "PROTOCOL.md": "679da1ef20ea6c1e05c1e0bdde3a41ff3059d4a70d1877e5a73dc7f4ab791a8c",
+    "architecture_model.py": "be571681d52f75313642c5f4cb6aa1f3157ae98e4ba5df8bc31906a44a287e6d",
+    "inputs.json": "edcc241a1636e7b5dbe099fce67ee69cd78d9235622bd43efe721406db2e3bed",
+    "run_model.py": "62d6967484e43432f003799f7806ab99372fcac16445d501bdb098f19ea172cc",
+    "test_architecture.py": "41408bdca9d892eadd99f53b3ddf41c6df61e27ed1285f70e2aa5565872488ab"
+  },
+  "output_sha256": {
+    "grid.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "grid.stdout": "9fc32da25c70984c66335078cbb288db7fc021ecd6b44f7aa91dbe6a5b2b868b",
+    "unit.stderr": "d6f6777fdd33604fda3fbfe95ec31e8d1d07083b5ab792f22076757b4af57885",
+    "unit.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

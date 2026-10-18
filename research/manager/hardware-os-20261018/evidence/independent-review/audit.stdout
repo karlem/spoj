@@ -1,0 +1,7 @@
+{
+  "checks": 9,
+  "status": "PASS",
+  "transport_application_bytes": 18023680,
+  "counterexample_weight_serial_ms": 391.8096384,
+  "counterexample_near_lower_ms": 3209.6
+}

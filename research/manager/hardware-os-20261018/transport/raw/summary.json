@@ -1,0 +1,414 @@
+{
+  "scope": "Measured localhost C/OS request echo plus verification only; no NIC/GPU/inference measurement",
+  "total_payload_bytes": 90117376,
+  "successful_requests": 1520,
+  "corruption_rejected": true,
+  "sessions": [
+    {
+      "pair": 1,
+      "position": 1,
+      "transport": "tcp",
+      "mode": "normal",
+      "name": "00-tcp-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.01038012500066543,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 19038.5,
+          "mean_ns": 19516.140625,
+          "min_ns": 18428,
+          "max_ns": 41132
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 20561.0,
+          "mean_ns": 26433.3125,
+          "min_ns": 20020,
+          "max_ns": 67331
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 211968.0,
+          "mean_ns": 211968,
+          "min_ns": 208052,
+          "max_ns": 215884
+        }
+      },
+      "setup_ns": 625368
+    },
+    {
+      "pair": 1,
+      "position": 2,
+      "transport": "unix",
+      "mode": "normal",
+      "name": "01-unix-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.00760919999993348,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 15388.0,
+          "mean_ns": 15987.3125,
+          "min_ns": 14532,
+          "max_ns": 38988
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 16680.0,
+          "mean_ns": 17193.25,
+          "min_ns": 16344,
+          "max_ns": 24116
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 223846.0,
+          "mean_ns": 223846,
+          "min_ns": 220812,
+          "max_ns": 226880
+        }
+      },
+      "setup_ns": 102944
+    },
+    {
+      "pair": 2,
+      "position": 1,
+      "transport": "unix",
+      "mode": "normal",
+      "name": "02-unix-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.005802130999654764,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 15278.0,
+          "mean_ns": 15813.171875,
+          "min_ns": 14812,
+          "max_ns": 39899
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 16855.0,
+          "mean_ns": 17253.1875,
+          "min_ns": 16474,
+          "max_ns": 23115
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 259068.0,
+          "mean_ns": 259068,
+          "min_ns": 254511,
+          "max_ns": 263625
+        }
+      },
+      "setup_ns": 112949
+    },
+    {
+      "pair": 2,
+      "position": 2,
+      "transport": "tcp",
+      "mode": "normal",
+      "name": "03-tcp-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.0074939269998139935,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 14111.0,
+          "mean_ns": 14715.3984375,
+          "min_ns": 13851,
+          "max_ns": 41732
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 15868.5,
+          "mean_ns": 15974.5,
+          "min_ns": 15073,
+          "max_ns": 17396
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 154471.5,
+          "mean_ns": 154471.5,
+          "min_ns": 148753,
+          "max_ns": 160190
+        }
+      },
+      "setup_ns": 455202
+    },
+    {
+      "pair": 3,
+      "position": 1,
+      "transport": "tcp",
+      "mode": "normal",
+      "name": "04-tcp-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.007941538000522996,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 21392.0,
+          "mean_ns": 22285.453125,
+          "min_ns": 20681,
+          "max_ns": 54852
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 24381.5,
+          "mean_ns": 24436.75,
+          "min_ns": 22644,
+          "max_ns": 27271
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 214161.0,
+          "mean_ns": 214161,
+          "min_ns": 202734,
+          "max_ns": 225588
+        }
+      },
+      "setup_ns": 493470
+    },
+    {
+      "pair": 3,
+      "position": 2,
+      "transport": "unix",
+      "mode": "normal",
+      "name": "05-unix-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.004662130999349756,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 11046.5,
+          "mean_ns": 11990.546875,
+          "min_ns": 10806,
+          "max_ns": 77015
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 11908.0,
+          "mean_ns": 17036.3125,
+          "min_ns": 11447,
+          "max_ns": 53801
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 95548.0,
+          "mean_ns": 95548,
+          "min_ns": 81732,
+          "max_ns": 109364
+        }
+      },
+      "setup_ns": 70636
+    },
+    {
+      "pair": 4,
+      "position": 1,
+      "transport": "unix",
+      "mode": "normal",
+      "name": "06-unix-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.005538285000511678,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 15273.0,
+          "mean_ns": 16513.203125,
+          "min_ns": 14592,
+          "max_ns": 105307
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 16815.0,
+          "mean_ns": 19708.3125,
+          "min_ns": 16164,
+          "max_ns": 51187
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 196269.0,
+          "mean_ns": 196269,
+          "min_ns": 192749,
+          "max_ns": 199789
+        }
+      },
+      "setup_ns": 69975
+    },
+    {
+      "pair": 4,
+      "position": 2,
+      "transport": "tcp",
+      "mode": "normal",
+      "name": "07-tcp-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.005771214000560576,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 14046.0,
+          "mean_ns": 14834.0703125,
+          "min_ns": 13811,
+          "max_ns": 45789
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 15738.5,
+          "mean_ns": 15876.25,
+          "min_ns": 14872,
+          "max_ns": 17266
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 258082.5,
+          "mean_ns": 258082.5,
+          "min_ns": 254352,
+          "max_ns": 261813
+        }
+      },
+      "setup_ns": 351297
+    },
+    {
+      "pair": 5,
+      "position": 1,
+      "transport": "tcp",
+      "mode": "normal",
+      "name": "08-tcp-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.007341789001657162,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 21407.5,
+          "mean_ns": 22181.9609375,
+          "min_ns": 20791,
+          "max_ns": 46360
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 24602.0,
+          "mean_ns": 25347.4375,
+          "min_ns": 22464,
+          "max_ns": 34492
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 323996.0,
+          "mean_ns": 323996,
+          "min_ns": 321762,
+          "max_ns": 326230
+        }
+      },
+      "setup_ns": 386689
+    },
+    {
+      "pair": 5,
+      "position": 2,
+      "transport": "unix",
+      "mode": "normal",
+      "name": "09-unix-normal",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "unix",
+        "normal"
+      ],
+      "exit": 0,
+      "wall_s": 0.004876271999819437,
+      "timeout": false,
+      "payloads": {
+        "128": {
+          "count": 128,
+          "median_ns": 11021.5,
+          "mean_ns": 11351.625,
+          "min_ns": 10816,
+          "max_ns": 34162
+        },
+        "16384": {
+          "count": 16,
+          "median_ns": 11647.0,
+          "mean_ns": 11925.1875,
+          "min_ns": 11277,
+          "max_ns": 16515
+        },
+        "1048576": {
+          "count": 2,
+          "median_ns": 114917.5,
+          "mean_ns": 114917.5,
+          "min_ns": 97476,
+          "max_ns": 132359
+        }
+      },
+      "setup_ns": 72709
+    },
+    {
+      "pair": null,
+      "position": null,
+      "transport": "tcp",
+      "mode": "corrupt",
+      "name": "10-tcp-corrupt",
+      "command": [
+        "/workspace/spoj-hardware-transport/research/manager/hardware-os-20261018/transport/echo.bin",
+        "tcp",
+        "corrupt"
+      ],
+      "exit": 42,
+      "wall_s": 0.0020697740001196507,
+      "timeout": false,
+      "setup_ns": 323736
+    }
+  ]
+}

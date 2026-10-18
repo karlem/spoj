@@ -1,0 +1,7 @@
+Using CPython 3.12.14 interpreter at: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3
+Creating virtual environment at: spoi/.venv
+   Building spoi @ file:///workspace/spoj-hardware/spoi
+error: Failed to download `torch==2.14.1`
+  cause: Network connectivity is disabled, but the requested data wasn't found in the cache: https://files.pythonhosted.org/packages/ba/fd/c470857d0dfc5d4c94430658b3eed60fd5292b0bf596a8aae7b9fd66d674/torch-2.14.1-cp312-cp312-manylinux_2_28_x86_64.whl
+
+hint: `torch` (v2.14.1) was included because `spoi` (v0.1.0) depends on `torch`
