@@ -8,6 +8,7 @@
   "bandwidth_gib_s": [0.5, 2, 8, 32],
   "prefill_tokens_s": [2000, 20000, 100000],
   "capacity_domains": ["separate", "same"],
+  "allocator_releases": [false, true],
   "export_fixed_seconds": 0.005,
   "restore_fixed_seconds": 0.005,
   "replay_fixed_seconds": 0.02,

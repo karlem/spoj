@@ -116,3 +116,24 @@ dependencies mean a disclosed failed/unrun product gate, not waived acceptance.
 No source/product change or merge-ready claim. At two failed attempts or two
 cycles without new evidence, stop. Publish a bounded decision memo and evidence,
 with one next real-trace assignment. Do not restart blocked D7 or SSH work.
+
+## Pre-execution amendment: allocation is not occupancy
+
+Before any grid execution, the source researcher identified that llama.cpp
+`seq_rm` frees cells for reuse in a preallocated KV pool, without releasing the
+backend buffer. Its server also has an existing idle-slot RAM cache path.
+Therefore the physical-release assumption must be explicit. Expand the grid
+with `allocator_releases = false/true` (864 cases). False gives zero credited
+physical saving for both replay and export even when logical slots are reusable;
+true is a **hypothetical upper-bound capability**, not a claim that inspected
+llama.cpp implements it. Resident always credits zero. Separate reported reusable
+slot occupancy from physical occupancy. For same-domain RAM offload, physical
+saving stays zero even with allocator release because the checkpoint replaces
+source storage. The existing 25% physical-capacity gate is unchanged. Also
+report the 25% reusable-slot gate separately; it cannot satisfy the physical gate.
+
+The strongest implementation baseline must include llama.cpp's built-in idle
+slot caching, unified KV and bounded RAM cache when applicable. This fixture
+does not simulate that demand-triggered policy and cannot claim to beat it.
+It considers only immediate export/replay upper bounds. This amendment changes
+no results after observation: no model had been executed at amendment time.
