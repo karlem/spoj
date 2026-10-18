@@ -1,0 +1,14 @@
+{
+  "command": "spoi/.venv/bin/python -m spoi.verify_tcp_trace docs/evidence/local-tcp-1193fcf/trace.json",
+  "exit_code": 0,
+  "result": {
+    "verified": true,
+    "frames": 33,
+    "contributions": 14,
+    "requests": 3,
+    "workers": 3,
+    "max_absolute_error": 0.0,
+    "trace_sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+  },
+  "establishes": "Fresh numerical/frame replay of historical local TCP evidence. No new socket, model-streaming, performance or Mac run."
+}

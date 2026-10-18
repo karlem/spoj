@@ -1,0 +1,6 @@
+{
+  "command": "spoi/.venv/bin/python -c 'import json; from spoi.qwen3_adapter import compatibility; print(json.dumps(compatibility(),indent=2))'",
+  "exit_code": 0,
+  "stdout": "{\n  \"torch\": \"2.14.1+cu130\",\n  \"transformers\": \"5.20.1\",\n  \"qwen_source_sha256\": \"58387f2cc22a706e7e4c7dabe6cf05cb1e9c9fe48c57e2f2a0fc5cbdb2132f4f\",\n  \"experts_backend\": \"eager\"\n}\n",
+  "stderr": ""
+}

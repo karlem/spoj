@@ -1,0 +1,28 @@
+{
+  "evaluated_code_commit": "af9d34c32cf6ea464705b6dae730fc130bcbce6f",
+  "python": "3.12.14",
+  "uv_version": "uv 0.12.23 (x86_64-unknown-linux-gnu)",
+  "compatibility": "See compatibility.json for actual runtime local-version suffix and HF source SHA guard. Distribution metadata alone omits the torch build suffix.",
+  "files": [
+    {
+      "path": "spoi/uv.lock",
+      "size": 220053,
+      "sha256": "84c7d962a98809b1d158c99bbf37426262a62451dabdd2efc2f82d244775f2e7"
+    },
+    {
+      "path": "spoi/pyproject.toml",
+      "size": 380,
+      "sha256": "fa5758d65f7bfa415be6869f58cf81de83bc9c4226c9d2e8900aeb1fc423fe93"
+    },
+    {
+      "path": "spoi/src/spoi/qwen3_adapter.py",
+      "size": 7379,
+      "sha256": "dc5f20177f3ae05a2fa65502ad3273b936b427d5cd374b05a5ca7e95fe99eace"
+    },
+    {
+      "path": "docs/evidence/local-tcp-1193fcf/trace.json",
+      "size": 836114,
+      "sha256": "0188250560dd213c9fa1173fadeab002cbf48f2e95976c794503a362f58b796a"
+    }
+  ]
+}

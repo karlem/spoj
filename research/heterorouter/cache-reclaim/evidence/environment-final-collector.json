@@ -1,0 +1,155 @@
+{
+  "timestamp_utc": "2026-10-18T14:13:11.441851+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "kernel": "6.18.55",
+  "machine": "x86_64",
+  "python": "3.12.14",
+  "packages": {
+    "torch": "2.14.1",
+    "transformers": "5.20.1",
+    "pytest": "9.1.1"
+  },
+  "page_bytes": 4096,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "status": [
+    "CapInh:\t0000000000000000",
+    "CapPrm:\t0000000000000000",
+    "CapEff:\t0000000000000000",
+    "CapBnd:\t0000000000000000",
+    "CapAmb:\t0000000000000000",
+    "Cpus_allowed_list:\t0-4",
+    "Mems_allowed_list:\t0"
+  ],
+  "files": {
+    "/proc/self/cgroup": "0::/",
+    "/proc/sys/kernel/perf_event_paranoid": "2",
+    "/sys/kernel/security/lockdown": {
+      "error": "FileNotFoundError",
+      "errno": 2
+    },
+    "/sys/fs/cgroup/cpu.max": "400000 100000",
+    "/sys/fs/cgroup/cpu.stat": "usage_usec 1195419056\nuser_usec 1047790901\nsystem_usec 147628155\nnice_usec 0\nnr_periods 76034\nnr_throttled 119\nthrottled_usec 5934258\nnr_bursts 0\nburst_usec 0",
+    "/sys/fs/cgroup/cpuset.cpus.effective": "0-4",
+    "/sys/fs/cgroup/memory.max": "34359738368",
+    "/sys/fs/cgroup/memory.current": "1572208640",
+    "/sys/fs/cgroup/memory.peak": "3750391808",
+    "/sys/fs/cgroup/memory.swap.max": "max",
+    "/sys/fs/cgroup/memory.stat": "anon 61063168\nfile 1442275328\nkernel 67256320\nkernel_stack 589824\npagetables 2101248\nsec_pagetables 0\npercpu 16828\nsock 0\nvmalloc 4096\nshmem 4788224\nfile_mapped 167936\nfile_dirty 81920\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 60948480\nactive_anon 4784128\ninactive_file 832831488\nactive_file 604667904\nunevictable 0\nslab_reclaimable 63232608\nslab_unreclaimable 1295424\nslab 64528032\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 55148126\npgmajfault 2364\npgrefill 0\npgactivate 159826\npgdeactivate 0\npglazyfree 566\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "/sys/fs/cgroup/memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "/sys/fs/cgroup/memory.pressure": {
+      "error": "FileNotFoundError",
+      "errno": 2
+    },
+    "/sys/fs/cgroup/io.stat": "259:0 rbytes=983040 wbytes=0 rios=239 wios=0 dbytes=0 dios=0\n254:0 rbytes=1427959808 wbytes=78839808 rios=11448 wios=19825 dbytes=0 dios=0",
+    "/sys/fs/cgroup/io.pressure": {
+      "error": "FileNotFoundError",
+      "errno": 2
+    }
+  },
+  "mount_capacity": {
+    "/workspace": {
+      "capacity_bytes": 33770192896,
+      "available_bytes": 25993785344
+    },
+    "/tmp": {
+      "capacity_bytes": 17871880192,
+      "available_bytes": 17867096064
+    }
+  },
+  "tools": {
+    "perf": null,
+    "bpftrace": null,
+    "strace": "/usr/bin/strace",
+    "nsys": null,
+    "iostat": null,
+    "nvidia-smi": null,
+    "uv": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv"
+  },
+  "tracepoint_directory": {
+    "/sys/kernel/tracing": {
+      "exists": false,
+      "readable": false,
+      "events_exists": false
+    },
+    "/sys/kernel/debug/tracing": {
+      "exists": false,
+      "readable": false,
+      "events_exists": false
+    }
+  },
+  "perf_event_open": {
+    "purpose": "disabled own-process userspace task-clock permission probe",
+    "available": true,
+    "errno": 0
+  },
+  "strace_readiness": {
+    "purpose": "trace /bin/true only; not an inference or storage trace",
+    "argv": [
+      "strace",
+      "-o",
+      "/workspace/scratch/deep-mechanism/final-readiness/strace-readiness.log",
+      "-e",
+      "trace=openat,read,pread64,mmap,madvise,munmap",
+      "/bin/true"
+    ],
+    "exit_code": 1,
+    "stderr": "strace: test_ptrace_get_syscall_info: PTRACE_TRACEME: Operation not permitted\nstrace: ptrace(PTRACE_TRACEME, ...): Operation not permitted\nstrace: PTRACE_SETOPTIONS: Operation not permitted\nstrace: cleanup: waitpid(-1, __WALL): No child processes\n"
+  },
+  "commands": [
+    {
+      "argv": [
+        "lscpu",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"46 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"5\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-4\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"AuthenticAMD\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"AMD EPYC 9V74 80-Core Processor\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"25\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"17\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"5\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"5192.25\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx512_bf16 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm arch_capabilities\"\n      },{\n         \"field\": \"Hypervisor vendor:\",\n         \"data\": \"KVM\"\n      },{\n         \"field\": \"Virtualization type:\",\n         \"data\": \"full\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"96 KiB (3 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"96 KiB (3 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"3 MiB (3 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"32 MiB (1 instance)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0-4\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Ghostwrite:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Indirect target selection:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Old microcode:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Vulnerable\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Vulnerable\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Vulnerable; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsa:\",\n         \"data\": \"Vulnerable\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Vmscape:\",\n         \"data\": \"Not affected\"\n      }\n   ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsblk",
+        "--json",
+        "-o",
+        "NAME,TYPE,SIZE,MOUNTPOINTS"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n   \"blockdevices\": [\n      {\n         \"name\": \"vda\",\n         \"type\": \"disk\",\n         \"size\": \"32G\",\n         \"mountpoints\": []\n      },{\n         \"name\": \"pmem0\",\n         \"type\": \"disk\",\n         \"size\": \"14.1G\",\n         \"mountpoints\": []\n      }\n   ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "findmnt",
+        "-T",
+        "/workspace",
+        "-o",
+        "TARGET,SOURCE,FSTYPE"
+      ],
+      "exit_code": 0,
+      "stdout": "TARGET     SOURCE              FSTYPE\n/workspace overlay[/workspace] overlay\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "findmnt",
+        "-T",
+        "/tmp",
+        "-o",
+        "TARGET,SOURCE,FSTYPE"
+      ],
+      "exit_code": 0,
+      "stdout": "TARGET SOURCE FSTYPE\n/tmp   none   tmpfs\n/tmp   none   tmpfs\n",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "No model or inference workload executed by this collector.",
+    "Guest devices do not identify host storage or sustainable bandwidth.",
+    "Cgroup counters are snapshots of this session, not model measurements."
+  ]
+}

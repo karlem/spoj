@@ -1,0 +1,54 @@
+{
+  "searches": [
+    {
+      "argv": [
+        "rg",
+        "--files",
+        "/workspace",
+        "/tmp",
+        "-g",
+        "*.safetensors",
+        "-g",
+        "*.gguf",
+        "-g",
+        "*.pt",
+        "-g",
+        "*.pth",
+        "-g",
+        "!**/.venv/**",
+        "-g",
+        "!**/.git/**"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "rg: /tmp/codex-daemon-1000: Permission denied (os error 13)\n",
+      "meaning": "No matching model checkpoint path found in searched workspace/tmp when exit1 and empty output. Not a scan of other hosts or all possible model formats; no checkpoint downloaded."
+    },
+    {
+      "argv": [
+        "rg",
+        "--files",
+        "/workspace",
+        "/tmp",
+        "-g",
+        "*.safetensors",
+        "-g",
+        "*.gguf",
+        "-g",
+        "*.pt",
+        "-g",
+        "*.pth",
+        "-g",
+        "!**/.venv/**",
+        "-g",
+        "!**/.git/**",
+        "-g",
+        "!codex-daemon-*"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "conclusion": "Initial search incomplete (exit2: /tmp/codex-daemon-1000 denied); bounded retry excludes that directory. No matching checkpoint found in accessible searched paths. Other formats, excluded directory and other hosts are uninspected; no checkpoint downloaded."
+}

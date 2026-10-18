@@ -1,0 +1,30 @@
+{
+  "user_supplied_primary_url": "https://arxiv.org/abs/2608.00577",
+  "primary_text_read": true,
+  "source": "https://github.com/CSQianDong/Awesome-arXiv-Daily-Reporter/blob/9b383750edcd578dabc0feb142ec655d662c2a23/4-Aug-2026/NLP/papers.jsonl",
+  "status": "User-attached primary PDF read; prior mirrored_record retained as historical metadata, not authoritative for this attachment",
+  "accessed_at": "2026-10-17T15:15:31.395102+00:00",
+  "mirrored_record": {
+    "arxiv_id": "arXiv:2608.00577",
+    "title": "HetRoute Heterogeneous and Cost-aware Collaborative Routing Framework for Distributed Edge MoE Inference",
+    "authors": "Xin Yuan, Ning Li, Wenchao Xu, Athanasios V. Vasilakos, Song Guo, Haijun Zhang",
+    "link": "https://arxiv.org/abs/2608.00577",
+    "abstract": "Mixture-of-Experts (MoE) models have become a dominant architecture for large-scale AI services, yet deploying them over geo-distributed heterogeneous edge servers remains challenging. When the Top-k activated experts of a token are spread across multiple servers, the optimal routing depends jointly on cross-server link bandwidth, heterogeneous GPU computing capability, GPU-CPU expert loading delay, instantaneous queueing backlog, and replica-level quantization quality loss. Existing distributed inference and MoE serving methods address these factors separately and do not provide a unified framework for online multi-server collaborative routing. In this paper, we propose HetRoute, a heterogeneous-cost-aware collaborative routing framework for distributed edge MoE inference. HetRoute introduces a unified per-assignment cost model that explicitly captures four cost components: cross-server transmission, GPU-CPU offloading, GPU computation with queueing, and quantization-induced quality penalty. Guided by this model, the offline stage determines expert server placement, GPU-CPU residency, and replica precision through a routing-cost-coupled deployment algorithm, while the online stage routes the Top-k activated expert set as a whole by minimizing the bottleneck layer cost via exact enumeration or beam search. Theoretical analysis establishes fallback feasibility, a bound on the number of participating servers, per-layer optimality for small candidate domains, and online computational complexity. Trace-driven evaluation on three MoE models over a heterogeneous 10-server edge testbed shows that HetRoute reduces average inference latency by up to 59.0% and P99 latency by up to 58.0%, cuts cross-server traffic by up to 72.1%, and achieves 2.13x throughput improvement compared with representative baselines, while keeping quality degradation within the configured budget."
+  },
+  "attachment": {
+    "sha256": "2ee21d03af26bbeeecb64c4dc7c76eb082b3a40e0ad708fecdf48bf00a65c321",
+    "size_bytes": 3077989,
+    "pages": 15,
+    "filename": "1-2608.00577.pdf",
+    "arxiv_version": null,
+    "authors": [
+      "Xin Yuan",
+      "Ning Li",
+      "Wenchao Xu",
+      "Song Guo",
+      "Haijun Zhang"
+    ],
+    "read_at": "2026-10-17",
+    "metadata_creation_date": "2026-08-12T01:49:12Z"
+  }
+}

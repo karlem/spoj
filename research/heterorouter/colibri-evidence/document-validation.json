@@ -1,0 +1,21 @@
+{
+  "scope": "static primary-source research/documentation only",
+  "upstream_revision": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+  "source_files_inspected": 16,
+  "pinned_links_validated": 12,
+  "manifest_hashes_match": true,
+  "markdown_fences_balanced": true,
+  "colibri_executed": false,
+  "models_downloaded": false,
+  "new_product_test_runs": false,
+  "checks": [
+    {
+      "command": "validate pinned source links and hashes against selected downloaded files",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ]
+}

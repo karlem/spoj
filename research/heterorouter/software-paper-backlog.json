@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-17",
+  "scope": "Extension queue; existing HetRoute/Colibri/hardware papers remain in consolidated report",
+  "status": "Discovery and reading agenda, no performance reproduction",
+  "entries": [
+    {
+      "title": "Fast Inference of Mixture-of-Experts Language Models with Offloading",
+      "paper_url": "https://arxiv.org/abs/2312.17238",
+      "citation_source": "https://github.com/dvmazur/mixtral-offloading/blob/ce545188b804238f0b23a59fc45e6a8f8b390c40/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "expert-cache",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How do cache residency and quantization change bytes and quality, and which paper features exist in the artifact?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference",
+      "paper_url": "https://arxiv.org/abs/2308.12066",
+      "citation_source": "https://github.com/ranggihwang/Pregated_MoE/blob/6b0a6660ea792a7a9e128c592fa4641d11228dc8/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "prediction-and-semantics",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Does early gating require architecture/training changes, and what is exact versus approximate?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "FastMoE: A Fast Mixture-of-Expert Training System",
+      "paper_url": "https://arxiv.org/abs/2103.13262",
+      "citation_source": "https://github.com/laekov/fastmoe/blob/55af4f98eee087cf5b3aac34318abf80c3bcbafd/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "communication",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Which dispatch/grouping costs transfer from training to inference?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "FasterMoE: Modeling and Optimizing Training of Large-Scale Dynamic Pre-Trained Models",
+      "paper_url": "https://doi.org/10.1145/3503221.3508418",
+      "citation_source": "https://github.com/laekov/fastmoe/blob/55af4f98eee087cf5b3aac34318abf80c3bcbafd/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "replication-and-overlap",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "What are shadowing setup/memory costs, topology assumptions and gate semantic changes?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Tutel: Adaptive Mixture-of-Experts at Scale",
+      "paper_url": "https://arxiv.org/abs/2206.03382",
+      "citation_source": "https://github.com/microsoft/Tutel/blob/175ad8075acf7783e42d8de4473aa120dcc9e4d0/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "adaptive-parallelism",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Which parallel/capacity changes preserve semantics and help small-batch inference?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "paper_url": "https://arxiv.org/abs/2309.06180",
+      "citation_source": "https://github.com/vllm-project/vllm/blob/7879f3687b5b6a4be4754242e70b9c21cf7b4183/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "kv-memory",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Separate KV allocation/fragmentation benefits from expert-weight capacity.",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+      "paper_url": "https://arxiv.org/abs/2401.09670",
+      "citation_source": "https://github.com/LLMServe/DistServe/blob/82831f1604cc6b10bebd360f6c437a07790dde9f/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "phase-scheduling",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Which load and topology repay KV handoff and extra resource allocation?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving",
+      "paper_url": "https://arxiv.org/abs/2407.00079",
+      "citation_source": "https://github.com/kvcache-ai/Mooncake/blob/19e0ab28f125346f7348e8ac9d043537d7202771/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "kv-disaggregation",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "What cache hit distributions and KV transfer assumptions drive end-to-end results?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Mooncake: Trading More Storage for Less Computation \u2014 A KVCache-centric Architecture for Serving LLM Chatbot",
+      "paper_url": "https://www.usenix.org/conference/fast25/presentation/qin",
+      "citation_source": "https://github.com/kvcache-ai/Mooncake/blob/19e0ab28f125346f7348e8ac9d043537d7202771/README.md",
+      "citation_evidence_level": "primary artifact citation; same research family as 2407.00079",
+      "topic": "kv-disaggregation",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Compare paper versions and artifact evolution; do not count as an independent method by default.",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "TENT: A Declarative Slice Spraying Engine for Performant and Resilient Data Movement in Disaggregated LLM Serving",
+      "paper_url": "https://arxiv.org/abs/2604.00368",
+      "citation_source": "https://github.com/kvcache-ai/Mooncake/blob/19e0ab28f125346f7348e8ac9d043537d7202771/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "transport",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How are multiple paths, retries and transfer completion modeled and measured?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Surviving Partial Rank Failures in Wide Expert-Parallel MoE Inference",
+      "paper_url": "https://arxiv.org/abs/2605.10670",
+      "citation_source": "https://github.com/kvcache-ai/Mooncake/blob/19e0ab28f125346f7348e8ac9d043537d7202771/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "failure-semantics",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "What expert availability/replica or approximation assumptions permit continuation after failure?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference",
+      "paper_url": "https://arxiv.org/abs/2510.09665",
+      "citation_source": "https://github.com/LMCache/LMCache/blob/f24bfe9840599f796c844ac7bdfb6be791be8122/README.md",
+      "citation_evidence_level": "primary artifact citation",
+      "topic": "kv-reuse",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How do cache preparation, context identity, shared prefixes and memory limits affect interactive tasks?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving",
+      "paper_url": null,
+      "citation_source": "https://github.com/LMCache/LMCache/blob/f24bfe9840599f796c844ac7bdfb6be791be8122/README.md",
+      "citation_evidence_level": "primary related-paper bibliography; SIGCOMM2024",
+      "topic": "kv-compression",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "What error/quality and network-cost trade-offs follow from compression?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion",
+      "paper_url": null,
+      "citation_source": "https://github.com/LMCache/LMCache/blob/f24bfe9840599f796c844ac7bdfb6be791be8122/README.md",
+      "citation_evidence_level": "primary related-paper bibliography; EuroSys2025",
+      "topic": "non-prefix-reuse",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How much recomputation is required to recover quality versus exact prefix reuse?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Flash-MoE: Streaming a 397B Parameter Mixture-of-Experts Model from NVMe at 5.7 Tokens/Second on Consumer Hardware",
+      "paper_url": "https://github.com/danveloper/flash-moe/blob/3601d41882a346d85041f7955c66429d248e8cd9/paper/flash_moe.pdf",
+      "citation_source": "https://github.com/danveloper/flash-moe/blob/3601d41882a346d85041f7955c66429d248e8cd9/paper/flash_moe.pdf",
+      "citation_evidence_level": "author-hosted technical report PDF; peer review not established",
+      "topic": "apple-streaming",
+      "full_text_read": true,
+      "reproduced": false,
+      "open_question": "Resolve semantic changes and report/README contradictions before any performance comparison.",
+      "next_step": "Audit report issues against code and numerical oracle before using a result"
+    },
+    {
+      "title": "LLM in a Flash: Efficient Large Language Model Inference with Limited Memory",
+      "paper_url": "https://arxiv.org/abs/2312.11514",
+      "citation_source": "https://github.com/danveloper/flash-moe/blob/3601d41882a346d85041f7955c66429d248e8cd9/paper/flash_moe.pdf#page=10",
+      "citation_evidence_level": "reference in another author report; original primary text not inspected",
+      "topic": "flash-and-locality",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Extract actual hardware/model/sparsity assumptions rather than repeating Flash-MoE related-work characterization.",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "ProMoE: Fast MoE-based LLM Serving using Proactive Caching",
+      "paper_url": "https://arxiv.org/abs/2410.22134",
+      "citation_source": "https://github.com/MoE-Inf/awesome-moe-inference/blob/48182b8ef7654f4d2fb0de935d490ae2ea13717a/README.md",
+      "citation_evidence_level": "secondary discovery bibliography only",
+      "topic": "predictive-cache",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How are prediction errors, wasted prefetch and changing expert demand charged?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs",
+      "paper_url": "https://arxiv.org/abs/2411.11217",
+      "citation_source": "https://github.com/MoE-Inf/awesome-moe-inference/blob/48182b8ef7654f4d2fb0de935d490ae2ea13717a/README.md",
+      "citation_evidence_level": "secondary discovery bibliography only",
+      "topic": "offload-and-batching",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Separate throughput batch size and overlap assumptions from interactive single-request latency.",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference",
+      "paper_url": "https://arxiv.org/abs/2411.01433",
+      "citation_source": "https://github.com/MoE-Inf/awesome-moe-inference/blob/48182b8ef7654f4d2fb0de935d490ae2ea13717a/README.md",
+      "citation_evidence_level": "secondary discovery bibliography only",
+      "topic": "mixed-precision",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "Which precision/expert-skipping choices alter accuracy and how are they evaluated?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "Accelerating Distributed MoE Training and Inference with Lina",
+      "paper_url": "https://www.usenix.org/conference/atc23/presentation/li-jiamin",
+      "citation_source": "https://github.com/MoE-Inf/awesome-moe-inference/blob/48182b8ef7654f4d2fb0de935d490ae2ea13717a/README.md",
+      "citation_evidence_level": "secondary discovery bibliography only",
+      "topic": "communication-scheduling",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "How are all-to-all interference and priorities handled, and what inference workloads were measured?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    },
+    {
+      "title": "SiDA: Sparsity-Inspired Data-Aware Serving for Efficient and Scalable Large Mixture-of-Experts Models",
+      "paper_url": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/698cfaf72a208aef2e78bcac55b74328-Abstract-Conference.html",
+      "citation_source": "https://github.com/MoE-Inf/awesome-moe-inference/blob/48182b8ef7654f4d2fb0de935d490ae2ea13717a/README.md",
+      "citation_evidence_level": "secondary paper citation; separate thin primary artifact timlee0212/SiDA-MoE inspected",
+      "topic": "prediction-and-cache",
+      "full_text_read": false,
+      "reproduced": false,
+      "open_question": "What does the full paper validate beyond the artifact activation-collection README?",
+      "next_step": "Acquire primary full text and author artifact, pin version, extract method and assumptions"
+    }
+  ]
+}

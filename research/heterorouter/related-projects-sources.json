@@ -1,0 +1,186 @@
+{
+  "access_date": "2026-10-17",
+  "method": "Pinned primary repository README, selected docs/source; static inspection, no execution",
+  "full_papers_read": false,
+  "projects": [
+    {
+      "repository": "EfficientMoE/MoE-Infinity",
+      "url": "https://github.com/EfficientMoE/MoE-Infinity",
+      "revision": "96a95527028f434f94a616c487094714ef10436b",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "aad09eaef1b4869421766bcfa56f3f5c4b2fcc3af871573346ee980a3977dea7",
+      "readme_size": 22095,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "moe_infinity/memory/expert_tracer.py",
+          "size": 8251,
+          "sha256": "a3017f5542a77abb949a1b298d50f32cbac86e0bd2e7b6589c3e32f8d376374b"
+        },
+        {
+          "path": "moe_infinity/memory/expert_prefetcher.py",
+          "size": 23184,
+          "sha256": "801417e64991e52e6fb2f383bf5fb8e82f9e2958afee5add7bcffb8fef1a421e"
+        }
+      ]
+    },
+    {
+      "repository": "PKU-SEC-Lab/HybriMoE",
+      "url": "https://github.com/PKU-SEC-Lab/HybriMoE",
+      "revision": "508a85b9a43dff37124370d8816e411e74827803",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "aab657087d358fc2cc77118f381bfc6c8d759dcaf581d9ccf0449d2558d06c68",
+      "readme_size": 2760,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "ktransformers/operators/experts.py",
+          "size": 80201,
+          "sha256": "8eccdeb7102c4a6f3c363cb5a39d0623a4ad016aba39a08810678834e46a3809"
+        }
+      ]
+    },
+    {
+      "repository": "Relaxed-System-Lab/HexGen",
+      "url": "https://github.com/Relaxed-System-Lab/HexGen",
+      "revision": "949414d1be18e504752508c0559cb966ddf999f4",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "5e99cc30611247d622647c8cf1629acdf4228b41604ae564b924388685c8465d",
+      "readme_size": 8843,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "hexgen/hexgen_core/README.md",
+          "size": 2281,
+          "sha256": "882375fe6dad906ec85babffdf397f98ac919c58704acaf5dc0c55295137ede1"
+        },
+        {
+          "path": "hexgen/hexgen_core/gen_hetero_groups.py",
+          "size": 5584,
+          "sha256": "bdd2d192b7d34bdf29df26c2e6af5666d9f85c90167b5c119531acab8026342f"
+        }
+      ]
+    },
+    {
+      "repository": "b4rtaz/distributed-llama",
+      "url": "https://github.com/b4rtaz/distributed-llama",
+      "revision": "4074c0f3fc02800346ccd6df3293915d4276c3d2",
+      "default_branch": "main",
+      "license": "MIT",
+      "readme_path": "README.md",
+      "readme_sha256": "1023c4cb64afedeba26fd2e02c5333f4102fd5cea1274ddf8d9def365e678960",
+      "readme_size": 8062,
+      "access_date": "2026-10-17",
+      "executed": false
+    },
+    {
+      "repository": "bigscience-workshop/petals",
+      "url": "https://github.com/bigscience-workshop/petals",
+      "revision": "22afba627a7eb4fcfe9418c49472c6a51334b8ac",
+      "default_branch": "main",
+      "license": "MIT",
+      "readme_path": "README.md",
+      "readme_sha256": "39a1351269bd2b4520de124f1b52a43dba3f9177b1456822b51e903e769589c7",
+      "readme_size": 9161,
+      "access_date": "2026-10-17",
+      "executed": false
+    },
+    {
+      "repository": "deepseek-ai/DeepEP",
+      "url": "https://github.com/deepseek-ai/DeepEP",
+      "revision": "b5a33eefda39485f438dc764695b71ba7b9249b6",
+      "default_branch": "main",
+      "license": "MIT",
+      "readme_path": "README.md",
+      "readme_sha256": "86415f7fc11381dceb14c112b6c602103d975936444601666ab1fcfd65e8fceb",
+      "readme_size": 32914,
+      "access_date": "2026-10-17",
+      "executed": false
+    },
+    {
+      "repository": "efeslab/fiddler",
+      "url": "https://github.com/efeslab/fiddler",
+      "revision": "227715bfd6e8c731b29548eab01d9919c4fe9564",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "45b01cb0b4e2b617f170b6fcf76c6228a234447566331cb73128fa4cfe701803",
+      "readme_size": 4846,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "src/fiddler/infer.py",
+          "size": 1207,
+          "sha256": "af2e85ddca815030f77616287f347135ea7076c2d62f5a9807be2f5f5a11ed9e"
+        },
+        {
+          "path": "src/fiddler/mixtral.py",
+          "size": 22692,
+          "sha256": "766749a258314e47395d8dd8665992fa50ccbeb17ab02f8a0f024cb455d48130"
+        }
+      ]
+    },
+    {
+      "repository": "exo-explore/exo",
+      "url": "https://github.com/exo-explore/exo",
+      "revision": "bc412e2230f395e652c23426a5eb88dfa515769b",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "176868021ebcf900b1397d5cb8d4ae94d5c196fbeae094bc5b57673a3586f09e",
+      "readme_size": 21897,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "src/exo/master/placement.py",
+          "size": 17584,
+          "sha256": "839e40b43dbbc1f01166dc4eeda3415c85038b62ddd09ee8d7b66b0353f2a50a"
+        },
+        {
+          "path": "src/exo/master/placement_utils.py",
+          "size": 15045,
+          "sha256": "b238de4e01016fa52f7e441f0817642b0fef1bc34b0ca42ee0eb5a94ffd48fba"
+        }
+      ]
+    },
+    {
+      "repository": "kvcache-ai/ktransformers",
+      "url": "https://github.com/kvcache-ai/ktransformers",
+      "revision": "7fbbc20d31265b266a16dd4a3929f2abf76681e6",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "readme_path": "README.md",
+      "readme_sha256": "31a7eb93c6f7b55e12d68a7a9cbfa53006de32da14af3adea91c1e4eb7665749",
+      "readme_size": 13544,
+      "access_date": "2026-10-17",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "doc/en/kt-kernel/experts-sched-Tutorial.md",
+          "size": 8002,
+          "sha256": "f7714175e6d3d7f3c64a25a45f66d9533f47252fcffa1f89609ff107da365ced"
+        }
+      ]
+    }
+  ],
+  "discovery_limits": [
+    {
+      "repository": "learning-at-home/petals",
+      "result": "Initial API lookup failed; primary accessible repository resolved to bigscience-workshop/petals, not an absence claim."
+    }
+  ],
+  "installations": false,
+  "models_downloaded": false,
+  "benchmarks_run": false
+}

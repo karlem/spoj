@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-10-17T22:14:52.184269+00:00",
+  "method": "Static primary artifact inspection; local source hash/size and pinned-link verification",
+  "repositories": 9,
+  "files_verified": 12,
+  "verified_files": [
+    "AIFM-sys/AIFM/README.md",
+    "CMU-SAFARI/prim-benchmarks/README.md",
+    "FastLM/CXL-SpecKV/README.md",
+    "MoatLab/Pond/README.md",
+    "SymbioticLab/Leap/README.md",
+    "SymbioticLab/Infiniswap/README.md",
+    "Yufeng98/CENT/README.md",
+    "ece-fast-lab/ISCA-2025-LIA/README.md",
+    "ece-fast-lab/ISCA-2025-LIA/lia/cxl/numa_alloc.c",
+    "ece-fast-lab/ISCA-2025-LIA/lia/cxl/numa_alloc.py",
+    "ece-fast-lab/ISCA-2025-LIA/examples/cpu/inference/python/llm/scripts/cxl_offloading.sh",
+    "upmem/dpu_demo/README.md"
+  ],
+  "pinned_readme_links_verified": 9,
+  "git_diff_check_exit_code": 0,
+  "full_paper_texts_read": false,
+  "project_code_executed": false,
+  "hardware_experiments_run": false,
+  "product_tests_run": false,
+  "limitations": "Source checks establish provenance and bounded artifact claims, not performance, full-paper validation, hardware availability or product correctness."
+}

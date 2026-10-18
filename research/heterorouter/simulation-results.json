@@ -1,0 +1,114 @@
+{
+  "hypothetical_identical_replicas": {
+    "0": [
+      0,
+      1
+    ],
+    "1": [
+      1,
+      2
+    ],
+    "2": [
+      0,
+      2
+    ],
+    "3": [
+      0
+    ],
+    "4": [
+      2
+    ]
+  },
+  "metric_unit": "individual expert-batch job, not MoE request",
+  "perceived_assumed": [
+    {
+      "bps": 12500000,
+      "row_s": 0.001,
+      "rtt": 0.002
+    },
+    {
+      "bps": 12500000,
+      "row_s": 0.0003,
+      "rtt": 0.002
+    },
+    {
+      "bps": 6250000,
+      "row_s": 0.002,
+      "rtt": 0.01
+    }
+  ],
+  "results": [
+    {
+      "jobs": 120,
+      "makespan_s": 1.2107475200000006,
+      "mean_s": 0.10526592800000024,
+      "p50_s": 0.09571680000000038,
+      "p95_s_nearest_rank": 0.25874752000000056,
+      "policy": "first_eligible",
+      "worker_jobs": [
+        81,
+        32,
+        7
+      ]
+    },
+    {
+      "jobs": 120,
+      "makespan_s": 1.1633721600000004,
+      "mean_s": 0.0556325093333334,
+      "p50_s": 0.04145600000000005,
+      "p95_s_nearest_rank": 0.16264192000000044,
+      "policy": "round_robin_eligible",
+      "worker_jobs": [
+        43,
+        39,
+        38
+      ]
+    },
+    {
+      "jobs": 120,
+      "makespan_s": 0.9849408000000002,
+      "mean_s": 0.03626542533333337,
+      "p50_s": 0.03983680000000003,
+      "p95_s_nearest_rank": 0.05440960000000006,
+      "policy": "predicted_earliest_finish",
+      "worker_jobs": [
+        34,
+        78,
+        8
+      ]
+    },
+    {
+      "jobs": 120,
+      "makespan_s": 0.9694560000000001,
+      "mean_s": 0.03279755200000005,
+      "p50_s": 0.03532095999999998,
+      "p95_s_nearest_rank": 0.053331200000000245,
+      "policy": "earliest_finish_with_true_parameters_non_oracle",
+      "worker_jobs": [
+        60,
+        31,
+        29
+      ]
+    }
+  ],
+  "sanity_checks": "passed",
+  "seed": 731,
+  "status": "synthetic exploratory model; not measured",
+  "true_assumed": [
+    {
+      "bps": 12500000,
+      "row_s": 0.001,
+      "rtt": 0.002
+    },
+    {
+      "bps": 1250000,
+      "row_s": 0.0003,
+      "rtt": 0.03
+    },
+    {
+      "bps": 6250000,
+      "row_s": 0.002,
+      "rtt": 0.01
+    }
+  ]
+}

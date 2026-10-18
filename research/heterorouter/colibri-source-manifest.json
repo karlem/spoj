@@ -1,0 +1,90 @@
+{
+  "repository": "https://github.com/JustVugg/colibri",
+  "revision": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+  "access_date": "2026-10-17",
+  "method": "GitHub contents API at pinned revision; static source/document inspection only",
+  "colibri_executed": false,
+  "models_downloaded": false,
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 45240,
+      "sha256": "84eb7fff9bb64f52b6f6bff55e8eb1abcd24ac439a5949ff13db1cf0666329ed"
+    },
+    {
+      "path": "docs/tuning.md",
+      "size_bytes": 14987,
+      "sha256": "28a8b738b78c74323ab1f71c5c5adc5ae39bffcc75430101c51fb1004367eb89"
+    },
+    {
+      "path": "docs/cluster.md",
+      "size_bytes": 983,
+      "sha256": "8ceb29dd7c03341090138b482c03ee5ebfae8d6d99055156602545f2d0de18d5"
+    },
+    {
+      "path": "docs/multidisk.md",
+      "size_bytes": 7227,
+      "sha256": "84702f78e5ae92616aa8ef0bd1e48f779b1444d01f16f858f61b8e862f0c47ec"
+    },
+    {
+      "path": "docs/benchmarking.md",
+      "size_bytes": 15040,
+      "sha256": "b6ae07bd54ddfb32390695149911696c2095ac61d0796590bbef21beeb3a969d"
+    },
+    {
+      "path": "docs/routing-telemetry.md",
+      "size_bytes": 10272,
+      "sha256": "cd770a2fc77db7ee7c0865785a3ad88c38fc5ee4bfcc21840c9d6b3d54ef0c89"
+    },
+    {
+      "path": "docs/CACHE_ROUTE.md",
+      "size_bytes": 3370,
+      "sha256": "571a874f1155df0928049efb049b5d35f8cb1f34d2ffd11b95dec42da95af952"
+    },
+    {
+      "path": "c/expert_store.h",
+      "size_bytes": 3293,
+      "sha256": "e2958ab832cce953448bc458dc6a76df6abb93abf0bfe3ea80fbb99640031f8f"
+    },
+    {
+      "path": "c/route_trace.h",
+      "size_bytes": 25885,
+      "sha256": "08887ab30efd7bab09c3b9d813a548fc1c38858f5a091f2350c4cc5cc5916d74"
+    },
+    {
+      "path": "c/resource_plan.py",
+      "size_bytes": 170276,
+      "sha256": "a72136d7d71099870a6ff471007aa12a86639b4d1f7b8daa51f379a305d1b85a"
+    },
+    {
+      "path": "c/colibri.c",
+      "size_bytes": 820461,
+      "sha256": "23154484d1df560e41490060e91d96487a39f5aa9c569c2a3ce0becdd7447563"
+    },
+    {
+      "path": "c/cluster.py",
+      "size_bytes": 7480,
+      "sha256": "2132c03fbb818f2b3fa274f3d15dba211aa9cd399f694f176276b46667335017"
+    },
+    {
+      "path": "c/tier.h",
+      "size_bytes": 2939,
+      "sha256": "b03ca03b4366f6bdf4a7bcd94efef2d59d51b9025323f089c7387ae3d82ede4d"
+    },
+    {
+      "path": "c/autotune.py",
+      "size_bytes": 28804,
+      "sha256": "e1bb41cb64eccc0f3983384255ae742b724bb17d05a988eda2a72385b22b1898"
+    },
+    {
+      "path": "c/tests/test_cluster_sharding.py",
+      "size_bytes": 7276,
+      "sha256": "ff335d005820f61b5fa37d5083aca210a66eb85f974f8f47257351916172d868"
+    },
+    {
+      "path": "c/tests/test_cluster_protocol.c",
+      "size_bytes": 4827,
+      "sha256": "aa31a586044b3ec979f4332ccf1f899b4b9912d4d239af1185718986b3a0a51a"
+    }
+  ]
+}

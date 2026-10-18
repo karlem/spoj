@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-17",
+  "method": "Static primary artifact READMEs; three selected LIA allocation/config sources",
+  "projects": [
+    {
+      "requested_repository": "AIFM-sys/AIFM",
+      "repository": "AIFM-sys/AIFM",
+      "revision": "fa4f31ce827501ad52f5a5ca9249ef04ba92b467",
+      "readme_path": "README.md",
+      "size": 7329,
+      "sha256": "ab51c79764b0a557513075f6fef4013d059cd001d903adcdf7cf92ab8ca3cfeb",
+      "executed": false
+    },
+    {
+      "requested_repository": "CMU-SAFARI/prim-benchmarks",
+      "repository": "CMU-SAFARI/prim-benchmarks",
+      "revision": "67179099730cdccc650d52d25f458cb2e4f8a675",
+      "readme_path": "README.md",
+      "size": 7839,
+      "sha256": "f3b610118c0d28d8be4ed7719746b23e215cec9d198cbbc02b4c11027f8d0f7f",
+      "executed": false
+    },
+    {
+      "requested_repository": "FastLM/CXL-SpecKV",
+      "repository": "FastLM/CXL-SpecKV",
+      "revision": "0eb12ad0429c00c961fec1d4f4f16279efe61712",
+      "readme_path": "README.md",
+      "size": 5745,
+      "sha256": "48efc0ec6e85e679eb5364597303a070b41b340fac83be98a845b08f64cf4a31",
+      "executed": false
+    },
+    {
+      "requested_repository": "MoatLab/Pond",
+      "repository": "MoatLab/Pond",
+      "revision": "5ac0e66b3624b9324cc9042abcd930127005d4bc",
+      "readme_path": "README.md",
+      "size": 4066,
+      "sha256": "8f723190d239682c7b97130140ab248876b998820e718c257b291ea5b97ca953",
+      "executed": false
+    },
+    {
+      "requested_repository": "SymbioticLab/Leap",
+      "repository": "SymbioticLab/Leap",
+      "revision": "13787f2bb5e4cf830e7ff05c189a81c295645022",
+      "readme_path": "README.md",
+      "size": 5249,
+      "sha256": "98003547e931ad1afb8d23e59260d3f846b5c81d533a04ba166d9858565ef863",
+      "executed": false
+    },
+    {
+      "requested_repository": "SymbioticLab/infiniswap",
+      "repository": "SymbioticLab/Infiniswap",
+      "revision": "da7c14bf749ccadb4ef44953579d55143e8e7182",
+      "readme_path": "README.md",
+      "size": 11171,
+      "sha256": "7c6b603ab2f9842c7f118dbc867bb40c590f481da212586e40e43400a8ee986c",
+      "executed": false
+    },
+    {
+      "requested_repository": "Yufeng98/CENT",
+      "repository": "Yufeng98/CENT",
+      "revision": "4c2aac6ce6aa3ddfe1944fc9c5d656b90d3fc7d2",
+      "readme_path": "README.md",
+      "size": 5483,
+      "sha256": "9fc43d14f4feccc660446a2efd65515cce8ccef94b488f1725e57bcc4f375012",
+      "executed": false
+    },
+    {
+      "requested_repository": "ece-fast-lab/ISCA-2025-LIA",
+      "repository": "ece-fast-lab/ISCA-2025-LIA",
+      "revision": "e6dd47d36fcfa45ffa411e70920681828d04301b",
+      "readme_path": "README.md",
+      "size": 3905,
+      "sha256": "0d766ef3823cc283b5fe0fd98fa2eaf2528d66eaf456b5c39c98c01a8177300f",
+      "executed": false,
+      "additional_sources": [
+        {
+          "path": "lia/cxl/numa_alloc.c",
+          "size": 3169,
+          "sha256": "dff26fe6b1985f0c3cc785025d06951f2b9371c02de7fc62775ef5402cceaf97"
+        },
+        {
+          "path": "lia/cxl/numa_alloc.py",
+          "size": 1765,
+          "sha256": "b6353ed75dcd5b93e9c400df0d8cf8cb04861d89bbe7a1997ed1336a2d4f94ad"
+        },
+        {
+          "path": "examples/cpu/inference/python/llm/scripts/cxl_offloading.sh",
+          "size": 4779,
+          "sha256": "da069a0c790db9cc666b11e0b3657a6679ec3b1a77fe11bed5e697b9d4a695a0"
+        }
+      ]
+    },
+    {
+      "requested_repository": "upmem/dpu_demo",
+      "repository": "upmem/dpu_demo",
+      "revision": "938fbcdb74f0713567b93f24af841cf0ce4af30c",
+      "readme_path": "README.md",
+      "size": 1742,
+      "sha256": "363cd25e345b96b0525157852e3835defeb43bf2a9e9e66faadd67ae0246dee1",
+      "executed": false
+    }
+  ],
+  "full_paper_texts_read": false,
+  "hardware_experiments_run": false,
+  "project_code_executed": false,
+  "procurement_or_reservations": false,
+  "access_limits": [
+    {
+      "source": "https://www.usenix.org/system/files/atc20-maruf.pdf",
+      "exit_code": 22,
+      "observed": "HTTP403 in publisher PDF fetch"
+    },
+    {
+      "source": "GitHub guessed Pond author repository path p/asplos23-pond.pdf",
+      "observed": "HTTP404; not an absence claim"
+    }
+  ]
+}

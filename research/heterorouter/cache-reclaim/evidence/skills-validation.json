@@ -1,0 +1,15 @@
+{
+  "command": "python3 scripts/validate.py",
+  "cwd": "karlem/skills@c41b2b27c91da7155d555eb4946ece348ac08657",
+  "exit_code": 0,
+  "ok": true,
+  "counts": {
+    "skills": 11,
+    "books": 10,
+    "sources": 65,
+    "scenarios": 11,
+    "markdown_files": 53
+  },
+  "errors": [],
+  "establishes": "Offline upstream structure/link/evaluation wiring; not skill effectiveness or source access revalidation."
+}

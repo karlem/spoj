@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "strace",
+    "-o",
+    "/workspace/scratch/deep-mechanism/strace-readiness-authorized.log",
+    "-e",
+    "trace=openat,read,pread64,mmap,madvise,munmap",
+    "/bin/true"
+  ],
+  "execution_context": "Authorized own-child tracing (require_escalated) after restricted PTRACE_TRACEME failure",
+  "exit_code": 0,
+  "stderr": "",
+  "scope": "Tool readiness only; not model/storage evidence."
+}

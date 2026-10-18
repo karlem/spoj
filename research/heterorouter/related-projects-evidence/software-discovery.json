@@ -1,0 +1,380 @@
+{
+  "method": "Bounded GitHub repository discovery; results are leads, not capability or paper verification",
+  "queries": [
+    {
+      "query": "JACCL",
+      "total_count": 20,
+      "items": [
+        {
+          "repo": "alexziskind1/mlx-jaccl-cluster",
+          "description": null
+        },
+        {
+          "repo": "tmc/gojaccl",
+          "description": "JACCL bindings and tools"
+        },
+        {
+          "repo": "dev-tb5-tester/rdma_jaccl",
+          "description": "JACCL bug report"
+        },
+        {
+          "repo": "jaccl17/jaccl17.github.io",
+          "description": "personal website with all my work"
+        },
+        {
+          "repo": "arouel/jacclog",
+          "description": "Jacclog is a prototype of a modular access log analytics system written in Java. It is open source and the modular architecture (OSGi) is based on Apache Karaf. The goal of this application is the rapid analysis of access logs. At present only a file import and a statistical analysis with CSV export is available."
+        }
+      ]
+    },
+    {
+      "query": "Thunderbolt RDMA mlx",
+      "total_count": 3,
+      "items": [
+        {
+          "repo": "Jackten/deepseek-v41-mlx-three-mac",
+          "description": "Original-weight DeepSeek V4.1 Flash on three M5 Max Macs: MLX, Thunderbolt RDMA, full DSpark, portable setup and measured benchmarks."
+        },
+        {
+          "repo": "todd-chamberlain/jaccl-rdma",
+          "description": "JACCL distributed inference over Thunderbolt 5 RDMA \u2014 Ray + MLX wrapper for Apple Silicon clusters"
+        },
+        {
+          "repo": "jonathan308/ThunderMLX",
+          "description": "NOTICE : THIS PROJECT IS BEING PORTED INTO OMLX : Run a 428B-parameter (23B-active) frontier MoE on your desk \u2014 two Apple Silicon Macs fused over Thunderbolt 5 RDMA into one OpenAI-compatible MiniMax-M3 inference machine."
+        }
+      ]
+    },
+    {
+      "query": "Pre-gated MoE",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "ProMoE inference",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "FasterMoE",
+      "total_count": 2,
+      "items": [
+        {
+          "repo": "thu-pacman/FasterMoE",
+          "description": null
+        },
+        {
+          "repo": "laekov/fastermoe-ae",
+          "description": null
+        }
+      ]
+    },
+    {
+      "query": "LLM in a flash",
+      "total_count": 223,
+      "items": [
+        {
+          "repo": "xlite-dev/Awesome-LLM-Inference",
+          "description": "\ud83d\udcdaA curated list of Awesome LLM/VLM Inference Papers with Codes: Flash-Attention, Paged-Attention, WINT8/4, Parallelism, etc.\ud83c\udf89"
+        },
+        {
+          "repo": "PromtEngineer/Anki_FlashCard_Generator",
+          "description": "Automatically generate Anki Flashcards from your PDF files with LLM (ChatGPT in this case)  to help you study. "
+        },
+        {
+          "repo": "dataflowr/gpu_llm_flash-attention",
+          "description": "Course on Flash-attention in Triton"
+        },
+        {
+          "repo": "ShaYeBuHui01/flash_attention_inference",
+          "description": "Performance of the C++ interface of flash attention and flash attention v2 in large language model (LLM) inference scenarios."
+        },
+        {
+          "repo": "Bruce-Lee-LY/flash_attention_inference",
+          "description": "Performance of the C++ interface of flash attention and flash attention v2 in large language model (LLM) inference scenarios."
+        }
+      ]
+    },
+    {
+      "query": "Lina MoE inference",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "ExpertFlow MoE",
+      "total_count": 3,
+      "items": [
+        {
+          "repo": "MartinCrespoC/QuantumLeap---Llama.cpp-TurboQuant",
+          "description": "\ud83d\ude80 Run any LLM on any hardware. 130% faster MoE inference with ExpertFlow + TurboQuant KV compression. Ollama-compatible API. Built on llama.cpp."
+        },
+        {
+          "repo": "jhammant/expertflow",
+          "description": "\u26a1 Dynamic MoE expert streaming for Apple Silicon \u2014 run 685B parameter models on a laptop. Rust-native GPU + ANE + NVMe orchestration."
+        },
+        {
+          "repo": "desmondgregarious958/QuantumLeap---Llama.cpp-TurboQuant",
+          "description": "Run LLMs on any hardware with llama.cpp, TurboQuant KV compression, and ExpertFlow MoE tuning for faster local inference"
+        }
+      ]
+    },
+    {
+      "query": "HotSwitch MoE",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"ProMoE\" in:readme",
+      "total_count": 73,
+      "items": [
+        {
+          "repo": "ali-vilab/ProMoE",
+          "description": "[ICLR2026] The official code of \"Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance\""
+        },
+        {
+          "repo": "xmms2/promoe",
+          "description": "A client with a WinAmp / XMMS 1 look"
+        },
+        {
+          "repo": "Lingxi-Qihang/LingXi-Image-MoE",
+          "description": null
+        },
+        {
+          "repo": "Lingxi-Qihang/LingXi-Image-MoE-1.68B-A0.56M",
+          "description": null
+        },
+        {
+          "repo": "MoE-Inf/awesome-moe-inference",
+          "description": "Curated collection of papers in MoE model inference "
+        }
+      ]
+    },
+    {
+      "query": "\"Pre-gated\" in:readme",
+      "total_count": 1111,
+      "items": [
+        {
+          "repo": "mdpsec/bug-bounty-hunting-prompts",
+          "description": "Reusable prompts for a structured, evidence-first bug bounty hunting workflow"
+        },
+        {
+          "repo": "ranggihwang/Pregated_MoE",
+          "description": null
+        },
+        {
+          "repo": "gneu42/Triple-Decky",
+          "description": "New triple deck filament block for ERCF V1 and Sturdy Bunny"
+        },
+        {
+          "repo": "Carrot-collective/ERCF_v3",
+          "description": "Main Repo for all things ERCF v3"
+        },
+        {
+          "repo": "DanielObara/DanielObara",
+          "description": "This is a special repository. Its README.md will appear on my public profile like a overview."
+        }
+      ]
+    },
+    {
+      "query": "\"MoE-Lightning\"",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"HOBBIT\" MoE in:readme",
+      "total_count": 48,
+      "items": [
+        {
+          "repo": "MoE-Inf/awesome-moe-inference",
+          "description": "Curated collection of papers in MoE model inference "
+        },
+        {
+          "repo": "horseee/Awesome-Efficient-LLM",
+          "description": "A curated list for Efficient Large Language Models"
+        },
+        {
+          "repo": "ongunm/llama-moe-cache",
+          "description": "Expert cache + predictive prefetch for MoE inference in llama.cpp. A 12GB GPU can run a 120GB model at native speed. At 3% sparsity, a single workstation could theoretically run a 1T parameter model. 500 LoC, zero training, 99.5% cache hit rate."
+        },
+        {
+          "repo": "chenhongyu2048/LLM-inference-optimization-paper",
+          "description": "Summary of some awesome work for optimizing  LLM inference"
+        },
+        {
+          "repo": "Randozart/VITRIOL",
+          "description": null
+        }
+      ]
+    },
+    {
+      "query": "\"LLM in a flash\" user:apple",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"Lina\" user:microsoft",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"JACCL\" org:ml-explore",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"Thunderbolt\" org:ml-explore",
+      "total_count": 0,
+      "items": []
+    },
+    {
+      "query": "\"Janus\" MoE inference",
+      "total_count": 1,
+      "items": [
+        {
+          "repo": "ariannamethod/janus.DoE",
+          "description": "DoE: Democracy of Experts. Janus Architecture."
+        }
+      ]
+    },
+    {
+      "query": "\"DynaMoE\" inference",
+      "total_count": 1,
+      "items": [
+        {
+          "repo": "derekrparris/DynaMoE",
+          "description": "Dynamic, SSD-streamed Mixture-of-Experts LLM inference on Apple Silicon."
+        }
+      ]
+    },
+    {
+      "query": "2411.11217 in:readme",
+      "total_count": 61,
+      "items": [
+        {
+          "repo": "hoan654/Carbon-Emission-Analysis",
+          "description": null
+        },
+        {
+          "repo": "theneao/CV-SAR-Seg-arxiv-daily",
+          "description": "CV\u9886\u57df \u4e2a\u4eba\u5173\u6ce8\u65b9\u5411 \u6bcf\u65e5arxiv\u6587\u7ae0\u66f4\u65b0"
+        },
+        {
+          "repo": "SylphinPhan/Carbon-Amisson-Analysis",
+          "description": null
+        },
+        {
+          "repo": "devillove084/LLMZeroToHero",
+          "description": null
+        },
+        {
+          "repo": "Maianh2510/Project-2---Carbon-Emission-Analysis",
+          "description": null
+        }
+      ]
+    },
+    {
+      "query": "2410.22134 in:readme",
+      "total_count": 23,
+      "items": [
+        {
+          "repo": "hiifong/starList",
+          "description": "Export your star's repository list"
+        },
+        {
+          "repo": "amanbolat/awesome-cpp-with-stars",
+          "description": "List of awesome c/c++ projects with stars"
+        },
+        {
+          "repo": "mltooling/ci-test",
+          "description": null
+        },
+        {
+          "repo": "bookeee/high_load_app",
+          "description": null
+        },
+        {
+          "repo": "Alex223124/high_load_app",
+          "description": "test task"
+        }
+      ]
+    },
+    {
+      "query": "flash-moe",
+      "total_count": 308,
+      "items": [
+        {
+          "repo": "danveloper/flash-moe",
+          "description": "Running a big model on a small laptop"
+        },
+        {
+          "repo": "Anemll/flash-moe",
+          "description": null
+        },
+        {
+          "repo": "Anemll/Flash-iOS",
+          "description": "Flash-MoE iOS \u2014 Run massive MoE models on iPhone"
+        },
+        {
+          "repo": "Anemll/anemll-flash-llama.cpp",
+          "description": "Flash-MoE sidecar slot-bank runtime for large GGUF MoE models on Apple Silicon \u2014 llama.cpp fork"
+        },
+        {
+          "repo": "PrimeIntellect-ai/prime-flash-moe",
+          "description": "Fused MoE kernel"
+        }
+      ]
+    },
+    {
+      "query": "LLM flash apple research in:readme",
+      "total_count": 7394,
+      "items": [
+        {
+          "repo": "lyogavin/airllm",
+          "description": "AirLLM 2.8T LLM inference with single 4GB GPU"
+        },
+        {
+          "repo": "open-compass/VLMEvalKit",
+          "description": "Open-source evaluation toolkit of large multi-modality models (LMMs), support 220+ LMMs, 80+ benchmarks"
+        },
+        {
+          "repo": "algorithmicsuperintelligence/openevolve",
+          "description": "Open-source implementation of AlphaEvolve"
+        },
+        {
+          "repo": "systemdesign42/system-design-academy",
+          "description": "If you want to become good at AI engineering & system design, join this newsletter \ud83d\udc47"
+        },
+        {
+          "repo": "xlite-dev/Awesome-LLM-Inference",
+          "description": "\ud83d\udcdaA curated list of Awesome LLM/VLM Inference Papers with Codes: Flash-Attention, Paged-Attention, WINT8/4, Parallelism, etc.\ud83c\udf89"
+        }
+      ]
+    },
+    {
+      "query": "SiDA-MoE",
+      "total_count": 5,
+      "items": [
+        {
+          "repo": "timlee0212/SiDA-MoE",
+          "description": "Code for MLSys 2024 Paper \"SiDA-MoE: Sparsity-Inspired Data-Aware Serving for Efficient and Scalable  Large Mixture-of-Experts Models\""
+        },
+        {
+          "repo": "Zishan-Shao/sida-moe",
+          "description": "ECE661-Final-Project"
+        },
+        {
+          "repo": "Zishan-Shao/SiDA-MOE-Training",
+          "description": null
+        },
+        {
+          "repo": "Blacksmith556/SiDA-MoE-main",
+          "description": null
+        },
+        {
+          "repo": "burhan3325/Garowe-Polytecnic-Institute",
+          "description": "Garowe Polytechnic Institute (GPI) transitional from Garowe Vocational Training Center (GVTC) which is a public center that aims to develop skilled labor through diversified skill courses to meet the requirements of mainly the unorganized sector of the community and to instill self-employment skills into the people through a large number of self-employment oriented skill courses. Garowe VTC is one of the four vocational training centers in Puntland built by the Islamic Development Bank in 1993-1994 with a group of professional engineers, intellectuals, businesspersons and field experts living in Puntland regions mainly in Nugal region, but it was started operating in 2006 and the gap between the year of establishment and the year of commencement was resulted the political and security unrest of country. Garowe VTC was established because there was a need to get skilled and professional people in the region to overcome the massive unemployment in the region, GVTC helps the person in becoming skilled in a particular field at a comparatively lower age, those who want to utilize what they have been accomplished or trained. Garowe VTC has achieved most of the planned activities to encourage, setting up, managing and sustaining a national system that ensures vocational training of human resources in productive occupations that may be required by the national development process and that take into account the abilities, attitudes and moral and ethical values of individuals. As well as, setting up of a skill training program focusing on different vocational skills training. The Garowe VTC was strongly developed and equipped to such a level that it is one of its benchmark for other Vocal Training Centers. From the plan of GVTC as at the time of equipped and constructed it was to develop into a higher level of technical learning institution to develop and expand its skill program services to the region and toempower growing needs of the community to create skilled man power, and encourage employability opportunities. It has mostly been project based learning institution. The projects from the NGOs and other funding bodies may not be sufficient to run the institution all through the years. Apart from the projects from the funding bodies, the polytechnic seek to have its programs running not necessarily depending on the bodies wholesomely. GVTC closely worked with International Organizations including; European Union (EU), ILO, UNDP, UNODC, USAID, SIDA, Care international, Save the children International, World Vision International, Norwegian Church Aid (NCA), Norwegian Refugee Council (NRC) and American Refugee Committee (ARC), these organizations funded and supported many skills training and livelihood projects implemented by the Garowe VTC. Garowe VTC also closely partnership with Governmental Institutions (Puntland Ministry Of Education And Higher Education (MoE & HE) and Garowe local Authority (GLA), and number of local companies for long time which plays an important role for the running of the center. including; NECSOM (Nugal Electric Company of Somalia) GOLIS, Mubarak Construction Company, Samaaley Construction Company and NUWACO these companies  perform with GVTC by ideal contribution when it comes to the programs to be offered since they are a market operating companies they mostly likely identify where there is a need and scarcity in community; moreover these companies sometimes contribute material support and promote the programs to succeed, and  as estimated 50% of  each graduates from GVTC attached to get jobs from the above mentioned companies although GVTC is the only reliable vocational center in the Nugal Region particularly, in Garowe District. The Garowe VCT has strong partnership with the government; the educational policies used by the center are based on stratagem and curriculum of the Ministry of Education and Higher Education of Puntland to words the vocational schools, and TVET centers."
+        }
+      ]
+    }
+  ]
+}

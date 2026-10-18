@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-18",
+  "scope": "Human-requested wedge investigation, not implementation authorization for a new runtime",
+  "primary_project_documentation": [
+    {
+      "repository": "jundot/omlx",
+      "requested_repository": "jundot/omlx",
+      "revision": "165be1ff5933a020f2f5a7544e1e95a2797f777f",
+      "path": "README.md",
+      "size": 24628,
+      "sha256": "4a23a0452022bbd13aa88b5c96693ceb83a085aefa92d8331ea743f636464fcc",
+      "executed": false,
+      "url": "https://github.com/jundot/omlx/blob/165be1ff5933a020f2f5a7544e1e95a2797f777f/README.md"
+    },
+    {
+      "repository": "mostlygeek/llama-swap",
+      "requested_repository": "mostlygeek/llama-swap",
+      "revision": "a2796fb0306215c6883454a8707dfb22d25c3068",
+      "path": "README.md",
+      "size": 17354,
+      "sha256": "a72e7644254751dbb15c5793e74186ba0288e1f672d52c4772f63d45dc9d4ffb",
+      "executed": false,
+      "url": "https://github.com/mostlygeek/llama-swap/blob/a2796fb0306215c6883454a8707dfb22d25c3068/README.md"
+    },
+    {
+      "repository": "waybarrios/vllm-mlx",
+      "requested_repository": "waybarrios/vllm-mlx",
+      "revision": "ab74aa6606a1ac7647f4981320e863edee70823a",
+      "path": "README.md",
+      "size": 15500,
+      "sha256": "7ef876daeb2eb935dac298fd3492e2ecdc08faa2cb84f2c1c6b11f796c49265e",
+      "executed": false,
+      "url": "https://github.com/waybarrios/vllm-mlx/blob/ab74aa6606a1ac7647f4981320e863edee70823a/README.md"
+    },
+    {
+      "repository": "osaurus-ai/osaurus",
+      "requested_repository": "osaurus-ai/osaurus",
+      "revision": "1e5bfab23ecf630546a1f82cc882aa3c76473d8d",
+      "path": "README.md",
+      "size": 28837,
+      "sha256": "aae9089aff08c51f2d3b8b917ce5ad0d46a3b23d5b036a7ecce4de764092e520",
+      "executed": false,
+      "url": "https://github.com/osaurus-ai/osaurus/blob/1e5bfab23ecf630546a1f82cc882aa3c76473d8d/README.md"
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "requested_repository": "ggml-org/llama.cpp",
+      "revision": "547208dca250ceb3e4c8615598d043f2b602a527",
+      "path": "README.md",
+      "size": 7470,
+      "sha256": "dc2d34687c844ecf929d9e9a9c9c78e8023b52abf3b2b3d039600c79016673b6",
+      "executed": false,
+      "url": "https://github.com/ggml-org/llama.cpp/blob/547208dca250ceb3e4c8615598d043f2b602a527/README.md"
+    },
+    {
+      "repository": "JustVugg/colibri",
+      "requested_repository": "JustVugg/colibri",
+      "revision": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+      "path": "README.md",
+      "size": 45240,
+      "sha256": "84eb7fff9bb64f52b6f6bff55e8eb1abcd24ac439a5949ff13db1cf0666329ed",
+      "executed": false,
+      "url": "https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/README.md"
+    }
+  ],
+  "issue_discussion_snapshots": [
+    {
+      "repository": "exo-explore/exo",
+      "number": 957,
+      "url": "https://github.com/exo-explore/exo/issues/957",
+      "state": "open",
+      "snapshot_path": "exo-explore--exo-issue-957.json",
+      "sha256": "125651ced7c18d42e25a9f14f45ee9ce268f58b45bc8a9926c86664e673ef04a",
+      "comments_total": 6,
+      "comments_fetched": 6
+    },
+    {
+      "repository": "exo-explore/exo",
+      "number": 1102,
+      "url": "https://github.com/exo-explore/exo/issues/1102",
+      "state": "open",
+      "snapshot_path": "exo-explore--exo-issue-1102.json",
+      "sha256": "1420022fb1262bb1527b136e55b644e55de7179c7d479d8bc6f0e47053327a90",
+      "comments_total": 12,
+      "comments_fetched": 12
+    },
+    {
+      "repository": "exo-explore/exo",
+      "number": 2373,
+      "url": "https://github.com/exo-explore/exo/issues/2373",
+      "state": "open",
+      "snapshot_path": "exo-explore--exo-issue-2373.json",
+      "sha256": "0d4338798b7e9b7dd5d4f2e51c8076ce73e6bd602704cd12f4c240866233c17e",
+      "comments_total": 0,
+      "comments_fetched": 0
+    },
+    {
+      "repository": "ml-explore/mlx-lm",
+      "number": 1438,
+      "url": "https://github.com/ml-explore/mlx-lm/issues/1438",
+      "state": "open",
+      "snapshot_path": "ml-explore--mlx-lm-issue-1438.json",
+      "sha256": "5e0b70895facc11885eba1f0a567abab692737af80ee995cb2f74e763eb869a6",
+      "comments_total": 32,
+      "comments_fetched": 32
+    },
+    {
+      "repository": "ml-explore/mlx-lm",
+      "number": 1194,
+      "url": "https://github.com/ml-explore/mlx-lm/issues/1194",
+      "state": "open",
+      "snapshot_path": "ml-explore--mlx-lm-issue-1194.json",
+      "sha256": "6357f4375e7f6c59c310338b5df005e71a0f0e44707d4ffe83fa40ad36862373",
+      "comments_total": 2,
+      "comments_fetched": 2
+    },
+    {
+      "repository": "JustVugg/colibri",
+      "number": 2109,
+      "url": "https://github.com/JustVugg/colibri/issues/2109",
+      "state": "open",
+      "snapshot_path": "JustVugg--colibri-issue-2109.json",
+      "sha256": "0a621a36c8896a6e24b7575c8f8c53c61ddd015bad7114f740d9e6c3a880ff82",
+      "comments_total": 4,
+      "comments_fetched": 4
+    }
+  ],
+  "issue_evidence_limit": "Unverified user/developer reports; issue state is not proof a feature is absent. Six issue bodies and selected comments were inspected; full available comment histories were fetched (all <=100 comments). Mutable snapshots remain in scratch; source URLs/comment IDs are public references. Snapshot SHA256s identify local observations, not a Git commit or immutable public archive.",
+  "policy_probe_source": {
+    "repository": "deepseek-ai/EPLB",
+    "revision": "d52c72d5b2f2fb4c41afbf8eb21366820239913d",
+    "path": "eplb.py",
+    "sha256": "25b37ccd83aef2369c68f2b4bb596608a4f289956d97d9a3504bfd3159459e29",
+    "executed": true,
+    "execution": "CPU policy only; constructed workloads and assumed rates; no model/network/hardware performance test"
+  },
+  "source_fetch_limit": "Six README files inspected; no competitive engine installation/execution. Earlier research pins remain in software-mac-sources.json."
+}
