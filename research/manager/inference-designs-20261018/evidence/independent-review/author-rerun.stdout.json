@@ -1,0 +1,110 @@
+{
+  "seed": 20261018,
+  "checks": {
+    "comparisons": 432,
+    "empty_comparisons": 240,
+    "max_absolute_error": 1.1102230246251565e-16,
+    "tolerance": 1e-10,
+    "deliberate_wrong_gqa_mapping_detected": true,
+    "scope": "Binary64 fixture only; no GPU kernel, FP16 or inference validation"
+  },
+  "ledger": {
+    "kv_bytes_per_token_all_layers": 131072,
+    "branch_example": {
+      "prefix_tokens": 8192,
+      "branches": 4,
+      "suffix_tokens_each": 1024,
+      "naive_copy_bytes": 4831838208,
+      "existing_prefix_sharing_bytes": 1610612736,
+      "proposed_prefix_sharing_bytes": 1610612736,
+      "saving_over_existing_sharing": 0
+    },
+    "per_remote_per_layer": {
+      "query_bytes": 8192,
+      "summary_bytes": 16640
+    },
+    "new_kv_append_bytes_per_layer_if_remote": 4096,
+    "dependent_32_layer_RTT_floor_ms": {
+      "0.02": 0.64,
+      "0.2": 6.4,
+      "1": 32
+    },
+    "little_law_example": {
+      "blocked_arrivals_per_s": 4,
+      "mean_tool_wait_s": 20,
+      "mean_blocked_sessions": 80,
+      "gib_per_session": 1,
+      "mean_retained_gib": 80,
+      "scope": "Stable-flow illustrative averages, not tail bounds; admission changes arrivals."
+    },
+    "rows": [
+      {
+        "context": 8192,
+        "remote_workers": 1,
+        "total_kv_bytes": 1073741824,
+        "ideal_equal_shard_bytes": 536870912,
+        "raw_remote_kv_copy_bytes_per_decode_token": 536870912,
+        "query_broadcast_bytes_per_decode_token": 262144,
+        "summary_return_bytes_per_decode_token": 532480,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      },
+      {
+        "context": 8192,
+        "remote_workers": 3,
+        "total_kv_bytes": 1073741824,
+        "ideal_equal_shard_bytes": 268435456,
+        "raw_remote_kv_copy_bytes_per_decode_token": 805306368,
+        "query_broadcast_bytes_per_decode_token": 786432,
+        "summary_return_bytes_per_decode_token": 1597440,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      },
+      {
+        "context": 8192,
+        "remote_workers": 7,
+        "total_kv_bytes": 1073741824,
+        "ideal_equal_shard_bytes": 134217728,
+        "raw_remote_kv_copy_bytes_per_decode_token": 939524096,
+        "query_broadcast_bytes_per_decode_token": 1835008,
+        "summary_return_bytes_per_decode_token": 3727360,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      },
+      {
+        "context": 65536,
+        "remote_workers": 1,
+        "total_kv_bytes": 8589934592,
+        "ideal_equal_shard_bytes": 4294967296,
+        "raw_remote_kv_copy_bytes_per_decode_token": 4294967296,
+        "query_broadcast_bytes_per_decode_token": 262144,
+        "summary_return_bytes_per_decode_token": 532480,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      },
+      {
+        "context": 65536,
+        "remote_workers": 3,
+        "total_kv_bytes": 8589934592,
+        "ideal_equal_shard_bytes": 2147483648,
+        "raw_remote_kv_copy_bytes_per_decode_token": 6442450944,
+        "query_broadcast_bytes_per_decode_token": 786432,
+        "summary_return_bytes_per_decode_token": 1597440,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      },
+      {
+        "context": 65536,
+        "remote_workers": 7,
+        "total_kv_bytes": 8589934592,
+        "ideal_equal_shard_bytes": 1073741824,
+        "raw_remote_kv_copy_bytes_per_decode_token": 7516192768,
+        "query_broadcast_bytes_per_decode_token": 1835008,
+        "summary_return_bytes_per_decode_token": 3727360,
+        "new_kv_append_bytes_if_remote": 131072,
+        "caveat": "Payload only; excludes framing, registration, copies, workspaces and recompute. KV scan remains distributed."
+      }
+    ]
+  },
+  "source_sha256": "24d8c671408333e7a2cff47d4a6273fc2b1cdfd024e4f2da5e2d0fb82a459ac2"
+}
